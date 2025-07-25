@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="overflow-hidden relative z-10 bg-black border-t border-white-1/20 text-white">
       <div className="max-w-[1440px] mx-auto relative z-10 px-4 md:px-10 lg:px-16 xl:px-20">
-        <div className="flex space-x-10 md:space-x-28 items-center justify-center w-full pt-[30px]">
+        {/* <div className="flex space-x-10 md:space-x-28 items-center justify-center w-full pt-[30px]">
           {socialMedia.map((social) => (
             <Link href={social.link} key={social.name} target="_blank">
               <Image
@@ -22,7 +22,7 @@ export default function Footer() {
               />
             </Link>
           ))}
-        </div>
+        </div> */}
         <div className="py-12 flex flex-col gap-y-20 md:items-start items-center justify-between md:flex-row">
           <div className="mr-0 max-w-full lg:max-w-96 space-y-5 text-center sm:text-center md:text-left">
             <p className="text-p2 mb-[10px]">A global initiative by</p>
@@ -76,7 +76,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#601DFF] blur-[200px] opacity-50 pointer-events-none z-0" />
     </footer>
   );
 }

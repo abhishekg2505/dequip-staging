@@ -97,7 +97,7 @@ export default function HeroSection() {
     <>
       <section
         ref={containerRef}
-        className="relative w-full bg-[url('/images/homepage/hero-banner-mobile.webp')] md:bg-[url('/images/homepage/hero-banner.webp')] bg-cover bg-right-top"
+        className="relative w-full bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
       >
         {/* <div className="absolute left-0 top-0 px-4 md:px-20 pt-[30px] z-10">
           <Link href="/" className="">
@@ -111,29 +111,57 @@ export default function HeroSection() {
           </Link>
         </div> */}
         <div className="absolute inset-0 bg-black z-20 hero-overlay" />
-        <div className="relative pt-[289px] pb-[289px] md:pt-72 md:pb-60 w-full">
+        <div className="relative pt-[120px] pb-[289px] md:pt-[120px] md:pb-60 w-full">
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">
             <div className="max-w-7xl mx-auto hidden sm:block">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-10">
-                <div className="max-w-[695px] inline-flex flex-col justify-start items-start">
-                  <h1 className="self-stretch  justify-start bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text text-transparent text-h1 font-normal font-anton hero-title">
-                    QUANTUM MINDS{" "}
-                  </h1>
-                  <div className="inline-flex justify-start items-center gap-3.5">
-                    <div className="justify-start bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text text-transparent text-h1 font-normal font-anton hero-title2">
-                      PODCAST
-                    </div>
-                    <div className="pt-2 inline-flex flex-col justify-center items-start">
-                      <div className="justify-start text-white text-3xl font-normal font-antonio">
-                        with
-                      </div>
-                      <div className="justify-start text-white text-5xl font-normal font-antonio">
-                        KAPIL DHIMAN.
-                      </div>
-                    </div>
-                  </div>
+              <div className="mx-auto w-[462px] h-[462px] p-[2px] bg-circle-gradient rounded-[100%] shadow-[4px_4px_94px_0px_#D7D7D726]">
+                <div className="flex flex-col items-center justify-center w-full h-full rounded-[100%] bg-[#000000] bg-[url('/images/homepage/wire.png')] bg-contain bg-center-top bg-no-repeat">
+                  <h2>Welcome to</h2>
+                  <Image
+                    src="/images/homepage/logo.svg"
+                    alt="Dequip logo"
+                    width={306}
+                    height={89}
+                    className=""
+                  />
                 </div>
+              </div>
+              <div className="max-w-[513px] mx-auto my-8 text-center">
+                <p className="text-p1 font-open-sans">
+                  Quranium&rsquo;s high-intensity & high-impact Incubator for decentralized &
+                  quantum-secure innovation
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-x-4">
+                <Link href="#" target="_blank">
+                  <Button className="group relative overflow-hidden">
+                    <span className="text-p2 font-montserrat text-[#000000]">
+                      Apply Now (DeQUIP 50)
+                    </span>
+                  </Button>
+                </Link>
+                <Link href="#" target="_blank">
+                  <Button variant="outline" className="group relative overflow-hidden">
+                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      Become a Mentor
+                    </span>
+                  </Button>
+                </Link>
+                <Link href="#" target="_blank">
+                  <Button variant="outline" className="group relative overflow-hidden">
+                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      Partner With Us
+                    </span>
+                  </Button>
+                </Link>
+                <Link href="#" target="_blank">
+                  <Button variant="outline" className="group relative overflow-hidden">
+                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      Subscribe to Pulse
+                    </span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

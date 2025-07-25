@@ -2,11 +2,15 @@ import { ROUTES } from "./routes";
 
 export const footer = [
   {
-    title: "About Kapil Dhiman",
-    links: [{ name: "About Kapil Dhiman", href: ROUTES?.ABOUT_KAPIL_DHIMAN }],
-  },
-  {
     title: "About Quranium",
     links: [{ name: "About Quranium", href: "https://www.quranium.org" }],
+  },
+  {
+    title: "About DeQUIP50",
+    links: [{ name: "About DeQUIP50", href: "#" }],
+  },
+  {
+    title: "Contact",
+    links: [{ name: "Contact", href: "#" }],
   },
 ];

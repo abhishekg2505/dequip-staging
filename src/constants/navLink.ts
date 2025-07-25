@@ -15,11 +15,11 @@ export const navLinks = [
   //   ],
   // },
   {
-    itemName: "Home",
-    link: "/",
+    itemName: "About",
+    link: "#",
   },
   {
-    itemName: "About Kapil Dhiman",
-    link: ROUTES?.ABOUT_KAPIL_DHIMAN,
+    itemName: "Contact",
+    link: "#",
   },
 ];

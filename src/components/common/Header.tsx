@@ -87,7 +87,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Nav */}
-          {/* <div className="hidden lg:flex items-center gap-4 2xl:gap-8">
+          <div className="hidden lg:flex items-center gap-4 2xl:gap-8">
             <nav className="flex items-start gap-3 xl:gap-6 px-3 py-1">
               {navLinks.map((item, idx) => (
                 <div
@@ -104,19 +104,21 @@ export default function Header() {
                       href={item.link}
                       className="flex items-center gap-2 text-center hover:opacity-60 duration-300"
                     >
-                      <span className="text-p3 font-semibold leading-[26px] text-white-1">
+                      <span className="text-p3 font-semibold leading-[26px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {item.itemName}
                       </span>
-                      {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}
+                      {/* {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />} */}
                     </Link>
                   ) : (
                     <div className="flex items-center gap-2 cursor-default text-white-1 font-semibold text-p3 leading-[26px]">
-                      {item.itemName}
-                      {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}
+                      <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                        {item.itemName}
+                      </span>
+                      {/* {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />} */}
                     </div>
                   )}
 
-                  {openDropdownIndex === idx && item.subMenu && (
+                  {/* {openDropdownIndex === idx && item.subMenu && (
                     <div className="absolute top-full left-0 w-max pt-4">
                       <div className="border border-[rgba(255,255,255,0.15)] bg-background rounded-lg shadow-lg z-50 transition-all transform opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                         {item.subMenu.map((subItem, subIdx) => (
@@ -137,12 +139,12 @@ export default function Header() {
                         ))}
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               ))}
             </nav>
 
-            <div ref={contactRef}>
+            {/* <div ref={contactRef}>
               <Link href="/contact-us">
                 <Button className="group relative overflow-hidden text-[#ffffff] hover:text-[#601dff]">
                   <span className="absolute inset-0 z-0 bg-[#FFFFFF] transform -translate-x-[101%] transition-transform duration-500 ease-in-out group-hover:translate-x-0"></span>
@@ -151,13 +153,13 @@ export default function Header() {
                   </span>
                 </Button>
               </Link>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
 
           {/* Mobile Nav */}
-          <div className="lg:hidden1">
+          {/* <div className="lg:hidden">
             <MobileMenu />
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

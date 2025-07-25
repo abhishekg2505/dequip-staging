@@ -196,6 +196,9 @@ const config: Config = {
           linear-gradient(182.72deg, rgba(0,0,0,0) 73.87%, #0C0318 96.61%),
           linear-gradient(358.49deg, rgba(0,0,0,0) 77.87%, #0C0318 98.75%)
         `,
+        "circle-gradient": `
+          linear-gradient(214.97deg, #FFFFFF -45.61%, #171719 46.88%)
+        `,
         "multi-layer-gradient": `
           linear-gradient(0deg, #000000, #000000),
           linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
