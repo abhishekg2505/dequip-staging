@@ -1,0 +1,16 @@
+export const ROADSHOW_CITIES = [
+  { name: "Geneva" },
+  { name: "Davos" },
+  { name: "Hong Kong" },
+  { name: "Denver" },
+  { name: "New York" },
+  { name: "Singapore" },
+  { name: "Dubai" },
+  { name: "Riyadh" },
+  { name: "Toronto" },
+  { name: "Manila" },
+  { name: "Istanbul" },
+  { name: "Bangalore" },
+  { name: "Seoul" },
+  { name: "Riga" },
+];
