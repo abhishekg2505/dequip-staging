@@ -199,6 +199,9 @@ const config: Config = {
         "circle-gradient": `
           linear-gradient(214.97deg, #FFFFFF -45.61%, #171719 46.88%)
         `,
+        "card-gradient": `
+          linear-gradient(180deg, #1E1F23 0%, rgba(30, 31, 35, 0.2) 100%)
+        `,
         "multi-layer-gradient": `
           linear-gradient(0deg, #000000, #000000),
           linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
