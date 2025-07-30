@@ -4,8 +4,11 @@ import gsap from "gsap";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import BehindDequipCards from "./BehindDequipCards";
+import DequipDecoded from "./DequipDecoded";
+import AboutQuranium from "./AboutQuranium";
 
-export default function HeroSection() {
+export default function PeopleBehindDequip() {
   const containerRef = useRef(null);
 
   const splitWords = (el: HTMLElement, spanClass: string) => {
@@ -95,10 +98,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section
-        ref={containerRef}
-        className="relative w-full bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
-      >
+      <section ref={containerRef} className="relative w-full">
         {/* <div className="absolute left-0 top-0 px-4 md:px-20 pt-[30px] z-10">
           <Link href="/" className="">
             <Image
@@ -111,60 +111,25 @@ export default function HeroSection() {
           </Link>
         </div> */}
         <div className="absolute inset-0 bg-black z-20 hero-overlay" />
-        <div className="relative pt-[120px] pb-[289px] md:pt-[120px] md:pb-60 w-full">
+        <div className="relative pt-[120px] pb-[131px] md:pt-[120px] md:pb-[51px] w-full">
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">
             <div className="max-w-7xl mx-auto">
-              <div className="relative mx-auto w-[312px] h-[312px] md:w-[462px] md:h-[462px] p-[2px] rounded-[100%] overflow-hidden shadow-[4px_4px_94px_0px_#D7D7D726]">
+              <h3 className="text-center text-h4 md:text-h3 font-montserrat font-semibold mb-[30px]">
+                <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                  The People Behind DeQUIP
+                </span>
+              </h3>
+              <div className="relative mx-auto w-[312px] h-[312px] md:w-[378px] md:h-[378px] p-[2px] rounded-[100%] overflow-hidden shadow-[4px_4px_94px_0px_#D7D7D726]">
                 <div className="absolute z-0 top-0 left-0  w-full h-full bg-circle-gradient rounded-[100%]  animate-spin-slow" />
                 <div className="relative z-10 flex flex-col items-center justify-center w-full h-full rounded-[100%] bg-[#000000] bg-[url('/images/homepage/wire.png')] bg-[length:223px_auto] bg-[position:top_center] bg-no-repeat">
-                  <h2 className="text-[36px] font-montserrat font-thin">Welcome to</h2>
-                  <Image
-                    src="/images/homepage/logo.svg"
-                    alt="Dequip logo"
-                    width={306}
-                    height={89}
-                    className="w-[180px] h-[59px] md:w-[306px] md:h-[89px]"
-                  />
+                  <Image src="/q-logo.svg" alt="Quranium logo" width={210} height={30} />
+                  <h6 className="text-h6 font-montserrat font-normal">The Core Engine</h6>
                 </div>
               </div>
-              <div className="max-w-[513px] mx-auto my-8 text-center">
-                <p className="text-p1 font-open-sans">
-                  Quranium&rsquo;s high-intensity & high-impact Incubator for decentralized &
-                  quantum-secure innovation
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4">
-                <Link href="#" target="_blank">
-                  <Button className="group relative overflow-hidden">
-                    <span className="text-p2 font-montserrat text-[#000000]">
-                      Apply Now (DeQUIP 50)
-                    </span>
-                  </Button>
-                </Link>
-                <Link href="#" target="_blank">
-                  <Button variant="outline" className="group relative overflow-hidden">
-                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                      Become a Mentor
-                    </span>
-                  </Button>
-                </Link>
-                <Link href="#" target="_blank">
-                  <Button variant="outline" className="group relative overflow-hidden">
-                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                      Partner With Us
-                    </span>
-                  </Button>
-                </Link>
-                <Link href="#" target="_blank">
-                  <Button variant="outline" className="group relative overflow-hidden">
-                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                      Subscribe to Pulse
-                    </span>
-                  </Button>
-                </Link>
-              </div>
             </div>
+            <BehindDequipCards />
+            <AboutQuranium />
           </div>
         </div>
       </section>
