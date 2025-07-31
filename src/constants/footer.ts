@@ -7,7 +7,7 @@ export const footer = [
   },
   {
     title: "About DeQUIP50",
-    links: [{ name: "About DeQUIP50", href: "#" }],
+    links: [{ name: "About DeQUIP50", href: ROUTES?.ABOUT }],
   },
   {
     title: "Contact",

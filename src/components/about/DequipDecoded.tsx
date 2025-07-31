@@ -71,12 +71,42 @@ const DequipDecoded = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative px-4 md:px-20 pt-[273px] pb-[250px]">
+    <div ref={sectionRef} className="relative px-4 md:px-20 pt-[150px] md:pt-[273px] pb-[250px]">
       <div className="absolute left-0 bottom-32">
-        <Image src="/images/about/ringleft.png" alt="Ring Left" width={200} height={398} />
+        <Image
+          src="/images/about/ringleft.png"
+          alt="Ring Left"
+          width={200}
+          height={398}
+          className="w-[125px] h-[215px] md:w-[200px] md:h-[398px]"
+        />
       </div>
-      <div className="absolute right-0 top-32">
-        <Image src="/images/about/ringright.png" alt="Ring Right" width={172} height={333} />
+      <div className="absolute right-0 top-0 md:top-32">
+        <Image
+          src="/images/about/ringright.png"
+          alt="Ring Right"
+          width={172}
+          height={333}
+          className="w-[125px] h-[215px] md:w-[172px] md:h-[333px]"
+        />
+      </div>
+      <div className="absolute left-0 md:left-[272px] top-0 md:top-[176px]">
+        <Image
+          src="/images/about/ringtop.png"
+          alt="Ring Top"
+          width={110}
+          height={121}
+          className="w-[83px] h-[75px] md:w-[110px] md:h-[121px]"
+        />
+      </div>
+      <div className="absolute right-[40px] md:right-[80px] bottom-[150px]">
+        <Image
+          src="/images/about/ringbottom.png"
+          alt="Ring Bottom"
+          width={121}
+          height={110}
+          className="w-[75px] h-[75px] md:w-[121px] md:h-[110px]"
+        />
       </div>
       <div className="max-w-[1077px] mx-auto grid grid-cols-1 gap-y-10 gap-x-20 text-center">
         {/* Left Side */}

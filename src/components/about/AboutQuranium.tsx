@@ -73,20 +73,20 @@ const AboutQuranium = () => {
   return (
     <div
       ref={sectionRef}
-      className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-20 text-center md:text-left pt-[131px]"
+      className="grid grid-cols-1 md:grid-cols-2 gap-x-20 md:text-left pt-[131px]"
     >
       {/* Left Side */}
       <div className="relative z-10">
         <h3
           ref={mainTitleRef}
-          className="text-center md:text-left text-h4 md:text-h3 font-montserrat font-semibold"
+          className="text-left text-h4 md:text-h3 font-montserrat font-semibold"
         >
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             About Quranium
           </span>
         </h3>
 
-        <p className="text-p2 font-open-sans mt-[15px] mb-[20px]">
+        <p className="text-p3 md:text-p2 font-open-sans mt-[15px] mb-[20px]">
           Quranium is the{" "}
           <strong>
             Convergence Layer: a quantum-secure, AI-native, EVM-compatible Layer-1 blockchain
@@ -102,7 +102,7 @@ const AboutQuranium = () => {
           - Quranium enables builders, enterprises, and users to thrive in a truly secure and
           intelligent digital ecosystem.
         </p>
-        <p className="text-p2 font-open-sans mb-[20px]">
+        <p className="text-p3 md:text-p2 font-open-sans mb-[20px]">
           Strategic partners include <strong>PwC, Quantum Basel, and Galxe,</strong> and the project
           is backed by
           <strong>Animoca Brands</strong> and <strong>HyperScaled Ventures.</strong> Quranium
@@ -128,7 +128,7 @@ const AboutQuranium = () => {
         <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire4.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
           <h3
             ref={mainTitleRef}
-            className="text-center md:text-left text-h5 md:text-h4 font-montserrat font-semibold"
+            className="text-left text-h5 md:text-h4 font-montserrat font-semibold"
           >
             <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
               Mentors
@@ -141,7 +141,7 @@ const AboutQuranium = () => {
               From AI, blockchain, quantum, fintech
             </p>
           </div>
-          <div className="flex flex-row gap-x-2 mt-1.5">
+          <div className="flex flex-row gap-x-2 mt-1.5 justify-start">
             <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
             <p className="text-p2 text-[#D4D4D4] font-open-sans">
               Matched to startups by expertise
@@ -151,7 +151,7 @@ const AboutQuranium = () => {
             <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
             <p className="text-p2 text-[#D4D4D4] font-open-sans">Contribute 1 to 2 hours/week</p>
           </div>
-          <div className="flex flex-row gap-x-2 mt-1.5">
+          <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
             <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
             <p className="text-p2 text-[#D4D4D4] font-open-sans">
               Receive token allocations from startups
@@ -161,7 +161,7 @@ const AboutQuranium = () => {
         <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire5.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
           <h3
             ref={mainTitleRef}
-            className="text-center md:text-left text-h5 md:text-h4 font-montserrat font-semibold"
+            className="text-left text-h5 md:text-h4 font-montserrat font-semibold"
           >
             <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
               Partners

@@ -95,10 +95,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section
-        ref={containerRef}
-        className="relative w-full bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
-      >
+      <section ref={containerRef} className="relative w-full">
         {/* <div className="absolute left-0 top-0 px-4 md:px-20 pt-[30px] z-10">
           <Link href="/" className="">
             <Image
@@ -111,7 +108,8 @@ export default function HeroSection() {
           </Link>
         </div> */}
         <div className="absolute inset-0 bg-black z-20 hero-overlay" />
-        <div className="relative pt-[120px] pb-[289px] md:pt-[120px] md:pb-60 w-full">
+        <div className="absolute inset-0 bg-black z-[1px] bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat" />
+        <div className="relative pt-[120px] pb-[289px] md:pt-[120px] md:pb-60 w-full bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat">
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">
             <div className="max-w-7xl mx-auto">

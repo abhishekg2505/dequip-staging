@@ -8,7 +8,8 @@ import { LangIcon } from "@/src/constants/LangIcon";
 
 export default function Footer() {
   return (
-    <footer className="overflow-hidden relative z-10 bg-black border-t border-white-1/20 text-white">
+    <footer className="overflow-hidden relative z-10 bg-black text-white">
+      <div className="max-w-[1164px] mx-auto h-[1px] bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_#ffffff_50.74%,_rgba(255,255,255,0)_100%)]"></div>
       <div className="max-w-[1440px] mx-auto relative z-10 px-4 md:px-10 lg:px-16 xl:px-20">
         {/* <div className="flex space-x-10 md:space-x-28 items-center justify-center w-full pt-[30px]">
           {socialMedia.map((social) => (

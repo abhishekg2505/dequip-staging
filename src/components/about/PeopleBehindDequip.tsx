@@ -98,7 +98,10 @@ export default function PeopleBehindDequip() {
 
   return (
     <>
-      <section ref={containerRef} className="relative w-full">
+      <section
+        ref={containerRef}
+        className="relative w-full bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat"
+      >
         {/* <div className="absolute left-0 top-0 px-4 md:px-20 pt-[30px] z-10">
           <Link href="/" className="">
             <Image
@@ -110,7 +113,6 @@ export default function PeopleBehindDequip() {
             />
           </Link>
         </div> */}
-        <div className="absolute inset-0 bg-black z-20 hero-overlay" />
         <div className="relative pt-[120px] pb-[131px] md:pt-[120px] md:pb-[51px] w-full">
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">

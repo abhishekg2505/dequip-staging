@@ -150,7 +150,7 @@ const HeroSection: React.FC = () => {
                 key={index}
                 className="group perspective"
               >
-                <div className="relative w-full h-[365px] bg-card-gradient p-[1px] rounded-[10px]">
+                <div className="relative w-full h-[300px] md:h-[365px] bg-card-gradient p-[1px] rounded-[10px]">
                   <div
                     className={`bg-[#020309] p-5 h-full rounded-[10px] flex flex-col justify-start items-start text-left transition-colors duration-300 ease-in-out ${threat.imagepos} bg-size-[223px_auto] bg-no-repeat`}
                     style={{ backgroundImage: `url(${threat.imageUrl})` }}

@@ -115,8 +115,11 @@ const DequipTimeline: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="px-4 md:px-20 pb-[236px] pt-[160px] bg-black text-white overflow-hidden"
+      className="relative px-4 md:px-20 pb-[236px] pt-[160px] bg-black text-white overflow-hidden"
     >
+      <div className="absolute right-0 top-0">
+        <Image src="/images/common/bg/lights.webp" alt="Lights" width={683} height={1157} />
+      </div>
       <div className="max-w-7xl mx-auto text-center md:text-left">
         <h3
           ref={mainTitleRef}
