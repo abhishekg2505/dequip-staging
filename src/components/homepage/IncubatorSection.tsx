@@ -110,8 +110,18 @@ const IncubatorSection = () => {
                 systems that can withstand quantum attacks, AI acceleration, and complex
                 decentralization. To build in the age of Web3 and quantum, you must build DeQUIP.
               </p>
-              <p ref={para3Ref} className="text-p2 font-open-sans italic text-[#D4D4D4] mt-[16px]">
+              <p
+                ref={para3Ref}
+                className="relative w-fit mx-auto text-p2 font-open-sans italic text-[#D4D4D4] mt-[16px]"
+              >
                 If your idea deserves a future, DeQUIP is where it begins.
+                <Image
+                  src="/images/homepage/you.png"
+                  alt="You"
+                  width={66}
+                  height={60}
+                  className="absolute right-0 md:-right-[70px] w-[46px] h-[40px] md:w-[66px] md:h-[60px]"
+                />
               </p>
             </div>
             <div ref={rightCardRef} className="mt-6 text-center w-full flex justify-center">
