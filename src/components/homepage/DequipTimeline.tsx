@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode, Navigation } from "swiper/modules";
+import { Autoplay, FreeMode, Navigation, Mousewheel } from "swiper/modules";
 import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -15,6 +15,8 @@ interface ThreatCardProps {
   title: string;
   pillbtn: string;
   url: string;
+  imageurl: string;
+  imagepos: string;
 }
 
 const threats: ThreatCardProps[] = [
@@ -22,31 +24,43 @@ const threats: ThreatCardProps[] = [
     title: "Application Open",
     pillbtn: "August 2025",
     url: "#",
+    imageurl: "/images/homepage/tl1.png",
+    imagepos: "right bottom",
   },
   {
     title: "Mentor & Partner Onboarding",
     pillbtn: "August & September 2025",
     url: "#",
+    imageurl: "/images/homepage/tl2.png",
+    imagepos: "right bottom",
   },
   {
     title: "Cohort Selection + Grant Review",
     pillbtn: "October 2025",
     url: "#",
+    imageurl: "/images/homepage/tl3.png",
+    imagepos: "left bottom",
   },
   {
     title: "12-Week Incubation Program",
     pillbtn: "October – December 2025",
     url: "#",
+    imageurl: "/images/homepage/tl4.png",
+    imagepos: "left bottom",
   },
   {
     title: "Demo Day + Investment Announcements",
     pillbtn: "January 2026",
     url: "#",
+    imageurl: "/images/homepage/tl5.png",
+    imagepos: "right bottom",
   },
   {
     title: "QNet Access, Next Cycles",
     pillbtn: "Ongoing",
     url: "#",
+    imageurl: "/images/homepage/tl3.png",
+    imagepos: "right bottom",
   },
 ];
 
@@ -144,18 +158,18 @@ const DequipTimeline: React.FC = () => {
         </h5>
         <div className="relative w-full">
           <Swiper
-            modules={[Navigation, Autoplay, FreeMode]}
+            modules={[Navigation, FreeMode, Mousewheel]}
+            mousewheel={{
+              forceToAxis: true,
+              releaseOnEdges: true,
+              sensitivity: 1,
+            }}
             freeMode={{
               enabled: true,
               momentum: false,
             }}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
             speed={7000}
-            loop
+            loop={false}
             navigation={{
               nextEl: ".swiper-next",
               prevEl: ".swiper-prev",
@@ -168,6 +182,9 @@ const DequipTimeline: React.FC = () => {
               },
               1024: {
                 slidesPerView: 4,
+              },
+              1300: {
+                slidesPerView: 5,
               },
             }}
             className="my-linear-swiper overflow-hidden1 flex mt-10 "
@@ -182,7 +199,13 @@ const DequipTimeline: React.FC = () => {
                   className="group perspective"
                 >
                   <div className="relative w-full h-[305px] bg-card-gradient p-[1px] rounded-[10px]">
-                    <div className="bg-[#020309] p-5 h-full rounded-[10px] flex flex-col justify-start items-start text-left transition-colors duration-300 ease-in-out bg-[url('/images/homepage/wire2.png')] bg-right-bottom bg-size-[223px_auto] bg-no-repeat">
+                    <div
+                      className="bg-[#020309] p-5 h-full rounded-[10px] flex flex-col justify-start items-start text-left transition-colors duration-300 ease-in-out bg-size-[223px_auto] bg-no-repeat"
+                      style={{
+                        backgroundImage: `url(${threat.imageurl})`,
+                        backgroundPosition: `${threat.imagepos}`,
+                      }}
+                    >
                       <Button variant="outline" className="group relative overflow-hidden">
                         <span className="text-p3 font-open-sans bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                           {threat.pillbtn}

@@ -19,6 +19,8 @@ const DequipDecoded = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const buttons = gsap.utils.toArray(".buttonsanim a");
+      gsap.set(buttons, { y: 20, opacity: 0 });
       // Animate h2 after cards
       gsap.from(mainTitleRef.current, {
         scrollTrigger: {
@@ -88,6 +90,14 @@ const DequipDecoded = () => {
         transformOrigin: "center center",
         duration: 1,
         ease: "power2.out",
+      });
+      gsap.to(buttons, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.out",
+        stagger: 0.15,
+        delay: 1.2,
       });
     }, sectionRef);
 
@@ -172,10 +182,7 @@ const DequipDecoded = () => {
             </p>
           </div>
 
-          <div
-            ref={lineRef}
-            className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4"
-          >
+          <div className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4">
             <Link href="#" target="_blank">
               <Button className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat text-[#000000]">

@@ -116,7 +116,7 @@ const IncubatorSection = () => {
               >
                 If your idea deserves a future, DeQUIP is where it begins.
                 <Image
-                  src="/images/homepage/you.png"
+                  src="/images/homepage/you.svg"
                   alt="You"
                   width={66}
                   height={60}
