@@ -14,6 +14,8 @@ const DequipDecoded = () => {
   const lineRef = useRef(null);
   const cardsRef = useRef(null);
   const headingRef = useRef(null);
+  const heading2Ref = useRef(null);
+  const heading3Ref = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,6 +45,28 @@ const DequipDecoded = () => {
       });
 
       gsap.from(headingRef.current, {
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(heading2Ref.current, {
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(heading3Ref.current, {
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 90%",
@@ -119,11 +143,17 @@ const DequipDecoded = () => {
               DeQUIP Decoded
             </span>
           </h3>
-          <h4 className="text-center text-h5 md:text-h4 font-montserrat font-semibold mt-[10px]">
+          <h4
+            ref={headingRef}
+            className="text-center text-h5 md:text-h4 font-montserrat font-semibold mt-[10px]"
+          >
             This isn&rsquo;t just a label. It&rsquo;s a movement.
           </h4>
 
-          <p className="text-p4 text-[#EAEAEA] font-open-sans mt-[15px] mb-[20px]">
+          <p
+            ref={heading2Ref}
+            className="text-p4 text-[#EAEAEA] font-open-sans mt-[15px] mb-[20px]"
+          >
             DeQUIP stands for Decentralized Quantum-uncrackable Infrastructure Protocol, a new
             category coined by Quranium to define the next generation of truly secure digital
             systems. It represents the shift from vulnerable Web3 infrastructure to architecture
@@ -135,14 +165,17 @@ const DequipDecoded = () => {
               backgroundImage: "url('/images/about/wire6.png'), url('/images/about/wire7.png')",
             }}
           >
-            <p className="text-p4 text-[#EAEAEA] font-open-sans">
+            <p ref={heading3Ref} className="text-p4 text-[#EAEAEA] font-open-sans">
               The DeQUIP 50 Incubator embodies this vision in supporting startups that are not only
               building applications, but reshaping the infrastructure of the future. To build in the
               age of web3 and quantum, you must build DeQUIP.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4">
+          <div
+            ref={lineRef}
+            className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4"
+          >
             <Link href="#" target="_blank">
               <Button className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat text-[#000000]">

@@ -7,6 +7,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   const containerRef = useRef(null);
+  const btnsRef = useRef(null);
 
   const splitWords = (el: HTMLElement, spanClass: string) => {
     const wrapWords = (node: Node) => {
@@ -52,6 +53,8 @@ export default function HeroSection() {
       gsap.set(".hero-title .word", { y: 100, opacity: 0 });
       gsap.set(".hero-title2 .word", { y: 100, opacity: 0 });
       gsap.set(".hero-subtext .subword", { y: 20, opacity: 0 });
+      const buttons = gsap.utils.toArray(".buttonsanim a");
+      gsap.set(buttons, { y: 20, opacity: 0 });
 
       gsap.to(".hero-overlay", {
         opacity: 0,
@@ -87,6 +90,14 @@ export default function HeroSection() {
         ease: "expo.out",
         stagger: 0.01,
         delay: 1,
+      });
+      gsap.to(buttons, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.out",
+        stagger: 0.15,
+        delay: 1.2,
       });
     }, containerRef);
 
@@ -132,7 +143,10 @@ export default function HeroSection() {
                   quantum-secure innovation
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4">
+              <div
+                ref={btnsRef}
+                className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4"
+              >
                 <Link href="#" target="_blank">
                   <Button className="group relative overflow-hidden">
                     <span className="text-p2 font-montserrat text-[#000000]">

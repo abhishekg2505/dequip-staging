@@ -14,6 +14,8 @@ const WhatIsDequip = () => {
   const lineRef = useRef(null);
   const cardsRef = useRef(null);
   const headingRef = useRef(null);
+  const paraRef = useRef(null);
+  const btnRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,6 +55,28 @@ const WhatIsDequip = () => {
         delay: 0.3,
         ease: "power2.out",
       });
+      gsap.from(paraRef.current, {
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(btnRef.current, {
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.5,
+        ease: "power2.out",
+      });
 
       // Animate gradient line
       gsap.from(lineRef.current, {
@@ -89,11 +113,11 @@ const WhatIsDequip = () => {
               </span>
             </h3>
 
-            <p className="text-p2 font-open-sans mt-[15px] mb-[20px]">
+            <p ref={paraRef} className="text-p2 font-open-sans mt-[15px] mb-[20px]">
               DeQUIP 50 is a high-intensity, multi-tiered startup InQubator for founders building at
               the intersection of blockchain, AI, and quantum-secure infrastructure.
             </p>
-            <Link href="#" target="_blank">
+            <Link ref={btnRef} href="#" target="_blank">
               <Button variant="outline" className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Apply Now

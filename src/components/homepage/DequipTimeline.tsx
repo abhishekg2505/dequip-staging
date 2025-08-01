@@ -59,6 +59,8 @@ const DequipTimeline: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const buttons = gsap.utils.toArray(".buttonsanim a");
+      gsap.set(buttons, { y: 20, opacity: 0 });
       // Animate h2 after cards
       gsap.from(mainTitleRef.current, {
         scrollTrigger: {
@@ -106,6 +108,14 @@ const DequipTimeline: React.FC = () => {
         duration: 0.8,
         delay: 0.3,
         ease: "power2.out",
+      });
+      gsap.to(buttons, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.out",
+        stagger: 0.15,
+        delay: 1.2,
       });
     }, sectionRef);
 
@@ -203,7 +213,7 @@ const DequipTimeline: React.FC = () => {
             </div> */}
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4 mt-10">
+        <div className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4 mt-10">
           <Link href="#" target="_blank">
             <Button className="group relative overflow-hidden">
               <span className="text-p2 font-montserrat text-[#000000]">Apply Now (DeQUIP 50)</span>

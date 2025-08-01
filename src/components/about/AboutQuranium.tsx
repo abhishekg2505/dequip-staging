@@ -14,6 +14,7 @@ const AboutQuranium = () => {
   const lineRef = useRef(null);
   const cardsRef = useRef(null);
   const headingRef = useRef(null);
+  const heading2Ref = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,6 +44,17 @@ const AboutQuranium = () => {
       });
 
       gsap.from(headingRef.current, {
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(heading2Ref.current, {
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 90%",
@@ -86,7 +98,7 @@ const AboutQuranium = () => {
           </span>
         </h3>
 
-        <p className="text-p3 md:text-p2 font-open-sans mt-[15px] mb-[20px]">
+        <p ref={headingRef} className="text-p3 md:text-p2 font-open-sans mt-[15px] mb-[20px]">
           Quranium is the{" "}
           <strong>
             Convergence Layer: a quantum-secure, AI-native, EVM-compatible Layer-1 blockchain
@@ -102,7 +114,7 @@ const AboutQuranium = () => {
           - Quranium enables builders, enterprises, and users to thrive in a truly secure and
           intelligent digital ecosystem.
         </p>
-        <p className="text-p3 md:text-p2 font-open-sans mb-[20px]">
+        <p ref={heading2Ref} className="text-p3 md:text-p2 font-open-sans mb-[20px]">
           Strategic partners include <strong>PwC, Quantum Basel, and Galxe,</strong> and the project
           is backed by
           <strong>Animoca Brands</strong> and <strong>HyperScaled Ventures.</strong> Quranium
@@ -114,7 +126,7 @@ const AboutQuranium = () => {
           across Web3, AI, and cybersecurity to raise awareness of the quantum threat and spotlight
           the builders of tomorrow&rsquo;s secure internet.
         </p>
-        <Link href="#" target="_blank">
+        <Link ref={lineRef} href="#" target="_blank">
           <Button variant="outline" className="group relative overflow-hidden">
             <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
               Learn More

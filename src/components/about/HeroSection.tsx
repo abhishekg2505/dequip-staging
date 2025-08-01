@@ -43,6 +43,8 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".cardsAnim");
+      gsap.set(cards, { y: 20, opacity: 0 });
       // Animate h2 after cards
       gsap.from(mainTitleRef.current, {
         scrollTrigger: {
@@ -103,6 +105,14 @@ const HeroSection: React.FC = () => {
         delay: 0.2,
         ease: "power2.out",
       });
+      gsap.to(cards, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.out",
+        stagger: 0.15,
+        delay: 1.2,
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -111,7 +121,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       ref={sectionRef}
-      className="scroll-mt-24 rounded-[20px] pb-10 pt-[120px] px-4 md:px-20 bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
+      className="scroll-mt-24 rounded-[20px] pb-10 pt-[170px] px-4 md:px-20 bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[38%_62%] gap-10 text-center md:text-left ">
@@ -126,12 +136,12 @@ const HeroSection: React.FC = () => {
               </span>
             </h3>
 
-            <p className="text-p2 font-open-sans mt-[15px] mb-[20px]">
+            <p ref={headingRef} className="text-p2 font-open-sans mt-[15px] mb-[20px]">
               DeQUIP 50 is more than your average incubator; it&rsquo;s a full-stack incubator.{" "}
               <br />
               It is split into 3 tiers.
             </p>
-            <Link href="#" target="_blank">
+            <Link ref={lineRef} href="#" target="_blank">
               <Button variant="outline" className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Apply Now
@@ -148,7 +158,7 @@ const HeroSection: React.FC = () => {
                   cardsRef.current[index] = el;
                 }}
                 key={index}
-                className="group perspective"
+                className="group perspective cardsAnim"
               >
                 <div className="relative w-full h-[300px] md:h-[365px] bg-card-gradient p-[1px] rounded-[10px]">
                   <div

@@ -13,6 +13,7 @@ const IncubatorSection = () => {
   const mainTitleRef = useRef(null);
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
+  const para3Ref = useRef(null);
   const buttonRef = useRef(null);
   const rightCardRef = useRef(null);
 
@@ -50,6 +51,17 @@ const IncubatorSection = () => {
         y: 30,
         duration: 0.8,
         delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(para3Ref.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.5,
         ease: "power2.out",
       });
       gsap.from(buttonRef.current, {
@@ -93,12 +105,12 @@ const IncubatorSection = () => {
               <h3 ref={paraRef} className="text-[#CDCDCD] text-h4 font-montserrat font-semibold">
                 Our &rsquo;Incubator&rsquo; helps you build the next layer of the internet
               </h3>
-              <p className="text-p2 font-open-sans text-[#D4D4D4]">
+              <p ref={para2Ref} className="text-p2 font-open-sans text-[#D4D4D4]">
                 DeQUIP challenges outdated assumptions and empowers bold founders to architect
                 systems that can withstand quantum attacks, AI acceleration, and complex
                 decentralization. To build in the age of Web3 and quantum, you must build DeQUIP.
               </p>
-              <p className="text-p2 font-open-sans italic text-[#D4D4D4] mt-[16px]">
+              <p ref={para3Ref} className="text-p2 font-open-sans italic text-[#D4D4D4] mt-[16px]">
                 If your idea deserves a future, DeQUIP is where it begins.
               </p>
             </div>

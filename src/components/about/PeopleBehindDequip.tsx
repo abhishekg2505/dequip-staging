@@ -19,7 +19,7 @@ export default function PeopleBehindDequip() {
         return words.map((part) => {
           if (part.trim().length === 0) return document.createTextNode(part);
           const span = document.createElement("span");
-          span.className = `${spanClass} inline-block opacity-0 bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text text-transparent`;
+          span.className = `${spanClass} inline-block opacity-0 `;
           span.textContent = part;
           return span;
         });
@@ -117,7 +117,7 @@ export default function PeopleBehindDequip() {
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">
             <div className="max-w-7xl mx-auto">
-              <h3 className="text-center text-h4 md:text-h3 font-montserrat font-semibold mb-[30px]">
+              <h3 className="hero-title text-center text-h4 md:text-h3 font-montserrat font-semibold mb-[30px]">
                 <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   The People Behind DeQUIP
                 </span>
