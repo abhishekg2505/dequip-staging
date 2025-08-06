@@ -11,6 +11,6 @@ export const footer = [
   },
   {
     title: "Contact",
-    links: [{ name: "Contact", href: "#" }],
+    links: [{ name: "Contact", href: ROUTES?.CONTACT }],
   },
 ];

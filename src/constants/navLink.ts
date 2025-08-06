@@ -20,6 +20,6 @@ export const navLinks = [
   },
   {
     itemName: "Contact",
-    link: "#",
+    link: ROUTES?.CONTACT,
   },
 ];
