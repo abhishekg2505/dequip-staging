@@ -37,68 +37,68 @@ const founderSchema = z.object({
 });
 
 const formSchema = z.object({
-  // startupName: z
-  //   .string()
-  //   .min(5, "startup name is required and must be greater than 4")
-  //   .max(20, "must be less than 20"),
-  // oneLinePitch: z.string(),
-  // websiteURL: z.string().url(),
-  // hqLocation: z.string(),
-  // incorporation: z.string(),
-  // timeZone: z.string(),
-  // founder: founderSchema,
-  // coFounders: z.array(founderSchema),
-  // fullTimeTeam: z.string(),
-  // howToHear: z.string({ message: "Please select where you heard about us" }),
+  startupName: z
+    .string()
+    .min(5, "startup name is required and must be greater than 4")
+    .max(20, "must be less than 20"),
+  oneLinePitch: z.string(),
+  websiteURL: z.string().url(),
+  hqLocation: z.string(),
+  incorporation: z.string(),
+  timeZone: z.string(),
+  founder: founderSchema,
+  coFounders: z.array(founderSchema),
+  fullTimeTeam: z.string(),
+  howToHear: z.string({ message: "Please select where you heard about us" }),
   // projectUrls: z.array(z.string().url("Invalid URL")), //required
-  // projectUrls: z.array(z.string().url("Invalid URL").or(z.literal(""))),
-  // buildingMatter: z.string().min(1, "This field is required"),
-  // jargon: z.string().min(1, "This field is required"),
-  // whatsYourEdge: z.string().min(1, "This field is required"),
-  // whatsApproach: z.string().min(1, "This field is required"),
-  // whatsProduct: z.string().optional(),
-  // quantumOptions: z.array(z.string()),
-  // relateAI: z.string().optional(),
-  // aiOptions: z.array(z.string()),
-  // decentralized: z.string().optional(),
-  // idea: z.string().optional(),
-  // MVPPrototype: z.string().optional(),
-  // liveUsers: z.string().optional(),
-  // revenue: z.string().optional(),
-  // tokenLaunched: z.string().optional(),
-  // other: z.string().optional(),
+  projectUrls: z.array(z.string().url("Invalid URL").or(z.literal(""))),
+  buildingMatter: z.string().min(1, "This field is required"),
+  jargon: z.string().min(1, "This field is required"),
+  whatsYourEdge: z.string().min(1, "This field is required"),
+  whatsApproach: z.string().min(1, "This field is required"),
+  whatsProduct: z.string().optional(),
+  quantumOptions: z.array(z.string()),
+  relateAI: z.string().optional(),
+  aiOptions: z.array(z.string()),
+  decentralized: z.string().optional(),
+  idea: z.string().optional(),
+  MVPPrototype: z.string().optional(),
+  liveUsers: z.string().optional(),
+  revenue: z.string().optional(),
+  tokenLaunched: z.string().optional(),
+  other: z.string().optional(),
   deckFile: z.any().optional(),
   teamPhoto: z.any().optional(),
 });
 
 export type formValues = {
-  //startupName: string;
-  // oneLinePitch: string;
-  // websiteURL: string;
-  // hqLocation: string;
-  // incorporation: string;
-  // timeZone: string;
-  // founder: Founder;
-  // coFounders: Founder[];
-  // fullTimeTeam: string;
-  // howToHear: string;
-  // projectUrls: string[];
-  // /* ========= What You're Building (BuildingDetailsSection) ========= */
-  // buildingMatter: string;
-  // jargon: string;
-  // whatsYourEdge: string;
-  // whatsApproach: string;
-  // whatsProduct: string;
-  // quantumOptions: string[]; // multi-select checkboxes for quantum relevance
-  // relateAI: string;
-  // aiOptions: string[]; // multi-select checkboxes for AI relevance
-  // decentralized: string;
-  // idea: string;
-  // MVPPrototype: string;
-  // liveUsers: string;
-  // revenue: string;
-  // tokenLaunched: string;
-  // other: string;
+  startupName: string;
+  oneLinePitch: string;
+  websiteURL: string;
+  hqLocation: string;
+  incorporation: string;
+  timeZone: string;
+  founder: Founder;
+  coFounders: Founder[];
+  fullTimeTeam: string;
+  howToHear: string;
+  projectUrls: string[];
+  /* ========= What You're Building (BuildingDetailsSection) ========= */
+  buildingMatter: string;
+  jargon: string;
+  whatsYourEdge: string;
+  whatsApproach: string;
+  whatsProduct: string;
+  quantumOptions: string[]; // multi-select checkboxes for quantum relevance
+  relateAI: string;
+  aiOptions: string[]; // multi-select checkboxes for AI relevance
+  decentralized: string;
+  idea: string;
+  MVPPrototype: string;
+  liveUsers: string;
+  revenue: string;
+  tokenLaunched: string;
+  other: string;
   deckFile?: FileList;
   teamPhoto?: FileList;
 };
@@ -113,12 +113,12 @@ export default function ApplyDequipForm() {
   } = useForm<formValues>({
     resolver: zodResolver(formSchema),
     mode: "all",
-    // defaultValues: {
-    //   projectUrls: [""], // <-- ensures one field is always there instantly
-    // },
+    defaultValues: {
+      projectUrls: [""], // <-- ensures one field is always there instantly
+    },
   });
-  // const coFoundersArray = useFieldArray({ control, name: "coFounders" });
-  // const projectArray = useFieldArray({ control, name: "projectUrls" });
+  const coFoundersArray = useFieldArray({ control, name: "coFounders" });
+  const projectArray = useFieldArray({ control, name: "projectUrls" });
   // const onSubmit = async (data: formValues) => {
 
   //   try {
