@@ -37,10 +37,10 @@ const founderSchema = z.object({
 });
 
 const formSchema = z.object({
-  startupName: z
-    .string()
-    .min(5, "startup name is required and must be greater than 4")
-    .max(20, "must be less than 20"),
+  // startupName: z
+  //   .string()
+  //   .min(5, "startup name is required and must be greater than 4")
+  //   .max(20, "must be less than 20"),
   // oneLinePitch: z.string(),
   // websiteURL: z.string().url(),
   // hqLocation: z.string(),
@@ -72,7 +72,7 @@ const formSchema = z.object({
 });
 
 export type formValues = {
-  startupName: string;
+  //startupName: string;
   // oneLinePitch: string;
   // websiteURL: string;
   // hqLocation: string;
@@ -113,12 +113,12 @@ export default function ApplyDequipForm() {
   } = useForm<formValues>({
     resolver: zodResolver(formSchema),
     mode: "all",
-    defaultValues: {
-      projectUrls: [""], // <-- ensures one field is always there instantly
-    },
+    // defaultValues: {
+    //   projectUrls: [""], // <-- ensures one field is always there instantly
+    // },
   });
-  const coFoundersArray = useFieldArray({ control, name: "coFounders" });
-  const projectArray = useFieldArray({ control, name: "projectUrls" });
+  // const coFoundersArray = useFieldArray({ control, name: "coFounders" });
+  // const projectArray = useFieldArray({ control, name: "projectUrls" });
   // const onSubmit = async (data: formValues) => {
 
   //   try {
