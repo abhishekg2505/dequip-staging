@@ -305,7 +305,9 @@ export default function QnetDequipForm() {
       </section>
 
       <Button disabled={loading} type="submit" className="group relative overflow-hidden">
-        <span className="text-p2 font-montserrat text-[#000000]">
+        <span
+          className={`text-p2 font-montserrat ${loading ? "text-[#ffffff] " : "text-[#000000] "}`}
+        >
           {loading ? "Submitting..." : "Submit"}
         </span>
       </Button>
@@ -314,11 +316,11 @@ export default function QnetDequipForm() {
 
       {/* Success message */}
       {submitted && (
-        <div className="mt-6 p-4 text-center bg-[#000000] border border-green-300 rounded">
-          <h2 className="text-h5 font-semibold">
+        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+          <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.
           </h2>
-          <p className="text-p3">You will also receive a confirmation email.</p>
+          <p className="text-p3 font-open-sans">You will also receive a confirmation email.</p>
         </div>
       )}
     </form>

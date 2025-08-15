@@ -181,3 +181,23 @@ body {
   width: 4px; /* smaller inner circle */
   height: 4px;
 }
+/* Normal autofill */
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important; 
+  box-shadow: 0 0 0px 1000px transparent inset !important; 
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s; 
+}
+/* When focused */
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  background-color: transparent !important;
+}
+
+/* On hover (optional) */
+input:-webkit-autofill:hover {
+  -webkit-text-fill-color: white !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  background-color: transparent !important;
+}
