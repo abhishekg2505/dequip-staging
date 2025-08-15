@@ -174,7 +174,7 @@ const DequipTimeline: React.FC = () => {
               nextEl: ".swiper-next",
               prevEl: ".swiper-prev",
             }}
-            spaceBetween={24}
+            spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
               768: {
@@ -206,7 +206,10 @@ const DequipTimeline: React.FC = () => {
                         backgroundPosition: `${threat.imagepos}`,
                       }}
                     >
-                      <Button variant="outline" className="group relative overflow-hidden">
+                      <Button
+                        variant="outline"
+                        className="group relative overflow-hidden px-[12px] py-[6px]"
+                      >
                         <span className="text-p3 font-open-sans bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                           {threat.pillbtn}
                         </span>

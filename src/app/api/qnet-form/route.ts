@@ -197,6 +197,7 @@ export async function POST(req: NextRequest) {
         ", "
       )}</td></tr>
       <tr><th align="left">Your Score</th><td>${parsed.data.yourScore}</td></tr>
+      <tr><th align="left">Final Steps</th><td>${parsed.data.finalSteps}</td></tr>
     </table>
   `,
     });
