@@ -29,29 +29,33 @@ export default function QnetDequipForm() {
     formState: { errors, isSubmitting },
   } = useForm<QnetFormType>({ resolver: zodResolver(qnetFormSchema) });
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const onSubmit = async (data: QnetFormType) => {
-    console.log("Qnet Form Data", data);
-    const res = await fetch("/api/qnet-form", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    if (res.ok) {
-      setSubmitted(true);
-      reset();
-    } else {
-      // handle error (e.g. toast)
+    setErrorMessage("");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/qnet-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 10000); // Hide message after 10s
+      } else {
+        const errData = await res.json();
+        setErrorMessage(errData.error || "Failed to submit form");
+        setTimeout(() => setErrorMessage(""), 10000); // Hide error after 10s
+      }
+    } catch (err) {
+      setErrorMessage("Network or server error, please try again later.");
+      setTimeout(() => setErrorMessage(""), 10000);
     }
+    setLoading(false);
   };
 
-  if (submitted) {
-    return (
-      <div className="p-10 text-center">
-        <h2>Thank you for applying! We have received your details.</h2>
-        <p>You will also receive a confirmation email.</p>
-      </div>
-    );
-  }
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -300,9 +304,23 @@ export default function QnetDequipForm() {
         </div>
       </section>
 
-      <Button type="submit" className="group relative overflow-hidden">
-        <span className="text-p2 font-montserrat text-[#000000]">Submit</span>
+      <Button disabled={loading} type="submit" className="group relative overflow-hidden">
+        <span className="text-p2 font-montserrat text-[#000000]">
+          {loading ? "Submitting..." : "Submit"}
+        </span>
       </Button>
+      {/* Error message section */}
+      {errorMessage && <p className="mt-4 text-red-500 font-medium">{errorMessage}</p>}
+
+      {/* Success message */}
+      {submitted && (
+        <div className="mt-6 p-4 text-center bg-[#000000] border border-green-300 rounded">
+          <h2 className="text-h5 font-semibold">
+            Thank you for applying! We have received your details.
+          </h2>
+          <p className="text-p3">You will also receive a confirmation email.</p>
+        </div>
+      )}
     </form>
   );
 }

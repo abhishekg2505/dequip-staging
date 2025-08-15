@@ -173,7 +173,7 @@ export async function POST(req: NextRequest) {
 
     // 3️⃣ Send email to Admin
     await transporter.sendMail({
-      from: gmailUser,
+      from: `"Qnet Bot" <${parsed.data.founderemail}>`,
       to: adminEmail,
       subject: "📥 New Qnet Form Submission",
       html: `
