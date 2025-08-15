@@ -153,12 +153,12 @@ const gmailPass = process.env.GMAIL_PASS!;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    console.log("📩 Received in API:", body);
+    console.log("Received in API:", body);
 
     // 1️⃣ Validate using Zod
     const parsed = qnetFormSchema.safeParse(body);
     if (!parsed.success) {
-      console.error("❌ Validation error:", parsed.error.format());
+      console.error("Validation error:", parsed.error.format());
       return NextResponse.json({ error: parsed.error.format() }, { status: 400 });
     }
 
@@ -175,7 +175,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `"Qnet Bot" <${parsed.data.founderemail}>`,
       to: adminEmail,
-      subject: "📥 New Qnet Form Submission",
+      subject: "New Qnet Form Submission",
       html: `
     <h2>New Form Submission</h2>
     <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
@@ -201,21 +201,21 @@ export async function POST(req: NextRequest) {
     </table>
   `,
     });
-    console.log("✅ Admin email sent");
+    console.log("Admin email sent");
 
     // 4️⃣ Send Thank-you email to User
     await transporter.sendMail({
       from: gmailUser,
       to: parsed.data.founderemail,
-      subject: "✅ Thank You for Your Submission",
+      subject: "Thank You for Your Submission",
       text: "We’ve received your application. Thank you for applying!",
     });
-    console.log("✅ User thank-you email sent");
+    console.log("User thank-you email sent");
 
     // 5️⃣ Response
     return NextResponse.json({ message: "Emails sent successfully" }, { status: 200 });
   } catch (error: unknown) {
-    console.error("💥 API error:", error);
+    console.error("API error:", error);
 
     let message = "Unexpected error";
     if (error instanceof Error) message = error.message;
