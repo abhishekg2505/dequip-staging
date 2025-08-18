@@ -285,95 +285,95 @@
 //       </section>
 
 //       {/* === Founder Details === */}
-//       <section>
-//         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
-//           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-//             Founder Details
-//           </span>
-//         </h2>
-//         <p className="text-h5 font-montserrat mb-10">Primary Contact - Founder 1</p>
-//         <div className="grid grid-cols-1 gap-5 mb-10">
-//           <div className="flex flex-col gap-[16px]">
-//             <label htmlFor="founderFullName" className="text-h6 font-montserratfont-medium">
-//               Full Name
-//             </label>
-//             <input
-//               {...register("founder.fullName")}
-//               id="founderFullName"
-//               placeholder="Full Name"
-//               className="input"
-//               type="text"
-//             />
-//           </div>
-//         </div>
+// <section>
+//   <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
+//     <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+//       Founder Details
+//     </span>
+//   </h2>
+//   <p className="text-h5 font-montserrat mb-10">Primary Contact - Founder 1</p>
+//   <div className="grid grid-cols-1 gap-5 mb-10">
+//     <div className="flex flex-col gap-[16px]">
+//       <label htmlFor="founderFullName" className="text-h6 font-montserratfont-medium">
+//         Full Name
+//       </label>
+//       <input
+//         {...register("founder.fullName")}
+//         id="founderFullName"
+//         placeholder="Full Name"
+//         className="input"
+//         type="text"
+//       />
+//     </div>
+//   </div>
 
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-//           <div className="flex flex-col gap-[16px]">
-//             <label htmlFor="founderRole" className="text-h6 font-montserratfont-medium">
-//               Role
-//             </label>
-//             <input
-//               {...register("founder.role")}
-//               id="founderRole"
-//               placeholder="Role"
-//               className="input"
-//               type="text"
-//             />
-//           </div>
-//           <div className="flex flex-col gap-[16px]">
-//             <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
-//               Linekedin
-//             </label>
-//             <input
-//               {...register("founder.linkedIn")}
-//               id="founderLinkedin"
-//               placeholder="LinkedIn"
-//               className="input"
-//               type="text"
-//             />
-//           </div>
-//         </div>
+//   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+//     <div className="flex flex-col gap-[16px]">
+//       <label htmlFor="founderRole" className="text-h6 font-montserratfont-medium">
+//         Role
+//       </label>
+//       <input
+//         {...register("founder.role")}
+//         id="founderRole"
+//         placeholder="Role"
+//         className="input"
+//         type="text"
+//       />
+//     </div>
+//     <div className="flex flex-col gap-[16px]">
+//       <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
+//         Linekedin
+//       </label>
+//       <input
+//         {...register("founder.linkedIn")}
+//         id="founderLinkedin"
+//         placeholder="LinkedIn"
+//         className="input"
+//         type="text"
+//       />
+//     </div>
+//   </div>
 
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-//           <div className="flex flex-col gap-[16px]">
-//             <label htmlFor="founderemail" className="text-h6 font-montserratfont-medium">
-//               Email
-//             </label>
-//             <input
-//               {...register("founder.email")}
-//               id="founderemail"
-//               placeholder="Email"
-//               type="email"
-//               className="input"
-//             />
-//             {errors.founder?.email && (
-//               <p className="text-red-500 text-sm">{errors.founder?.email.message}</p>
-//             )}
-//           </div>
-//           <div className="flex flex-col gap-[16px]">
-//             <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
-//               Time zone
-//             </label>
-//             <Controller
-//               name="timeZone"
-//               control={control}
-//               render={({ field }) => (
-//                 <TimezoneSelect value={field.value} onChange={field.onChange} />
-//               )}
-//             />
-//           </div>
-//         </div>
-//         <FounderDetailsSection
-//           title="Co-Founders"
-//           fields={coFoundersArray.fields}
-//           register={register}
-//           append={coFoundersArray.append}
-//           remove={coFoundersArray.remove}
-//           name="coFounders"
-//           control={control}
-//           errors={errors}
-//         />
-//       </section>
+//   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+//     <div className="flex flex-col gap-[16px]">
+//       <label htmlFor="founderemail" className="text-h6 font-montserratfont-medium">
+//         Email
+//       </label>
+//       <input
+//         {...register("founder.email")}
+//         id="founderemail"
+//         placeholder="Email"
+//         type="email"
+//         className="input"
+//       />
+//       {errors.founder?.email && (
+//         <p className="text-red-500 text-sm">{errors.founder?.email.message}</p>
+//       )}
+//     </div>
+//     <div className="flex flex-col gap-[16px]">
+//       <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
+//         Time zone
+//       </label>
+//       <Controller
+//         name="timeZone"
+//         control={control}
+//         render={({ field }) => (
+//           <TimezoneSelect value={field.value} onChange={field.onChange} />
+//         )}
+//       />
+//     </div>
+//   </div>
+//   <FounderDetailsSection
+//     title="Co-Founders"
+//     fields={coFoundersArray.fields}
+//     register={register}
+//     append={coFoundersArray.append}
+//     remove={coFoundersArray.remove}
+//     name="coFounders"
+//     control={control}
+//     errors={errors}
+//   />
+// </section>
 
 //       {/* === What You're Building === */}
 //       <BuildingDetailsSection register={register} errors={errors} />

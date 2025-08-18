@@ -26,7 +26,7 @@ export default function QnetDequipForm() {
     control,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<QnetFormType>({ resolver: zodResolver(qnetFormSchema) });
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -80,6 +80,11 @@ export default function QnetDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founderFullName && (
+              <span className="text-red-500 text-sm">
+                {errors.founderFullName.message as string}
+              </span>
+            )}
           </div>
         </div>
 
@@ -95,6 +100,11 @@ export default function QnetDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founderLinkedinX && (
+              <span className="text-red-500 text-sm">
+                {errors.founderLinkedinX.message as string}
+              </span>
+            )}
           </div>
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="founderTelegramDiscord" className="text-h6 font-montserratfont-medium">
@@ -107,6 +117,11 @@ export default function QnetDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founderTelegramDiscord && (
+              <span className="text-red-500 text-sm">
+                {errors.founderTelegramDiscord.message as string}
+              </span>
+            )}
           </div>
         </div>
 
@@ -122,6 +137,9 @@ export default function QnetDequipForm() {
               type="email"
               className="input"
             />
+            {errors.founderemail && (
+              <span className="text-red-500 text-sm">{errors.founderemail.message as string}</span>
+            )}
           </div>
         </div>
       </section>
@@ -144,6 +162,11 @@ export default function QnetDequipForm() {
               className="input"
               type="text"
             />
+            {errors.startupProjectName && (
+              <span className="text-red-500 text-sm">
+                {errors.startupProjectName.message as string}
+              </span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
@@ -158,6 +181,11 @@ export default function QnetDequipForm() {
               className="input"
               type="text"
             />
+            {errors.whatAreYouBuilding && (
+              <span className="text-red-500 text-sm">
+                {errors.whatAreYouBuilding.message as string}
+              </span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
@@ -306,16 +334,18 @@ export default function QnetDequipForm() {
 
       <Button disabled={loading} type="submit" className="group relative overflow-hidden">
         <span
-          className={`text-p2 font-montserrat ${loading ? "text-[#ffffff] " : "text-[#000000] "}`}
+          className={`text-p2 font-montserrat ${
+            isSubmitting ? "text-[#ffffff] " : "text-[#000000] "
+          }`}
         >
-          {loading ? "Submitting..." : "Submit"}
+          {isSubmitting ? "Submitting..." : "Submit"}
         </span>
       </Button>
       {/* Error message section */}
       {errorMessage && <p className="mt-4 text-red-500 font-medium">{errorMessage}</p>}
 
       {/* Success message */}
-      {submitted && (
+      {isSubmitSuccessful && (
         <div className="mt-6 p-4 text-center bg-[#000000] rounded">
           <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.

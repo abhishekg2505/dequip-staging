@@ -84,18 +84,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:image:type" content="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
-        {/* talk with rajpal regrading this once node sale website is complete */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-N6XLGPT2');
-    `,
-          }}
-        />
       </Head>
       <body className="min-h-screen bg-slate-950 text-white-1 antialiased font-montserrat">
         {/* <CustomCursor /> */}
