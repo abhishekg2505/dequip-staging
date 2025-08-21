@@ -147,21 +147,21 @@ export default function HeroSection() {
                 ref={btnsRef}
                 className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4"
               >
-                <Link href="#" target="_blank">
+                <Link href="/apply" target="_blank">
                   <Button className="group relative overflow-hidden">
                     <span className="text-p2 font-montserrat text-[#000000]">
                       Apply Now (DeQUIP 50)
                     </span>
                   </Button>
                 </Link>
-                <Link href="#" target="_blank">
+                <Link href="/mentor" target="_blank">
                   <Button variant="outline" className="group relative overflow-hidden">
                     <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                       Become a Mentor
                     </span>
                   </Button>
                 </Link>
-                <Link href="#" target="_blank">
+                <Link href="/partner" target="_blank">
                   <Button variant="outline" className="group relative overflow-hidden">
                     <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                       Partner With Us

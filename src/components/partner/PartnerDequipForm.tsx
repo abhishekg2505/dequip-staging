@@ -2,8 +2,9 @@
 import { useForm, Controller, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { partnerFormSchema, PartnerFormType } from "@/src/schema/partnerFormSchema";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { TimezoneSelect } from "./timezone-field/TimezoneSelect";
 const options = [
   "Legal services",
   "Security auditing / quantum resilience",
@@ -40,11 +41,17 @@ export default function PartnerDequipForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<PartnerFormType>({
     resolver: zodResolver(partnerFormSchema),
+    defaultValues: {
+      founderTimezone: "",
+      // offeringLinks: [],
+    },
   });
-  const [logoFile, setLogoFile] = useState<File | null>(null);
-  const [deckFile, setDeckFile] = useState<File | null>(null);
+  // const { fields, append, remove } = useFieldArray<PartnerFormType>({
+  //   control,
+  //   name: "offeringLinks",
+  // });
+
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -73,6 +80,10 @@ export default function PartnerDequipForm() {
     }
     setLoading(false);
   };
+
+  // useEffect(() => {
+  //   console.log("errors", errors);
+  // }, [errors]);
 
   return (
     <form
@@ -288,7 +299,22 @@ export default function PartnerDequipForm() {
             <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
               Time zone
             </label>
-            {/* <TimezoneSelect onChange={} /> */}
+            <Controller
+              name="founderTimezone"
+              control={control}
+              render={({ field }) => (
+                <TimezoneSelect
+                  value={field.value || ""}
+                  onChange={field.onChange}
+                  // Pass any extra props required by your TimezoneSelect
+                />
+              )}
+            />
+            {errors.founderTimezone && (
+              <span className="text-red-500 text-sm">
+                {errors.founderTimezone.message as string}
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -323,30 +349,19 @@ export default function PartnerDequipForm() {
           <div className="flex flex-col gap-[16px]">
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
             <div className="max-w-[560px] columns-2 gap-4">
-              <Controller
-                name="checkedOptions"
-                control={control}
-                render={({ field }) => (
-                  <>
-                    {options.map((label, idx) => (
-                      <label key={idx} className="flex items-center cursor-pointer gap-2">
-                        <input
-                          type="checkbox"
-                          className="hidden peer"
-                          value={label}
-                          checked={field.value?.includes(label) || false}
-                          onChange={(e) => {
-                            const { checked } = e.target;
-                            field.onChange(
-                              checked
-                                ? [...(field.value || []), label]
-                                : (field.value || []).filter((v: string) => v !== label)
-                            );
-                          }}
-                        />
+              {options.map((label, idx) => (
+                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                  {/* Hidden checkbox */}
+                  <input
+                    type="checkbox"
+                    className="hidden peer"
+                    {...register("checkedOptions")}
+                    value={label}
+                  />
 
-                        <span
-                          className="
+                  {/* Custom checkbox */}
+                  <span
+                    className="
         w-4 h-4 border border-[#ffffff] rounded-sm flex items-center justify-center
         bg-transparent peer-checked:bg-[#ffffff]
         relative
@@ -355,25 +370,22 @@ export default function PartnerDequipForm() {
         after:border-black after:rotate-45
         after:opacity-0 peer-checked:after:opacity-100
       "
-                        ></span>
+                  ></span>
 
-                        {/* Label text */}
-                        <span className="text-white text-sm">{label}</span>
-                      </label>
-                    ))}
-                  </>
-                )}
-              />
+                  {/* Label text */}
+                  <span className="text-white text-sm">{label}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <p className="text-h6 font-montserrat font-medium">
+          {/*  <p className="text-h6 font-montserrat font-medium">
             Please describe the specific offering or benefit you&rsquo;d extend to DeQUIP
             startups(e.g. 10 hrs of legal consulting, 6 months of product credits, token design
             workshops, etc.)
           </p>
-          {/* <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px]">
             {fields.map((field, idx) => (
               <div key={field.id} className="flex gap-2 mb-1">
                 <input
@@ -382,9 +394,11 @@ export default function PartnerDequipForm() {
                   placeholder="Link URL"
                   type="text"
                 />
-                <Button type="button" className="mt-2" onClick={() => remove(idx)}>
-                  Remove
-                </Button>
+                {fields.length > 1 && (
+                  <Button type="button" className="mt-2" onClick={() => remove(idx)}>
+                    Remove
+                  </Button>
+                )}
               </div>
             ))}
             <Button
@@ -397,7 +411,29 @@ export default function PartnerDequipForm() {
                 Add more links
               </span>
             </Button>
+            {errors.offeringLinks && typeof errors.offeringLinks.message === "string" && (
+              <span className="text-red-500 text-sm">{errors.offeringLinks.message}</span>
+            )}
           </div> */}
+          <div className="flex flex-col gap-[16px]">
+            <label htmlFor="offeringToDequip" className="text-h6 font-montserratfont-medium">
+              Please describe the specific offering or benefit you&rsquo;d extend to DeQUIP
+              startups(e.g. 10 hrs of legal consulting, 6 months of product credits, token design
+              workshops, etc.)
+            </label>
+            <input
+              {...register("offeringToDequip")}
+              id="offeringToDequip"
+              placeholder="Enter here"
+              className="input"
+              type="text"
+            />
+            {errors.offeringToDequip && (
+              <span className="text-red-500 text-sm">
+                {errors.offeringToDequip.message as string}
+              </span>
+            )}
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
@@ -419,31 +455,21 @@ export default function PartnerDequipForm() {
           </div>
           <div className="flex flex-col gap-[16px]">
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
-            <div className="">
-              <Controller
-                name="checkedOptions2"
-                control={control}
-                render={({ field }) => (
-                  <>
-                    {options2.map((label, idx) => (
-                      <label key={idx} className="flex items-center cursor-pointer gap-2">
-                        <input
-                          type="checkbox"
-                          className="hidden peer"
-                          value={label}
-                          checked={field.value?.includes(label) || false}
-                          onChange={(e) => {
-                            const { checked } = e.target;
-                            field.onChange(
-                              checked
-                                ? [...(field.value || []), label]
-                                : (field.value || []).filter((v: string) => v !== label)
-                            );
-                          }}
-                        />
 
-                        <span
-                          className="
+            <div className="">
+              {options2.map((label, idx) => (
+                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                  {/* Hidden checkbox */}
+                  <input
+                    type="checkbox"
+                    className="hidden peer"
+                    {...register("checkedOptions2")}
+                    value={label}
+                  />
+
+                  {/* Custom checkbox */}
+                  <span
+                    className="
         w-4 h-4 border border-[#ffffff] rounded-sm flex items-center justify-center
         bg-transparent peer-checked:bg-[#ffffff]
         relative
@@ -452,15 +478,12 @@ export default function PartnerDequipForm() {
         after:border-black after:rotate-45
         after:opacity-0 peer-checked:after:opacity-100
       "
-                        ></span>
+                  ></span>
 
-                        {/* Label text */}
-                        <span className="text-white text-sm">{label}</span>
-                      </label>
-                    ))}
-                  </>
-                )}
-              />
+                  {/* Label text */}
+                  <span className="text-white text-sm">{label}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>
@@ -532,30 +555,19 @@ export default function PartnerDequipForm() {
           <div className="flex flex-col gap-[16px]">
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
             <div className="">
-              <Controller
-                name="whyYouAreFit"
-                control={control}
-                render={({ field }) => (
-                  <>
-                    {options.map((label, idx) => (
-                      <label key={idx} className="flex items-center cursor-pointer gap-2">
-                        <input
-                          type="checkbox"
-                          className="hidden peer"
-                          value={label}
-                          checked={field.value?.includes(label) || false}
-                          onChange={(e) => {
-                            const { checked } = e.target;
-                            field.onChange(
-                              checked
-                                ? [...(field.value || []), label]
-                                : (field.value || []).filter((v: string) => v !== label)
-                            );
-                          }}
-                        />
+              {whyYouAreFit.map((label, idx) => (
+                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                  {/* Hidden checkbox */}
+                  <input
+                    type="checkbox"
+                    className="hidden peer"
+                    {...register("whyYouAreFit")}
+                    value={label}
+                  />
 
-                        <span
-                          className="
+                  {/* Custom checkbox */}
+                  <span
+                    className="
         w-4 h-4 border border-[#ffffff] rounded-sm flex items-center justify-center
         bg-transparent peer-checked:bg-[#ffffff]
         relative
@@ -564,15 +576,12 @@ export default function PartnerDequipForm() {
         after:border-black after:rotate-45
         after:opacity-0 peer-checked:after:opacity-100
       "
-                        ></span>
+                  ></span>
 
-                        {/* Label text */}
-                        <span className="text-white text-sm">{label}</span>
-                      </label>
-                    ))}
-                  </>
-                )}
-              />
+                  {/* Label text */}
+                  <span className="text-white text-sm">{label}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ const threats: ThreatCardProps[] = [
   },
 ];
 
-const DequipTimeline: React.FC = () => {
+const QnetClubMember: React.FC = () => {
   const sectionRef = useRef(null);
   const mainTitleRef = useRef(null);
   const para1Ref = useRef(null);
@@ -139,7 +139,7 @@ const DequipTimeline: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative px-4 md:px-20 pb-[236px] pt-[160px] bg-black text-white overflow-hidden"
+      className="relative px-4 md:px-20  pt-[160px] bg-black text-white overflow-hidden"
     >
       <div className="absolute right-0 top-0">
         <Image src="/images/common/bg/lights.webp" alt="Lights" width={683} height={1157} />
@@ -150,11 +150,11 @@ const DequipTimeline: React.FC = () => {
           className="text-center md:text-left text-h4 md:text-h3 font-montserrat font-semibold"
         >
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-            Timeline for the DeQUIP50, 2025
+            What You Get as a QNet Club Member
           </span>
         </h3>
         <h5 ref={para1Ref} className="text-p2 font-open-sans  mt-2.5">
-          A subheading should go here explaining why we are choosing this timeline over any other.
+          All members unlock an expanding suite of builder-first benefits
         </h5>
         <div className="relative w-full">
           <Swiper
@@ -239,37 +239,9 @@ const DequipTimeline: React.FC = () => {
             </div> */}
           </div>
         </div>
-        <div className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4 mt-10">
-          <Link href="/apply" target="_blank">
-            <Button className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat text-[#000000]">Apply Now (DeQUIP 50)</span>
-            </Button>
-          </Link>
-          <Link href="/mentor" target="_blank">
-            <Button variant="outline" className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Become a Mentor
-              </span>
-            </Button>
-          </Link>
-          <Link href="/partner" target="_blank">
-            <Button variant="outline" className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Partner With Us
-              </span>
-            </Button>
-          </Link>
-          <Link href="#" target="_blank">
-            <Button variant="outline" className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Subscribe to Pulse
-              </span>
-            </Button>
-          </Link>
-        </div>
       </div>
     </section>
   );
 };
 
-export default DequipTimeline;
+export default QnetClubMember;

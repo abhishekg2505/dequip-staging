@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutQuranium = () => {
+const SelectionCriteria = () => {
   const sectionRef = useRef(null);
   const mainTitleRef = useRef(null);
   const lineRef = useRef(null);
@@ -83,114 +83,93 @@ const AboutQuranium = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="pt-[131px] md:text-left">
-      <h3 ref={mainTitleRef} className="text-left text-h4 md:text-h3 font-montserrat font-semibold">
-        <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-          About Quranium
-        </span>
-      </h3>
+    <div ref={sectionRef} className="container pt-[90px] md:text-left">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 mt-[15px]">
         {/* Left Side */}
-        <div className="relative z-10">
-          <p ref={headingRef} className="text-p3 md:text-p2 font-open-sans mb-[20px]">
-            Quranium is the{" "}
-            <strong>
-              Convergence Layer: a quantum-secure, AI-native, EVM-compatible Layer-1 blockchain
-              infrastructure
-            </strong>{" "}
-            built to scale, automate, and secure the next era of the internet. Designed for the
-            post-quantum world, Quranium combines advanced cryptography, intelligent on-chain logic,
-            and seamless developer access to power the next wave of decentralized innovation. With
-            its{" "}
-            <strong>
-              quantum-secure core, AI-native blockchain infrastructure, and QSafe Wallet -
-              supporting over 70 networks
-            </strong>{" "}
-            - Quranium enables builders, enterprises, and users to thrive in a truly secure and
-            intelligent digital ecosystem.
-          </p>
-          <p ref={heading2Ref} className="text-p3 md:text-p2 font-open-sans mb-[20px]">
-            Strategic partners include <strong>PwC, Quantum Basel, and Galxe,</strong> and the
-            project is backed by
-            <strong>Animoca Brands</strong> and <strong>HyperScaled Ventures.</strong> Quranium
-            launched its quantum-secure PoW blockchain in December 2024 and rolled out its PoS
-            Convergence Layer and multichain QSafe Wallet in May 2025. Its growing ecosystem already
-            spans 150,000+ community members, over 60 strategic partners, an over 1 million gamer
-            alliance, 100+ AI-powered games, and over 20,000 daily transactions, with global
-            traction across 50+ countries. Quranium is proud to collaborate with over 40 leading
-            media partners across Web3, AI, and cybersecurity to raise awareness of the quantum
-            threat and spotlight the builders of tomorrow&rsquo;s secure internet.
-          </p>
-          <Link ref={lineRef} href="https://www.quranium.org/" target="_blank">
-            <Button variant="outline" className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Learn More
-              </span>
-            </Button>
-          </Link>
-        </div>
-
-        {/* Right Side - Video */}
-        <div ref={cardsRef} className="flex flex-col mt-10 md:mt-0 relative w-full">
+        <div ref={mainTitleRef} className="relative z-10">
           <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire4.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
             <h3
               ref={mainTitleRef}
               className="text-left text-h5 md:text-h4 font-montserrat font-semibold"
             >
               <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Mentors
+                What Startups Get
               </span>
             </h3>
-            <h6 className="text-h6 font-montserrat font-medium text-left">Industry Experts</h6>
             <div className="flex flex-row gap-x-2 mt-5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                From AI, blockchain, quantum, fintech
+                Quranium direct investment + token design support
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5 justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
-              <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Matched to startups by expertise
-              </p>
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">Dedicated mentor mapping</p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
-              <p className="text-p2 text-[#D4D4D4] font-open-sans">Contribute 1 to 2 hours/week</p>
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">
+                Strategic partner backing (legal, cloud, GTM)
+              </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Receive token allocations from startups
+                Infra access: QSafe, QVM, Q-Remix
+              </p>
+            </div>
+            <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
+              <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">
+                Investor and VC network access
+              </p>
+            </div>
+            <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
+              <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">
+                Community building + go-to-market
+              </p>
+            </div>
+            <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
+              <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">
+                Long-term integration into Quranium ecosystem
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Right Side - Video */}
+        <div ref={cardsRef} className="flex flex-col mt-10 md:mt-0 relative w-full">
           <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire5.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
             <h3
               ref={mainTitleRef}
               className="text-left text-h5 md:text-h4 font-montserrat font-semibold"
             >
               <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                Partners
+                Selection Criteria
               </span>
             </h3>
-            <h6 className="text-h6 font-montserrat font-medium text-left">Ecosystem Enablers</h6>
             <div className="flex flex-row gap-x-2 mt-5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Provide services (cloud, legal, GTM, design)
+                Tech innovation in blockchain, AI, quantum
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Act as operating partners or value partners
+                Team capability and execution record
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
+              <p className="text-p2 text-[#D4D4D4] font-open-sans">Global scalability potential</p>
+            </div>
+            <div className="flex flex-row gap-x-2 mt-1.5">
+              <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Token allocations as incentives
+                Mission-alignment with Quranium (uncrackable, decentralized)
               </p>
             </div>
           </div>
@@ -200,4 +179,4 @@ const AboutQuranium = () => {
   );
 };
 
-export default AboutQuranium;
+export default SelectionCriteria;
