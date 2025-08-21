@@ -14,6 +14,8 @@ const HeroSection: React.FC = () => {
   const lineRef = useRef(null);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const headingRef = useRef(null);
+  const logoRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -47,6 +49,28 @@ const HeroSection: React.FC = () => {
       gsap.from(headingRef.current, {
         scrollTrigger: {
           trigger: headingRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(logoRef.current, {
+        scrollTrigger: {
+          trigger: logoRef.current,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+      gsap.from(buttonRef.current, {
+        scrollTrigger: {
+          trigger: buttonRef.current,
           start: "top 90%",
         },
         opacity: 0,
@@ -102,6 +126,14 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-[38%_62%] gap-10 text-center md:text-left ">
           {/* Left Side */}
           <div className="relative">
+            <Image
+              ref={logoRef}
+              src="/images/about/qnet.svg"
+              alt="QNet Logo"
+              width={162}
+              height={59}
+              className="mb-5 mx-auto md:mx-0"
+            />
             <h3
               ref={mainTitleRef}
               className="text-center md:text-left text-h4 md:text-h3 font-montserrat font-semibold"
@@ -114,7 +146,7 @@ const HeroSection: React.FC = () => {
             <p ref={headingRef} className="text-p2 font-open-sans mt-[15px] mb-[20px]">
               Access to the best minds in Web3, for the founder who never stops building
             </p>
-            <Link ref={lineRef} href="#" target="_blank">
+            <Link ref={buttonRef} href="#qnet-form">
               <Button variant="outline" className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Apply Now

@@ -1,9 +1,14 @@
 "use client";
 
-import { Button } from "@/src/components/ui/button";
-import { useState } from "react";
+import type { FieldErrors } from "react-hook-form";
+import { applyFormSchema, ApplyFormType } from "@/src/schema/applyFormSchema";
 
-export default function VisionReadinessFit() {
+type Props = {
+  register: any;
+  errors: FieldErrors<ApplyFormType>;
+};
+
+export default function VisionReadinessFit({ register, errors }: Props) {
   const options = [
     "Fundraising / Investor Readiness",
     "AI strategy",
@@ -15,7 +20,7 @@ export default function VisionReadinessFit() {
     "Quantum security",
   ];
   return (
-    <section>
+    <section className="mt-20">
       <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
         <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
           Vision, Readiness, & Fit
@@ -27,7 +32,7 @@ export default function VisionReadinessFit() {
             What does success look like in 2 years if you join DeQUIP50? Be bold. Be real.
           </label>
           <input
-            name="joinDequip"
+            {...register("joinDequip")}
             id="joinDequip"
             placeholder="Enter here"
             className="input"
@@ -36,18 +41,23 @@ export default function VisionReadinessFit() {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
-        <div className="flex flex-col gap-4 mt-10 mb-10">
+        <div className="flex flex-col gap-4">
           <p className="text-h6 font-montserrat font-medium">
             What&rsquo;s your biggest blocker right now?
           </p>
-          <div className="flex items-center gap-10">
+          <div className="flex items-center flex-wrap gap-5 md:gap-10">
             {["Technical", "Product-market fit", "Funding", "GTM/Marketing", "Hiring", "Other"].map(
               (value) => (
                 <label
                   key={value}
                   className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
                 >
-                  <input type="radio" value={value} className="custom-radio" />
+                  <input
+                    {...register("whatsYourBlocker")}
+                    type="radio"
+                    value={value}
+                    className="custom-radio"
+                  />
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               )
@@ -64,7 +74,12 @@ export default function VisionReadinessFit() {
             {options.map((label, idx) => (
               <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2">
                 {/* Hidden checkbox */}
-                <input type="checkbox" className="hidden peer" name={`option-${idx}`} />
+                <input
+                  {...register("mentorshipKind")}
+                  type="checkbox"
+                  className="hidden peer"
+                  value={label}
+                />
 
                 {/* Custom checkbox */}
                 <span
@@ -87,7 +102,7 @@ export default function VisionReadinessFit() {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
-        <div className="flex flex-col gap-4 mt-10 mb-10">
+        <div className="flex flex-col gap-4">
           <p className="text-h6 font-montserrat font-medium">
             Are you looking to raise funds in the next 6 months?
           </p>
@@ -97,7 +112,12 @@ export default function VisionReadinessFit() {
                 key={value}
                 className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
               >
-                <input type="radio" value={value} className="custom-radio" />
+                <input
+                  {...register("raiseFunds")}
+                  type="radio"
+                  value={value}
+                  className="custom-radio"
+                />
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
@@ -110,7 +130,7 @@ export default function VisionReadinessFit() {
             If yes, how much and at what stage?
           </label>
           <input
-            name="atWhatStage"
+            {...register("atWhatStage")}
             id="atWhatStage"
             placeholder="Enter here"
             className="input"

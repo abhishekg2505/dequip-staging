@@ -61,7 +61,7 @@ export default function QnetDequipForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="px-4 md:px-20 pt-[77px] pb-[80px] container mx-auto"
     >
-      <section>
+      <section id="qnet-form">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Founder Details

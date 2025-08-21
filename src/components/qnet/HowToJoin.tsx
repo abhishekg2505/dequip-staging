@@ -83,11 +83,11 @@ const HowToJoin = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="container pt-[90px] md:text-left">
+    <div ref={sectionRef} className="container px-4 md:px-20 pt-[90px] md:text-left">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 mt-[15px]">
         {/* Left Side */}
         <div ref={mainTitleRef} className="relative z-10">
-          <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire4.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
+          <div className="max-w-[585px] h-full mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire4.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
             <h3
               ref={mainTitleRef}
               className="text-left text-h5 md:text-h4 font-montserrat font-semibold"
@@ -125,7 +125,7 @@ const HowToJoin = () => {
 
         {/* Right Side - Video */}
         <div ref={cardsRef} className="flex flex-col mt-10 md:mt-0 relative w-full">
-          <div className="max-w-[585px] mb-5  p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire5.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
+          <div className="max-w-[585px] h-full p-[20px_20px_40px] border border-[#1E1F23] bg-[url('/images/about/wire5.png')] bg-right-top bg-size-[223px_auto] bg-no-repeat rounded-[10px]">
             <h3
               ref={mainTitleRef}
               className="text-left text-h5 md:text-h4 font-montserrat font-semibold"

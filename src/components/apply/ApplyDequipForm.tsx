@@ -23,7 +23,7 @@ export default function ApplyDequipForm() {
     control,
     reset,
     setValue,
-    formState: { errors },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ApplyFormType>({
     resolver: zodResolver(applyFormSchema),
     mode: "all",
@@ -88,9 +88,9 @@ export default function ApplyDequipForm() {
     setLoading(false);
   };
 
-  // useEffect(() => {
-  //   console.log(errors);
-  // }, [errors]);
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   return (
     <form
@@ -98,7 +98,7 @@ export default function ApplyDequipForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* === Startup Snapshot === */}
-      <section>
+      <section id="apply-form" className="scroll-mt-24">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Startup Snapshot
@@ -189,7 +189,7 @@ export default function ApplyDequipForm() {
       </section>
 
       {/* === Founder Details === */}
-      <section>
+      <section className="mt-20">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Founder Details
@@ -286,10 +286,10 @@ export default function ApplyDequipForm() {
       <AlignDequipSection register={register} errors={errors} />
 
       {/* === Vision, Readiness & Fit === */}
-      <VisionReadinessFit />
+      <VisionReadinessFit register={register} errors={errors} />
 
       {/* === Bonus Round === */}
-      <section>
+      <section className="mt-20">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Bonus Round
@@ -302,7 +302,7 @@ export default function ApplyDequipForm() {
               videos, whitepapers, etc.
             </label>
             <input
-              name="launchedbefor"
+              {...register("launchedbefor")}
               id="launchedbefor"
               placeholder="Enter here"
               className="input"
@@ -352,16 +352,34 @@ export default function ApplyDequipForm() {
       </section>
       {/* === Logistics === */}
 
-      <LogisticSection />
+      <LogisticSection register={register} errors={errors} />
 
       {/* === Additional Infromation === */}
-
+      <AdditionalInformation register={register} errors={errors} />
       {/* === Trust Per Human === */}
       <TrustPerHuman />
 
-      <Button type="submit" className="group relative overflow-hidden">
-        <span className="text-p2 font-montserrat text-[#000000]">Submit</span>
+      <Button disabled={loading} type="submit" className="group relative overflow-hidden">
+        <span
+          className={`text-p2 font-montserrat ${
+            isSubmitting ? "text-[#ffffff] " : "text-[#000000] "
+          }`}
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </span>
       </Button>
+      {/* Error message section */}
+      {errorMessage && <p className="mt-4 text-red-500 font-medium">{errorMessage}</p>}
+
+      {/* Success message */}
+      {isSubmitSuccessful && (
+        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+          <h2 className="text-h5 font-montserrat font-semibold">
+            Thank you for applying! We have received your details.
+          </h2>
+          <p className="text-p3 font-open-sans">You will also receive a confirmation email.</p>
+        </div>
+      )}
     </form>
   );
 }

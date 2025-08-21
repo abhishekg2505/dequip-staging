@@ -12,55 +12,68 @@ import { Button } from "../ui/button";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ThreatCardProps {
-  title: string;
-  pillbtn: string;
-  url: string;
+  gradientText: string;
+  simpleText: string;
   imageurl: string;
   imagepos: string;
+  description: string;
+  subDescription: string;
 }
 
 const threats: ThreatCardProps[] = [
   {
-    title: "Application Open",
-    pillbtn: "August 2025",
-    url: "#",
+    gradientText: "1:1 Mentorship",
+    simpleText: "On-Demand",
     imageurl: "/images/homepage/tl1.png",
     imagepos: "right bottom",
+    description:
+      "Book expert sessions from Quranium’s deep bench of advisors, on AI, blockchain, fundraising, security, GTM, legal and more.",
+    subDescription: "Only $1/min, paid in $QRN.",
   },
   {
-    title: "Mentor & Partner Onboarding",
-    pillbtn: "August & September 2025",
-    url: "#",
+    gradientText: "Weekly Intelligence",
+    simpleText: "Drops",
     imageurl: "/images/homepage/tl2.png",
     imagepos: "right bottom",
+    description:
+      "Stay sharp with exclusive insights on quantum, AI, Web3, and funding trends, direct to your inbox and Discord.",
+    subDescription: "",
   },
   {
-    title: "Cohort Selection + Grant Review",
-    pillbtn: "October 2025",
-    url: "#",
+    gradientText: "Monthly",
+    simpleText: "Masterclasses",
     imageurl: "/images/homepage/tl3.png",
     imagepos: "left bottom",
+    description:
+      "Live sessions with top mentors and operators. Ask questions. Make connections. Grow faster.",
+    subDescription: "",
   },
   {
-    title: "12-Week Incubation Program",
-    pillbtn: "October – December 2025",
-    url: "#",
+    gradientText: "Founder",
+    simpleText: "Matchmaking",
     imageurl: "/images/homepage/tl4.png",
     imagepos: "left bottom",
+    description:
+      "We help you find the right people, whether that’s a co-founder, CTO, design lead, tokenomics wizard, or VCs who get it.",
+    subDescription: "",
   },
   {
-    title: "Demo Day + Investment Announcements",
-    pillbtn: "January 2026",
-    url: "#",
+    gradientText: "Partner Discounts &",
+    simpleText: "Templates",
     imageurl: "/images/homepage/tl5.png",
     imagepos: "right bottom",
+    description:
+      "Access playbooks, legal boilerplates, token design frameworks, GTM maps, and discounts from DeQUIP partners (cloud, dev tools, more).",
+    subDescription: "",
   },
   {
-    title: "QNet Access, Next Cycles",
-    pillbtn: "Ongoing",
-    url: "#",
+    gradientText: "Early Access to",
+    simpleText: "DeQUIP Calls & Cycles",
     imageurl: "/images/homepage/tl3.png",
     imagepos: "right bottom",
+    description:
+      "Get first-in-line alerts for future DeQUIP 50 applications, hackathons, grants, and invite-only events. Community & Networking Channels",
+    subDescription: "",
   },
 ];
 
@@ -198,7 +211,7 @@ const QnetClubMember: React.FC = () => {
                   key={index}
                   className="group perspective"
                 >
-                  <div className="relative w-full h-[305px] bg-card-gradient p-[1px] rounded-[10px]">
+                  <div className="relative w-full h-[420px] bg-card-gradient p-[1px] rounded-[10px]">
                     <div
                       className="bg-[#020309] p-5 h-full rounded-[10px] flex flex-col justify-start items-start text-left transition-colors duration-300 ease-in-out bg-size-[223px_auto] bg-no-repeat"
                       style={{
@@ -206,19 +219,16 @@ const QnetClubMember: React.FC = () => {
                         backgroundPosition: `${threat.imagepos}`,
                       }}
                     >
-                      <Button
-                        variant="outline"
-                        className="group relative overflow-hidden px-[12px] py-[6px]"
-                      >
-                        <span className="text-p3 font-open-sans bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                          {threat.pillbtn}
-                        </span>
-                      </Button>
-                      <h6 className="text-h6 font-montserrat font-medium mt-5">
+                      <h6 className="text-h6 font-montserrat font-medium">
                         <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                          {threat.title}
+                          {threat.gradientText}
                         </span>
                       </h6>
+                      <h6 className="text-h6 font-montserrat font-medium mb-5">
+                        {threat.simpleText}
+                      </h6>
+                      <p>{threat.description}</p>
+                      <p>{threat.subDescription}</p>
                     </div>
                   </div>
                 </div>

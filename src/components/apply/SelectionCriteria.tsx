@@ -83,7 +83,7 @@ const SelectionCriteria = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="container pt-[90px] md:text-left">
+    <div ref={sectionRef} className="container px-4 md:px-20 pt-[90px] md:text-left">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 mt-[15px]">
         {/* Left Side */}
         <div ref={mainTitleRef} className="relative z-10">

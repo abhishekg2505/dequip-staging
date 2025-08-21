@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
             <p ref={headingRef} className="text-p2 font-open-sans mt-[15px] mb-[20px]">
               For founders building the future, not just an app.
             </p>
-            <Link ref={lineRef} href="#" target="_blank">
+            <Link ref={lineRef} href="#apply-form">
               <Button variant="outline" className="group relative overflow-hidden">
                 <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Apply Now

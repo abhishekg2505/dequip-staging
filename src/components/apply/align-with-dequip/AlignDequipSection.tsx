@@ -10,7 +10,7 @@ type Props = {
 
 export default function AlignDequipSection({ register, errors }: Props) {
   return (
-    <section>
+    <section className="mt-20">
       <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
         <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
           Alignment With DeQUIP
