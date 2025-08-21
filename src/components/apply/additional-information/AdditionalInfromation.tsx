@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { UseFormRegister, UseFormWatch, UseFormSetValue, FieldErrors } from "react-hook-form";
-import type { formValues } from "../ApplyDequipForm"; // adjust the path
+import { applyFormSchema, ApplyFormType } from "@/src/schema/applyFormSchema";
 
 export default function AdditionalInformation() {
   return (

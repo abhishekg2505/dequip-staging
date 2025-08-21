@@ -1,11 +1,11 @@
 "use client";
 
 import type { FieldErrors } from "react-hook-form";
-import { FormValues } from "../ApplyDequipForm";
+import { applyFormSchema, ApplyFormType } from "@/src/schema/applyFormSchema";
 
 type Props = {
   register: any;
-  errors: FieldErrors<FormValues>;
+  errors: FieldErrors<ApplyFormType>;
 };
 
 export default function BuildingDetailsSection({ register, errors }: Props) {
