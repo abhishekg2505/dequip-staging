@@ -8,7 +8,7 @@ import {
 } from "react-hook-form";
 import { Button } from "@/src/components/ui/button";
 import { TimezoneSelect } from "../timezone-field/TimezoneSelect";
-import { FormValues } from "../ApplyDequipForm";
+import { applyFormSchema, ApplyFormType } from "@/src/schema/applyFormSchema";
 type Props = {
   title: string;
   fields: { id: string }[];
@@ -16,8 +16,8 @@ type Props = {
   append: any;
   remove: any;
   name: "coFounders";
-  control: Control<FormValues>;
-  errors: FieldErrors<FormValues>;
+  control: Control<ApplyFormType>;
+  errors: FieldErrors<ApplyFormType>;
   disableAdd?: boolean;
   disableRemove?: boolean;
 };
