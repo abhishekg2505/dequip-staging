@@ -76,7 +76,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed z-[60] top-0 left-0 right-0 tracking-tightest bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_100%)] overflow-hidden"
+      className="fixed z-[60] top-0 left-0 right-0 tracking-tightest bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_100%)] overflow-hidden1"
     >
       <div className="relative px-4 md:px-10">
         <div className="py-2.5 md:py-5 w-full mx-auto flex items-center justify-between rounded-[20px] ">
@@ -88,7 +88,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-4 2xl:gap-8">
-            <nav className="flex items-start gap-3 xl:gap-6 px-3 py-1">
+            <nav className="flex items-start gap-3 xl:gap-10 px-3 py-1">
               {navLinks.map((item, idx) => (
                 <div
                   key={item.itemName}
@@ -107,19 +107,19 @@ export default function Header() {
                       <span className="text-p3 font-semibold leading-[26px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {item.itemName}
                       </span>
-                      {/* {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />} */}
+                      {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}
                     </Link>
                   ) : (
                     <div className="flex items-center gap-2 cursor-default text-white-1 font-semibold text-p3 leading-[26px]">
                       <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {item.itemName}
                       </span>
-                      {/* {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />} */}
+                      {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}
                     </div>
                   )}
 
-                  {/* {openDropdownIndex === idx && item.subMenu && (
-                    <div className="absolute top-full left-0 w-max pt-4">
+                  {openDropdownIndex === idx && item.subMenu && (
+                    <div className="absolute top-full right-0 md:w-48 w-max pt-4">
                       <div className="border border-[rgba(255,255,255,0.15)] bg-background rounded-lg shadow-lg z-50 transition-all transform opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                         {item.subMenu.map((subItem, subIdx) => (
                           <Link
@@ -139,7 +139,7 @@ export default function Header() {
                         ))}
                       </div>
                     </div>
-                  )} */}
+                  )}
                 </div>
               ))}
             </nav>
@@ -157,9 +157,9 @@ export default function Header() {
           </div>
 
           {/* Mobile Nav */}
-          {/* <div className="lg:hidden">
+          <div className="lg:hidden">
             <MobileMenu />
-          </div> */}
+          </div>
         </div>
       </div>
     </header>

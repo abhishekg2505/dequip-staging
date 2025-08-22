@@ -158,17 +158,8 @@ const DequipTimeline: React.FC = () => {
         </h5>
         <div className="relative w-full">
           <Swiper
-            modules={[Navigation, FreeMode, Mousewheel]}
-            mousewheel={{
-              forceToAxis: true,
-              releaseOnEdges: true,
-              sensitivity: 1,
-            }}
-            freeMode={{
-              enabled: true,
-              momentum: false,
-            }}
-            speed={7000}
+            modules={[Navigation]}
+            speed={500}
             loop={false}
             navigation={{
               nextEl: ".swiper-next",
@@ -229,14 +220,14 @@ const DequipTimeline: React.FC = () => {
           {/* Navigation Arrows */}
           <div className="flex justify-center gap-6 mt-6 md:mt-0 md:block">
             {/* Left Arrow */}
-            {/* <div className="swiper-prev md:absolute md:-left-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
+            <div className="swiper-prev md:absolute md:-left-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
               <MoveLeft className="text-white" />
-            </div> */}
+            </div>
 
             {/* Right Arrow */}
-            {/* <div className="swiper-next md:absolute md:-right-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
+            <div className="swiper-next md:absolute md:-right-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
               <MoveRight className="text-white" />
-            </div> */}
+            </div>
           </div>
         </div>
         <div className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4 mt-10">

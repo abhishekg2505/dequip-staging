@@ -229,7 +229,7 @@ export default function MentorDequipForm() {
         </div>
       </section>
       {/* === Professional Background === */}
-      <section>
+      <section className="mt-20">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Professional Background
@@ -285,7 +285,7 @@ export default function MentorDequipForm() {
                 render={({ field }) => (
                   <>
                     {specialization.map((label, idx) => (
-                      <label key={idx} className="flex items-center cursor-pointer gap-2">
+                      <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2.5">
                         <input
                           type="checkbox"
                           className="hidden peer"
@@ -324,7 +324,7 @@ export default function MentorDequipForm() {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4">
             <p className="text-h6 font-montserrat font-medium">
               Have you mentored startups before? (Yes/No)
             </p>
@@ -374,16 +374,23 @@ export default function MentorDequipForm() {
           </p>
           <div className="flex flex-col gap-[16px]">
             {fields.map((field, idx) => (
-              <div key={field.id} className="flex gap-2 mb-1">
+              <div key={field.id} className="flex flex-col w-full gap-2 mb-1">
                 <input
                   {...register(`workWithNotableCompanies.${idx}.url` as const)}
                   className="input"
-                  placeholder="Link URL"
+                  placeholder="Enter here"
                   type="text"
                 />
                 {fields.length > 1 && (
-                  <Button type="button" className="mt-2" onClick={() => remove(idx)}>
-                    Remove
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="mt-2 w-fit px-[12px] py-[2px]"
+                    onClick={() => remove(idx)}
+                  >
+                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      Remove
+                    </span>
                   </Button>
                 )}
               </div>
@@ -391,7 +398,7 @@ export default function MentorDequipForm() {
             <Button
               type="button"
               variant="outline"
-              className="group relative overflow-hidden"
+              className="group relative overflow-hidden w-fit"
               onClick={() => append({ url: "" })}
             >
               <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
@@ -409,7 +416,7 @@ export default function MentorDequipForm() {
       </section>
 
       {/* === Mentorship Fit === */}
-      <section>
+      <section className="mt-20">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Mentorship Fit
@@ -477,7 +484,7 @@ export default function MentorDequipForm() {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4">
             <p className="text-h6 font-montserrat font-medium">
               Would you be open to joining Demo Day or selection panels?
             </p>
@@ -570,23 +577,23 @@ export default function MentorDequipForm() {
           </span>
         </h2>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-[16px]">
               <label htmlFor="shareBio" className="text-[16px] font-montserrat font-medium">
                 Share a 1 to 2 sentence bio we can use on our site if accepted
               </label>
-              <input
+              <textarea
                 {...register("shareBio")}
                 id="shareBio"
                 placeholder="Enter here"
                 className="input"
-                type="text"
+                rows={4}
               />
             </div>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-[16px]">
               <label htmlFor="profileLink" className="text-[16px] font-montserrat font-medium">
                 Upload a Profile Picture (optional but encouraged, upload your pic on your drive and
@@ -603,7 +610,7 @@ export default function MentorDequipForm() {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4">
             <p className="text-h6 font-montserrat font-medium">
               Do you want to receive early access to Pulse, Quranium&rsquo;s newsletter?
             </p>
@@ -624,7 +631,7 @@ export default function MentorDequipForm() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4 mt-8">
             <p className="text-h6 font-montserrat font-medium">
               Would you like to be considered for future speaking opportunities or panel invites?
             </p>
