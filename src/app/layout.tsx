@@ -40,10 +40,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
-  },
+  title: siteMetadata.title,
   metadataBase: new URL(siteMetadata.siteUrl),
   description: siteMetadata.description,
   openGraph: {

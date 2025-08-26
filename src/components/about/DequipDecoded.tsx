@@ -182,31 +182,34 @@ const DequipDecoded = () => {
             </p>
           </div>
 
-          <div className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4">
-            <Link href="/apply">
-              <Button className="group relative overflow-hidden">
-                <span className="text-p2 font-montserrat text-[#000000]">
+          <div className="buttonsanim flex flex-wrap items-center justify-center gap-x-2 gap-y-4">
+            <Link href="/apply" className="w-[48%] sm:w-auto">
+              <Button className="group relative overflow-hidden hover:bg-[#ffffff] w-full">
+                <span className="text-[12px] sm:text-p2 font-montserrat text-[#000000]">
                   Apply Now (DeQUIP 50)
                 </span>
               </Button>
             </Link>
-            <Link href="/mentor">
-              <Button variant="outline" className="group relative overflow-hidden">
-                <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+            <Link href="/mentor" className="w-[48%] sm:w-auto">
+              <Button variant="outline" className="group relative overflow-hidden w-full">
+                <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Become a Mentor
                 </span>
               </Button>
             </Link>
-            <Link href="/partner">
-              <Button variant="outline" className="group relative overflow-hidden">
-                <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+            <Link href="/partner" className="w-[48%] sm:w-auto">
+              <Button variant="outline" className="group relative overflow-hidden w-full">
+                <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Partner With Us
                 </span>
               </Button>
             </Link>
-            <Link href="#">
-              <Button variant="outline" className="group relative overflow-hidden">
-                <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+            <Link
+              href="https://www.linkedin.com/newsletters/quranium-pulse-7317467565704765441/"
+              className="w-[48%] sm:w-auto"
+            >
+              <Button variant="outline" className="group relative overflow-hidden w-full">
+                <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                   Subscribe to Pulse
                 </span>
               </Button>
