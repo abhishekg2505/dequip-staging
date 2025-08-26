@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       className="scroll-mt-24 rounded-[20px] pb-10 pt-[170px] px-4 md:px-20 bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
     >
-      <div className="absolute inset-0 bg-black z-[0] bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat" />
+      {/* <div className="absolute inset-0 bg-black z-[0] bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat" /> */}
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[38%_62%] gap-10 text-center md:text-left ">
           {/* Left Side */}

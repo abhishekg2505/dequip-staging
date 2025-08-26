@@ -50,19 +50,19 @@ const MobileMenu = () => {
                       rel={item.link?.startsWith("http") ? "noopener noreferrer" : ""}
                       onClick={() => item.link && setIsSheetOpen(false)}
                     >
-                      <SheetTitle className="text-white-1 font-normal font-antonio text-h3 uppercase hover:bg-gradient-to-r from-sky-500 to-purple-500 hover:bg-clip-text hover:text-transparent">
+                      <SheetTitle className="text-h6 font-semibold bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {item.itemName}
                       </SheetTitle>
                     </Link>
-                    {/* {item.subMenu && <ChevronDown className="ml-2" />} */}
+                    {item.subMenu && <ChevronDown className="ml-2" />}
                   </div>
-                  {/* {openSubMenuIndex === idx && item.subMenu && (
+                  {openSubMenuIndex === idx && item.subMenu && (
                     <div className="pl-4 mt-2">
                       {item.subMenu.map((subItem, subIdx) => (
                         <Link
                           key={subIdx}
                           href={subItem.subMenuLink}
-                          className="block py-1"
+                          className="block py-1 text-h4 font-semibold bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent"
                           target={subItem.subMenuLink.startsWith("http") ? "_blank" : "_self"}
                           rel={subItem.subMenuLink.startsWith("http") ? "noopener noreferrer" : ""}
                           onClick={() => setIsSheetOpen(false)}
@@ -71,10 +71,10 @@ const MobileMenu = () => {
                         </Link>
                       ))}
                     </div>
-                  )} */}
+                  )}
                 </div>
               ))}
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <Link
                   href="mailto:business@quranium.org"
                   className=""
@@ -84,7 +84,7 @@ const MobileMenu = () => {
                     Contact
                   </SheetTitle>
                 </Link>
-              </div>
+              </div> */}
             </nav>
           </div>
         </SheetContent>

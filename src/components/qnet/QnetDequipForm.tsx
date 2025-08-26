@@ -253,7 +253,7 @@ export default function QnetDequipForm() {
           We ask all applicants to take the TPH Assessment; a 2-minute framework, designed by
           Quranium&rsquo;s CEO Kapil Dhiman, to understand how you show up in the world.
         </h5>
-        <h5 className="text-h5 font-montserrat">
+        <h5 className="text-h5 font-montserrat mb-5">
           It&rsquo;s not about popularity. It&rsquo;s about predictability, empathy, and presence.
         </h5>
         <Link href="https://trustperhuman.com/" target="_blank">

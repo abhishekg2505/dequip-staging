@@ -145,10 +145,10 @@ export default function HeroSection() {
               </div>
               <div
                 ref={btnsRef}
-                className="buttonsanim flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-4"
+                className="buttonsanim flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-4 gap-y-4"
               >
                 <Link href="/apply">
-                  <Button className="group relative overflow-hidden">
+                  <Button className="group relative overflow-hidden hover:bg-[#ffffff]">
                     <span className="text-p2 font-montserrat text-[#000000]">
                       Apply Now (DeQUIP 50)
                     </span>

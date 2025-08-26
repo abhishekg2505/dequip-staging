@@ -295,7 +295,7 @@ export default function PartnerDequipForm() {
               <span className="text-red-500 text-sm">{errors.founderemail.message as string}</span>
             )}
           </div>
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px] relative">
             <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
               Time zone
             </label>
@@ -350,7 +350,7 @@ export default function PartnerDequipForm() {
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
             <div className="max-w-[560px] columns-2 gap-4">
               {options.map((label, idx) => (
-                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2.5">
                   {/* Hidden checkbox */}
                   <input
                     type="checkbox"
@@ -458,7 +458,7 @@ export default function PartnerDequipForm() {
 
             <div className="">
               {options2.map((label, idx) => (
-                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2.5">
                   {/* Hidden checkbox */}
                   <input
                     type="checkbox"
@@ -556,7 +556,7 @@ export default function PartnerDequipForm() {
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
             <div className="">
               {whyYouAreFit.map((label, idx) => (
-                <label key={idx} className="flex items-center cursor-pointer gap-2">
+                <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2.5">
                   {/* Hidden checkbox */}
                   <input
                     type="checkbox"

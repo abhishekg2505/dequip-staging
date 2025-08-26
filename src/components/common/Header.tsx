@@ -76,10 +76,10 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed z-[60] top-0 left-0 right-0 tracking-tightest bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_100%)] overflow-hidden1"
+      className="fixed z-[60] top-0 left-0 right-0 tracking-tightest bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_100%)] border-b border-[#FFFFFF0F] overflow-hidden1"
     >
       <div className="relative px-4 md:px-10">
-        <div className="py-2.5 md:py-5 w-full mx-auto flex items-center justify-between rounded-[20px] ">
+        <div className="py-2.5 md:py-0 w-full mx-auto flex items-center justify-between rounded-[20px] ">
           <div ref={logoRef}>
             <Link href="/" className="shrink-0 p-3 block">
               <Image src="/logo.svg" alt="Quranium Logo" width={124} height={18} priority />

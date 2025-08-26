@@ -155,7 +155,7 @@ const DequipDecoded = () => {
           </h3>
           <h4
             ref={headingRef}
-            className="text-center text-h5 md:text-h4 font-montserrat font-semibold mt-[10px]"
+            className="text-center text-h5 md:text-h4 font-montserrat font-semibold mt-[10px] text-[#CDCDCD]"
           >
             This isn&rsquo;t just a label. It&rsquo;s a movement.
           </h4>

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode, Navigation, Mousewheel } from "swiper/modules";
 import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
@@ -83,6 +83,9 @@ const QnetClubMember: React.FC = () => {
   const para1Ref = useRef(null);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const para2Ref = useRef(null);
+  const swiperRef = useRef<any>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -171,6 +174,16 @@ const QnetClubMember: React.FC = () => {
         </h5>
         <div className="relative w-full">
           <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              // Set initial state
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
             modules={[Navigation]}
             speed={500}
             loop
@@ -230,12 +243,20 @@ const QnetClubMember: React.FC = () => {
           {/* Navigation Arrows */}
           <div className="flex justify-center gap-6 mt-6 md:mt-0 md:block">
             {/* Left Arrow */}
-            <div className="swiper-prev md:absolute md:-left-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
+            <div
+              className={`swiper-prev md:absolute md:-left-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
+                isBeginning ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+            >
               <MoveLeft className="text-white" />
             </div>
 
             {/* Right Arrow */}
-            <div className="swiper-next md:absolute md:-right-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-[#3C3747] hover:bg-white/20 p-2 rounded-full cursor-pointer">
+            <div
+              className={`swiper-next md:absolute md:-right-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
+                isEnd ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+            >
               <MoveRight className="text-white" />
             </div>
           </div>

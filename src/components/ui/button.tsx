@@ -9,9 +9,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "px-[20px] py-[10px] bg-[linear-gradient(164.66deg,_#FFFFFF_10.76%,_#999999_121.23%)] text-[#000000] border border-[rgba(255,255,255,0.1)]",
+          "px-[20px] py-[10px] bg-[linear-gradient(164.66deg,_#FFFFFF_10.76%,_#999999_121.23%)] hover:bg-none hover:bg-[#ffffff] text-[#000000] border border-[rgba(255,255,255,0.1)]",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        outline: "px-[20px] py-[10px] border border-[rgba(255,255,255,0.1)] bg-background",
+        outline:
+          "px-[20px] py-[10px] border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] bg-background",
       },
       size: {
         default: "",

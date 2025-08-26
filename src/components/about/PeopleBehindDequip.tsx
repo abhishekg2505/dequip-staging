@@ -19,7 +19,7 @@ export default function PeopleBehindDequip() {
         return words.map((part) => {
           if (part.trim().length === 0) return document.createTextNode(part);
           const span = document.createElement("span");
-          span.className = `${spanClass} inline-block opacity-0 `;
+          span.className = `${spanClass} inline-block opacity-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent`;
           span.textContent = part;
           return span;
         });
@@ -102,17 +102,6 @@ export default function PeopleBehindDequip() {
         ref={containerRef}
         className="relative w-full bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat"
       >
-        {/* <div className="absolute left-0 top-0 px-4 md:px-20 pt-[30px] z-10">
-          <Link href="/" className="">
-            <Image
-              src="/logo.svg"
-              alt="QMP logo"
-              width={128}
-              height={42}
-              className="w-full mb-5 md:mb-0"
-            />
-          </Link>
-        </div> */}
         <div className="relative pt-[120px] pb-[131px] md:pt-[120px] md:pb-[51px] w-full">
           <div className="h-16 absolute inset-0  z-10" />
           <div className="relative container mx-auto px-4 md:px-20">
