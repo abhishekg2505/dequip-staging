@@ -115,25 +115,25 @@ const SelectionCriteria = () => {
             <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Infra access: QSafe, QVM, Q-Remix
+                Infra access: QSafe, QVM, QRemix AI
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Investor and VC network access
+                Investor and Venture Capital (VC) network access
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Community building + go-to-market
+                Community building + Go-to-Market strategy
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5  justify-start">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Long-term integration into Quranium ecosystem
+                Long-term integration into the Quranium ecosystem
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ const SelectionCriteria = () => {
             <div className="flex flex-row gap-x-2 mt-5">
               <Image src="/images/about/star.svg" alt="star" width={10} height={10} />
               <p className="text-p2 text-[#D4D4D4] font-open-sans">
-                Tech innovation in blockchain, AI, quantum
+                Tech innovation in quantum, AI, blockchain
               </p>
             </div>
             <div className="flex flex-row gap-x-2 mt-1.5">

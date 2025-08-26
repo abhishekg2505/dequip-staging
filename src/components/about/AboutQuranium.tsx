@@ -110,14 +110,14 @@ const AboutQuranium = () => {
             intelligent digital ecosystem.
           </p>
           <p ref={heading2Ref} className="text-p3 md:text-p2 font-open-sans mb-[20px]">
-            Strategic partners include <strong>PwC, Quantum Basel, and Galxe,</strong> and the
+            Strategic partners include <strong>PwC, QuantumBasel, and Galxe,</strong> and the
             project is backed by
-            <strong>Animoca Brands</strong> and <strong>HyperScaled Ventures.</strong> Quranium
+            <strong> Animoca Brands</strong> and <strong>HyperScaled Ventures.</strong> Quranium
             launched its quantum-secure PoW blockchain in December 2024 and rolled out its PoS
             Convergence Layer and multichain QSafe Wallet in May 2025. Its growing ecosystem already
             spans 150,000+ community members, over 60 strategic partners, an over 1 million gamer
             alliance, 100+ AI-powered games, and over 20,000 daily transactions, with global
-            traction across 50+ countries. Quranium is proud to collaborate with over 40 leading
+            traction across 50+ countries. Quranium is proud to collaborate with over 60 leading
             media partners across Web3, AI, and cybersecurity to raise awareness of the quantum
             threat and spotlight the builders of tomorrow&rsquo;s secure internet.
           </p>

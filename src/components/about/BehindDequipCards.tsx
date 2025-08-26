@@ -21,7 +21,7 @@ const threats: ThreatCardProps[] = [
   {
     image: "/images/about/qremix.svg",
     title: "Supports via QVM, QSafe,",
-    desc: "QRemix",
+    desc: "QRemix AI",
   },
   {
     image: "/images/about/access.svg",

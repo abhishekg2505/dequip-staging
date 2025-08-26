@@ -2,7 +2,7 @@ import HeroSection from "@/src/components/partner/HeroSection";
 import PartnerDequipForm from "@/src/components/partner/PartnerDequipForm";
 import PartnerMessageBox from "@/src/components/partner/PartnerMessageBox";
 import { partnerMetadata } from "@/src/constants/metadata";
-import quraniumPreview from "../../public/images/quraniumPreview.png";
+import quraniumPreview from "../../../public/images/quraniumPreview.png";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

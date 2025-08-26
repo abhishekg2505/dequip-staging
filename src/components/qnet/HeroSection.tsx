@@ -168,8 +168,8 @@ const HeroSection: React.FC = () => {
                     not part of the DeQUIP 50 cohort.
                   </p>
                   <p className="text-p3 font-open-sans leading-normal text-[#EAEAEA] mt-5">
-                    You don&rsquo;t need a grant or investment to be part of this ecosystem. Just
-                    commitment. Curiosity. And a buck a minute.
+                    You don&rsquo;t need a grant or investment to join this ecosystem. Just
+                    commitment, curiosity, and a buck a minute.
                   </p>
                 </div>
               </div>

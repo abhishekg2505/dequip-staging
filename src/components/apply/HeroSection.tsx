@@ -133,9 +133,9 @@ const HeroSection: React.FC = () => {
                     form. We&rsquo;re not just looking for &rsquo;traction.&rsquo; We&rsquo;re
                     looking for conviction, creativity, and founders ready to reshape the
                     infrastructure of the internet. Please complete this application thoughtfully.
-                    We review every one. If selected, you&rsquo;ll join 49 other exceptional teams
-                    for a 90-day sprint to become quantum-proof, investor-ready, and
-                    ecosystem-integrated.
+                    Every submission is carefully reviewed, and if selected, you&rsquo;ll join 49
+                    other exceptional teams for a 90-day sprint to become quantum-proof,
+                    investor-ready, and ecosystem-integrated.
                   </p>
                 </div>
               </div>

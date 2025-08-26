@@ -226,7 +226,7 @@ export default function ApplyDequipForm() {
           </div>
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
-              Linekedin
+              Linkedin
             </label>
             <input
               {...register("founder.linkedIn")}

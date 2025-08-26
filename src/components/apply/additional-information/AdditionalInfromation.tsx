@@ -22,7 +22,7 @@ export default function AdditionalInformation({ register, errors }: Props) {
           <input
             {...register("uploadDeck")}
             id="uploadDeck"
-            placeholder="Startup Name here"
+            placeholder="Enter here"
             className="input"
             type="text"
           />
@@ -35,7 +35,7 @@ export default function AdditionalInformation({ register, errors }: Props) {
           <input
             {...register("uploadPhoto")}
             id="uploadPhoto"
-            placeholder="Startup Name here"
+            placeholder="Enter here"
             className="input"
             type="text"
           />

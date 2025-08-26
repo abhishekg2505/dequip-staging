@@ -18,7 +18,7 @@ export default function TrustPerHuman() {
       </h5>
       <h5 className="text-h5 font-montserrat">
         Trust Per Human provides us with your trust score, by considering your actions,
-        communication, and consistency. We need you to a score over 80 in order to proceed with your
+        communication, and consistency. A score above 80 is required to proceed with your
         application.
       </h5>
       <Link href="https://trustperhuman.com/" target="_blank">

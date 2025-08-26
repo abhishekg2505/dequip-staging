@@ -164,7 +164,7 @@ const DequipDecoded = () => {
             ref={heading2Ref}
             className="text-p4 text-[#EAEAEA] font-open-sans mt-[15px] mb-[20px]"
           >
-            DeQUIP stands for Decentralized Quantum-uncrackable Infrastructure Protocol, a new
+            DeQUIP stands for Decentralized Quantum-Uncrackable Infrastructure Protocol, a new
             category coined by Quranium to define the next generation of truly secure digital
             systems. It represents the shift from vulnerable Web3 infrastructure to architecture
             that is quantum-ready, AI-native, and fundamentally uncrackable.
@@ -178,7 +178,7 @@ const DequipDecoded = () => {
             <p ref={heading3Ref} className="text-p4 text-[#EAEAEA] font-open-sans">
               The DeQUIP 50 Incubator embodies this vision in supporting startups that are not only
               building applications, but reshaping the infrastructure of the future. To build in the
-              age of web3 and quantum, you must build DeQUIP.
+              age of Web3 and quantum, you must build DeQUIP.
             </p>
           </div>
 

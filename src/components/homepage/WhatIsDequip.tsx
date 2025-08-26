@@ -114,7 +114,7 @@ const WhatIsDequip = () => {
             </h3>
 
             <p ref={paraRef} className="text-p2 font-open-sans mt-[15px] mb-[20px]">
-              DeQUIP 50 is a high-intensity, multi-tiered startup InQubator for founders building at
+              DeQUIP50 is a high-intensity, multi-tiered startup incubator for founders building at
               the intersection of blockchain, AI, and quantum-secure infrastructure.
             </p>
             <Link ref={btnRef} href="/apply" target="_blank">

@@ -3,7 +3,7 @@ import ApplyMessageBox from "@/src/components/apply/ApplyMessageBox";
 import HeroSection from "@/src/components/apply/HeroSection";
 import SelectionCriteria from "@/src/components/apply/SelectionCriteria";
 import { applyMetadata } from "@/src/constants/metadata";
-import quraniumPreview from "../../public/images/quraniumPreview.png";
+import quraniumPreview from "../../../public/images/quraniumPreview.png";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

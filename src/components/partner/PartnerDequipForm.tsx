@@ -115,7 +115,7 @@ export default function PartnerDequipForm() {
           </div>
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="website" className="text-h6 font-montserratfont-medium">
-              website
+              Website
             </label>
             <input
               {...register("website")}
@@ -138,7 +138,7 @@ export default function PartnerDequipForm() {
             <input
               {...register("companySize")}
               id="companySize"
-              placeholder="SelectEnter here"
+              placeholder="Enter here"
               className="input"
               type="text"
             />
@@ -262,7 +262,7 @@ export default function PartnerDequipForm() {
           </div>
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
-              Linekedin
+              LinkedIn
             </label>
             <input
               {...register("founderLinkedin")}

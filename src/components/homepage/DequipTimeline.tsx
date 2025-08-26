@@ -157,7 +157,8 @@ const DequipTimeline: React.FC = () => {
           </span>
         </h3>
         <h5 ref={para1Ref} className="text-p2 font-open-sans  mt-2.5">
-          A subheading should go here explaining why we are choosing this timeline over any other.
+          A timeline built to guide founders from application to Demo Day, ensuring every team is
+          investor-ready and ecosystem-integrated.
         </h5>
         <div className="relative w-full">
           <Swiper
@@ -255,7 +256,7 @@ const DequipTimeline: React.FC = () => {
           <Link href="/apply" className="w-[48%] sm:w-auto">
             <Button className="group relative overflow-hidden hover:bg-[#ffffff] w-full">
               <span className="text-[12px] sm:text-p2 font-montserrat text-[#000000]">
-                Apply Now (DeQUIP 50)
+                Apply Now (DeQUIP50)
               </span>
             </Button>
           </Link>

@@ -2,7 +2,7 @@ import HeroSection from "@/src/components/mentor/HeroSection";
 import MentorDequipForm from "@/src/components/mentor/MentorDequipForm";
 import MentorMessageBox from "@/src/components/mentor/MentorMessageBox";
 import { mentorMetadata } from "@/src/constants/metadata";
-import quraniumPreview from "../../public/images/quraniumPreview.png";
+import quraniumPreview from "../../../public/images/quraniumPreview.png";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

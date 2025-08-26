@@ -4,7 +4,7 @@ import QnetClubMember from "@/src/components/qnet/QnetClubMember";
 import QnetDequipForm from "@/src/components/qnet/QnetDequipForm";
 import QnetMessageBox from "@/src/components/qnet/QnetMessageBox";
 import { qnetMetadata } from "@/src/constants/metadata";
-import quraniumPreview from "../../public/images/quraniumPreview.png";
+import quraniumPreview from "../../../public/images/quraniumPreview.png";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

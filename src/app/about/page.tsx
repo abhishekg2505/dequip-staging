@@ -3,7 +3,7 @@ import DequipDecoded from "@/src/components/about/DequipDecoded";
 import HeroSection from "@/src/components/about/HeroSection";
 import PeopleBehindDequip from "@/src/components/about/PeopleBehindDequip";
 import { aboutMetadata } from "@/src/constants/metadata";
-import quraniumPreview from "../../public/images/quraniumPreview.png";
+import quraniumPreview from "../../../public/images/quraniumPreview.png";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

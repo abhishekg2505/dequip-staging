@@ -11,14 +11,14 @@ export default function QnetDequipForm() {
   const options = [
     "Mentor Calls",
     "Templates & Resources",
-    "Designing for futureproof securityMasterclasses",
+    "Designing for futureproof security Masterclasses",
     "Founder Matching",
     "Partner Discounts",
     "Early Access to Ecosystem",
   ];
   const finalSteps = [
     "I’ve completed the TPH assessment",
-    "Templates & ResourcesI understand that mentor calls are $1/min paid in $QRN",
+    "I understand mentor calls are $1/min, paid in $QRN",
     "I’ll set up QSafe Wallet to access QNet services",
   ];
   const {

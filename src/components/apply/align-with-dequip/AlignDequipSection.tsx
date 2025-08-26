@@ -18,7 +18,7 @@ export default function AlignDequipSection({ register, errors }: Props) {
       </h2>
       <h5 className="text-left text-h5 font-montserrat font-medium mb-10">
         We&rsquo;re not here to incubate features. We&rsquo;re here to incubate infrastructure.
-        DeQUIP stands for “Decentralized Quantum-uncrackable Infrastructure Protocol.”{" "}
+        DeQUIP stands for “Decentralized Quantum-Uncrackable Infrastructure Protocol.”{" "}
       </h5>
       <div className="grid grid-cols-1 gap-5 mb-10">
         <div className="flex flex-col gap-[16px]">
@@ -29,7 +29,7 @@ export default function AlignDequipSection({ register, errors }: Props) {
           <input
             {...register("startupEmbody")}
             id="startupEmbody"
-            placeholder="Startup Name here"
+            placeholder="Enter here"
             className="input"
             type="text"
           />
