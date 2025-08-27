@@ -102,16 +102,16 @@ export default function Header() {
                   {item.link ? (
                     <Link
                       href={item.link}
-                      className="flex items-center gap-2 text-center hover:opacity-60 duration-300"
+                      className="flex items-center gap-2 text-center duration-300"
                     >
-                      <span className="text-p3 font-semibold leading-[26px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      <span className=" hover:bg-none hover:text-[#ffffff] text-p3 font-semibold leading-[26px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {item.itemName}
                       </span>
                       {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}
                     </Link>
                   ) : (
                     <div className="flex items-center gap-2 cursor-default text-white-1 font-semibold text-p3 leading-[26px]">
-                      <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                      <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent hover:bg-none hover:text-[#ffffff]">
                         {item.itemName}
                       </span>
                       {item.subMenu && <ChevronDown className="stroke-2 text-white-1" size={16} />}

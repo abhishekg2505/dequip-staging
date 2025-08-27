@@ -407,7 +407,7 @@ export default function PartnerDequipForm() {
               className="group relative overflow-hidden"
               onClick={() => append("")}
             >
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                 Add more links
               </span>
             </Button>
@@ -809,7 +809,7 @@ export default function PartnerDequipForm() {
       </Button>
       {errorMessage && <p className="mt-4 text-red-500 font-medium">{errorMessage}</p>}
       {isSubmitSuccessful && (
-        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+        <div className="mt-6 p-4 text-left bg-[#000000] rounded">
           <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.
           </h2>

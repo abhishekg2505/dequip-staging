@@ -211,14 +211,11 @@ const DequipTimeline: React.FC = () => {
                         backgroundPosition: `${threat.imagepos}`,
                       }}
                     >
-                      <Button
-                        variant="outline"
-                        className="group relative overflow-hidden px-[12px] py-[6px]"
-                      >
+                      <div className="group relative overflow-hidden px-[12px] py-[6px] border border-[rgba(255,255,255,0.1)] rounded-full">
                         <span className="text-p3 font-open-sans bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                           {threat.pillbtn}
                         </span>
-                      </Button>
+                      </div>
                       <h6 className="text-h6 font-montserrat font-medium mt-5">
                         <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                           {threat.title}
@@ -254,7 +251,7 @@ const DequipTimeline: React.FC = () => {
         </div>
         <div className="buttonsanim flex flex-wrap items-center justify-center gap-x-2 gap-y-4 mt-5">
           <Link href="/apply" className="w-[48%] sm:w-auto">
-            <Button className="group relative overflow-hidden hover:bg-[#ffffff] w-full">
+            <Button className="group relative overflow-hidden w-full">
               <span className="text-[12px] sm:text-p2 font-montserrat text-[#000000]">
                 Apply Now (DeQUIP50)
               </span>
@@ -262,14 +259,14 @@ const DequipTimeline: React.FC = () => {
           </Link>
           <Link href="/mentor" className="w-[48%] sm:w-auto">
             <Button variant="outline" className="group relative overflow-hidden w-full">
-              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]  group-hover:bg-none group-hover:text-[#ffffff]">
                 Become a Mentor
               </span>
             </Button>
           </Link>
           <Link href="/partner" className="w-[48%] sm:w-auto">
             <Button variant="outline" className="group relative overflow-hidden w-full">
-              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
                 Partner With Us
               </span>
             </Button>
@@ -279,7 +276,7 @@ const DequipTimeline: React.FC = () => {
             className="w-[48%] sm:w-auto"
           >
             <Button variant="outline" className="group relative overflow-hidden w-full">
-              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
                 Subscribe to Pulse
               </span>
             </Button>

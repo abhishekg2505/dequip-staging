@@ -148,22 +148,22 @@ export default function HeroSection() {
                 className="buttonsanim flex flex-wrap items-center justify-center gap-x-2 gap-y-4"
               >
                 <Link href="/apply" className="w-[48%] sm:w-auto">
-                  <Button className="group relative overflow-hidden hover:bg-[#ffffff] w-full">
+                  <Button className="group relative overflow-hidden w-full">
                     <span className="text-[12px] sm:text-p2 font-montserrat text-[#000000]">
-                      Apply Now (DeQUIP 50)
+                      Apply Now (DeQUIP50)
                     </span>
                   </Button>
                 </Link>
                 <Link href="/mentor" className="w-[48%] sm:w-auto">
                   <Button variant="outline" className="group relative overflow-hidden w-full">
-                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]  group-hover:bg-none group-hover:text-[#ffffff]">
                       Become a Mentor
                     </span>
                   </Button>
                 </Link>
                 <Link href="/partner" className="w-[48%] sm:w-auto">
                   <Button variant="outline" className="group relative overflow-hidden w-full">
-                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
                       Partner With Us
                     </span>
                   </Button>
@@ -173,7 +173,7 @@ export default function HeroSection() {
                   className="w-[48%] sm:w-auto"
                 >
                   <Button variant="outline" className="group relative overflow-hidden w-full">
-                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                    <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
                       Subscribe to Pulse
                     </span>
                   </Button>

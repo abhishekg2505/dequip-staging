@@ -388,7 +388,7 @@ export default function MentorDequipForm() {
                     className="mt-2 w-fit px-[12px] py-[2px]"
                     onClick={() => remove(idx)}
                   >
-                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                    <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                       Remove
                     </span>
                   </Button>
@@ -401,7 +401,7 @@ export default function MentorDequipForm() {
               className="group relative overflow-hidden w-fit"
               onClick={() => append({ url: "" })}
             >
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                 Add more links
               </span>
             </Button>
@@ -537,14 +537,14 @@ export default function MentorDequipForm() {
           what makes people feel safe, open, and willing to invest; emotionally, socially, or
           financially.
         </h5>
-        <h5 className="text-h5 font-montserrat">
+        <h5 className="text-h5 font-montserrat mb-5">
           Before we finalize your application, we kindly ask that you complete the TPH
           self-assessment. It takes just 2 minutes and helps us build the most values-aligned,
           high-trust incubator community in Web3.
         </h5>
         <Link href="https://trustperhuman.com/" target="_blank">
           <Button type="button" variant="outline" className="group relative overflow-hidden">
-            <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+            <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
               Take the TPH Self-Assessment
             </span>
           </Button>
@@ -665,7 +665,7 @@ export default function MentorDequipForm() {
       </Button>
       {errorMessage && <p className="mt-4 text-red-500 font-medium">{errorMessage}</p>}
       {isSubmitSuccessful && (
-        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+        <div className="mt-6 p-4 text-left bg-[#000000] rounded">
           <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.
           </h2>

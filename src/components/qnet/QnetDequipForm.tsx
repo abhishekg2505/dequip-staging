@@ -237,6 +237,11 @@ export default function QnetDequipForm() {
                 </>
               )}
             />
+            {errors.interestedOptions && (
+              <span className="text-red-500 text-sm">
+                {errors.interestedOptions.message as string}
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -258,7 +263,7 @@ export default function QnetDequipForm() {
         </h5>
         <Link href="https://trustperhuman.com/" target="_blank">
           <Button type="button" variant="outline" className="group relative overflow-hidden">
-            <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+            <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
               Take the TPH Self-Assessment
             </span>
           </Button>
@@ -279,6 +284,9 @@ export default function QnetDequipForm() {
                 className="input"
                 type="text"
               />
+              {errors.yourScore && (
+                <span className="text-red-500 text-sm">{errors.yourScore.message as string}</span>
+              )}
             </div>
           </div>
         </div>
@@ -328,6 +336,9 @@ export default function QnetDequipForm() {
                 </>
               )}
             />
+            {errors.finalSteps && (
+              <span className="text-red-500 text-sm">{errors.finalSteps.message as string}</span>
+            )}
           </div>
         </div>
       </section>
@@ -346,7 +357,7 @@ export default function QnetDequipForm() {
 
       {/* Success message */}
       {isSubmitSuccessful && (
-        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+        <div className="mt-6 p-4 text-left bg-[#000000] rounded">
           <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.
           </h2>

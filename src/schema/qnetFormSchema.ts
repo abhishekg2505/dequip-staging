@@ -7,9 +7,9 @@ export const qnetFormSchema = z.object({
   founderemail: z.string().email("Must be valid email"),
   startupProjectName: z.string().optional(),
   whatAreYouBuilding: z.string().min(3, "Describe what you are building"),
-  interestedOptions: z.array(z.string()).optional(),
-  yourScore: z.string(),
-  finalSteps: z.array(z.string()).optional(),
+  interestedOptions: z.array(z.string()).min(1, { message: "Please select at least one option" }),
+  yourScore: z.string().min(1, { message: "Score is required" }),
+  finalSteps: z.array(z.string()).min(1, { message: "Please select at least one option" }),
 });
 
 export type QnetFormType = z.infer<typeof qnetFormSchema>;

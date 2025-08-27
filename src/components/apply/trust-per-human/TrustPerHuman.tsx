@@ -16,14 +16,14 @@ export default function TrustPerHuman() {
         We ask all applicants to take the TPH Assessment; a 2-minute framework, designed by
         Quranium&rsquo;s CEO Kapil Dhiman, to understand how you show up in the world.
       </h5>
-      <h5 className="text-h5 font-montserrat">
+      <h5 className="text-h5 font-montserrat mb-5">
         Trust Per Human provides us with your trust score, by considering your actions,
         communication, and consistency. A score above 80 is required to proceed with your
         application.
       </h5>
       <Link href="https://trustperhuman.com/" target="_blank">
         <Button type="button" variant="outline" className="group relative overflow-hidden">
-          <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+          <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
             Take the TPH Self-Assessment
           </span>
         </Button>

@@ -173,7 +173,7 @@ export default function ApplyDequipForm() {
             />
           </div>
 
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px] relative">
             <label htmlFor="dateFounded" className="text-h6 font-montserratfont-medium">
               Time Zone
             </label>
@@ -254,7 +254,7 @@ export default function ApplyDequipForm() {
               <p className="text-red-500 text-sm">{errors.founder?.email.message}</p>
             )}
           </div>
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px] relative">
             <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
               Time zone
             </label>
@@ -373,7 +373,7 @@ export default function ApplyDequipForm() {
 
       {/* Success message */}
       {isSubmitSuccessful && (
-        <div className="mt-6 p-4 text-center bg-[#000000] rounded">
+        <div className="mt-6 p-4 text-left bg-[#000000] rounded">
           <h2 className="text-h5 font-montserrat font-semibold">
             Thank you for applying! We have received your details.
           </h2>

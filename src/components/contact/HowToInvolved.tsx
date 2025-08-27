@@ -201,7 +201,7 @@ const HowToInvolved: React.FC = () => {
           </h5>
           <Link href="#" target="_blank">
             <Button variant="outline" className="group relative overflow-hidden">
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                 Connect with DeQUIP50 team
               </span>
             </Button>
