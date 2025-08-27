@@ -188,7 +188,7 @@ export default function ApplyDequipForm() {
             )}
           </div>
 
-          <div className="flex flex-col gap-[16px] relative">
+          <div className="flex flex-col gap-[16px] relative overflow-hidden">
             <label htmlFor="dateFounded" className="text-h6 font-montserratfont-medium">
               Time Zone
             </label>

@@ -27,7 +27,7 @@ export default function QnetDequipForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<QnetFormType>({ resolver: zodResolver(qnetFormSchema) });
+  } = useForm<QnetFormType>({ resolver: zodResolver(qnetFormSchema), mode: "all" });
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);

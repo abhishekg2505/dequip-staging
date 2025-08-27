@@ -41,6 +41,7 @@ export default function PartnerDequipForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<PartnerFormType>({
     resolver: zodResolver(partnerFormSchema),
+    mode: "all",
     defaultValues: {
       founderTimezone: "",
       checkedOptions2: [],

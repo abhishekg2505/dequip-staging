@@ -15,12 +15,7 @@ export const mentorFormSchema = z.object({
     .min(0)
     .max(2)
     .regex(/^\d+$/, { message: "Year of experience must be only numbers" }),
-  // yearOfExperience: z
-  //   .number()
-  //   .min(1, { message: "Year of experience cannot be negative" })
-  //   .refine((val) => val !== undefined, {
-  //     message: "Year of experience is required",
-  //   }),
+
   specialization: z.array(z.string()).min(1, { message: "Please select at least one option" }),
   mentoredStartups: z.string().min(1, { message: "Please select" }),
   participatedIncubator: z.string().min(1, { message: "Please select" }),

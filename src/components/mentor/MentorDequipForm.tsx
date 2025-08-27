@@ -32,6 +32,7 @@ export default function MentorDequipForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<MentorFormType>({
     resolver: zodResolver(mentorFormSchema),
+    mode: "all",
     defaultValues: {
       mentorTimezone: "",
       workWithNotableCompanies: [{ url: "" }],
