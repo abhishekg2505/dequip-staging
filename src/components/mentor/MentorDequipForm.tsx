@@ -320,6 +320,11 @@ export default function MentorDequipForm() {
                   </>
                 )}
               />
+              {errors.specialization && (
+                <span className="text-red-500 text-sm">
+                  {errors.specialization.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -343,6 +348,11 @@ export default function MentorDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.mentoredStartups && (
+                <span className="text-red-500 text-sm">
+                  {errors.mentoredStartups.message as string}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-4 mt-10">
@@ -364,6 +374,11 @@ export default function MentorDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.participatedIncubator && (
+                <span className="text-red-500 text-sm">
+                  {errors.participatedIncubator.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -503,6 +518,11 @@ export default function MentorDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.selectionPanels && (
+                <span className="text-red-500 text-sm">
+                  {errors.selectionPanels.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -565,6 +585,9 @@ export default function MentorDequipForm() {
                 className="input"
                 type="text"
               />
+              {errors.TPHScore && (
+                <span className="text-red-500 text-sm">{errors.TPHScore.message as string}</span>
+              )}
             </div>
           </div>
         </div>
@@ -589,6 +612,9 @@ export default function MentorDequipForm() {
                 className="input"
                 rows={4}
               />
+              {errors.shareBio && (
+                <span className="text-red-500 text-sm">{errors.shareBio.message as string}</span>
+              )}
             </div>
           </div>
         </div>
@@ -606,6 +632,9 @@ export default function MentorDequipForm() {
                 className="input"
                 type="text"
               />
+              {errors.profileLink && (
+                <span className="text-red-500 text-sm">{errors.profileLink.message as string}</span>
+              )}
             </div>
           </div>
         </div>
@@ -629,6 +658,11 @@ export default function MentorDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.pulseNewsletter && (
+                <span className="text-red-500 text-sm">
+                  {errors.pulseNewsletter.message as string}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-4 mt-8">
@@ -650,6 +684,11 @@ export default function MentorDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.panelInvites && (
+                <span className="text-red-500 text-sm">
+                  {errors.panelInvites.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
