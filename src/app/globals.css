@@ -137,7 +137,7 @@ body {
 }
 
 button:hover svg {
-  stroke: #601dff;
+  /* stroke: #601dff; */
 }
 
 /* globals.css or Tailwind class override */

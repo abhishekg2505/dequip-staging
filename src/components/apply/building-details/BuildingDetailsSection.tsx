@@ -40,9 +40,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
-          {/* {errors.buildingMatter && (
+          {errors.buildingMatter && (
             <p className="text-red-500 text-sm">{errors.buildingMatter.message}</p>
-          )} */}
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -51,7 +51,7 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             We&rsquo;re not after jargon. Tell us what you&rsquo;re solving and why now.
           </label>
           <input {...register("jargon")} placeholder="Enter here" className="input" type="text" />
-          {/* {errors.jargon && <p className="text-red-500 text-sm">{errors.jargon.message}</p>} */}
+          {errors.jargon && <p className="text-red-500 text-sm">{errors.jargon.message}</p>}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -65,6 +65,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.whatsYourEdge && (
+            <span className="text-red-500 text-sm">{errors.whatsYourEdge.message as string}</span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[16px]">
@@ -77,6 +80,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.whatsApproach && (
+            <span className="text-red-500 text-sm">{errors.whatsApproach.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -90,6 +96,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.whatsProduct && (
+            <span className="text-red-500 text-sm">{errors.whatsProduct.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -124,6 +133,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
               <span className="text-white text-sm">{label}</span>
             </label>
           ))}
+          {errors.quantumOptions && (
+            <span className="text-red-500 text-sm">{errors.quantumOptions.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -132,6 +144,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             How does your startup relate to AI?
           </label>
           <input {...register("relateAI")} placeholder="Enter here" className="input" type="text" />
+          {errors.relateAI && (
+            <span className="text-red-500 text-sm">{errors.relateAI.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -166,6 +181,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
               <span className="text-white text-sm">{label}</span>
             </label>
           ))}
+          {errors.aiOptions && (
+            <span className="text-red-500 text-sm">{errors.aiOptions.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -180,6 +198,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.decentralized && (
+            <span className="text-red-500 text-sm">{errors.decentralized.message as string}</span>
+          )}
         </div>
       </div>
 
@@ -199,6 +220,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.idea && (
+            <span className="text-red-500 text-sm">{errors.idea.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -213,6 +237,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.MVPPrototype && (
+            <span className="text-red-500 text-sm">{errors.MVPPrototype.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -227,6 +254,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.liveUsers && (
+            <span className="text-red-500 text-sm">{errors.liveUsers.message as string}</span>
+          )}
         </div>
         <div className="flex flex-col gap-[16px]">
           <label htmlFor="revenue" className="text-h6 font-montserratfont-medium">
@@ -239,6 +269,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.revenue && (
+            <span className="text-red-500 text-sm">{errors.revenue.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -253,6 +286,9 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.tokenLaunched && (
+            <span className="text-red-500 text-sm">{errors.tokenLaunched.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -267,205 +303,11 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.other && (
+            <span className="text-red-500 text-sm">{errors.other.message as string}</span>
+          )}
         </div>
       </div>
     </section>
   );
 }
-
-// ("use client");
-
-// import type { FieldErrors } from "react-hook-form";
-// import { formValues } from "../ApplyDequipForm";
-
-// type Props = {
-//   register: any;
-//   errors: FieldErrors<formValues>;
-// };
-
-// export default function BuildingDetailsSection({ register, errors }: Props) {
-//   const quantumOptions = [
-//     "Securing data, assets, or computation",
-//     "Integrating quantum hardware / resilience",
-//     "Designing for futureproof security",
-//     "Not relevant, but we want to learn and build for it",
-//   ];
-
-//   const aiOptions = [
-//     "Building or deploying AI models",
-//     "Enabling autonomous agents",
-//     "Using AI in infrastructure (e.g., scheduling, risk, anomaly detection)",
-//     "Other",
-//   ];
-
-//   return (
-//     <section>
-//       <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
-//         <span
-//           className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)]
-//                        bg-clip-text text-transparent"
-//         >
-//           What You’re Building
-//         </span>
-//       </h2>
-
-//       {/* === What are you building === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">
-//           What are you building and why does it matter?
-//         </label>
-//         <input
-//           {...register("buildingMatter")}
-//           placeholder="Enter here"
-//           className="input"
-//           type="text"
-//         />
-//         {errors.buildingMatter && (
-//           <p className="text-red-500 text-sm">{errors.buildingMatter.message}</p>
-//         )}
-//       </div>
-
-//       {/* === Jargon === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">
-//           We’re not after jargon. Tell us what you’re solving and why now.
-//         </label>
-//         <input {...register("jargon")} placeholder="Enter here" className="input" type="text" />
-//         {errors.jargon && <p className="text-red-500 text-sm">{errors.jargon.message}</p>}
-//       </div>
-
-//       {/* === Edge & Approach === */}
-//       <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-5">
-//         <div>
-//           <label className="text-h6 font-montserrat font-medium">What’s your edge?</label>
-//           <input
-//             {...register("whatsYourEdge")}
-//             placeholder="Enter here"
-//             className="input"
-//             type="text"
-//           />
-//         </div>
-//         <div>
-//           <label className="text-h6 font-montserrat font-medium">
-//             What makes your approach different, better, or inevitable?
-//           </label>
-//           <input
-//             {...register("whatsApproach")}
-//             placeholder="Enter here"
-//             className="input"
-//             type="text"
-//           />
-//         </div>
-//       </div>
-
-//       {/* === Quantum-ready === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">
-//           How is your product/protocol quantum-ready or quantum-relevant?
-//         </label>
-//         <input
-//           {...register("whatsProduct")}
-//           placeholder="Enter here"
-//           className="input"
-//           type="text"
-//         />
-//       </div>
-
-//       {/* === Quantum Options (Checkbox Group) === */}
-//       <div className="mb-6">
-//         <p className="text-h6 font-montserrat font-medium">
-//           Check all that apply and elaborate below
-//         </p>
-//         {quantumOptions.map((label, idx) => (
-//           <label key={idx} className="flex items-center gap-2 cursor-pointer">
-//             <input type="checkbox" value={label} {...register("quantumOptions")} />
-//             <span>{label}</span>
-//           </label>
-//         ))}
-//       </div>
-
-//       {/* === Relate to AI === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">
-//           How does your startup relate to AI?
-//         </label>
-//         <input {...register("relateAI")} placeholder="Enter here" className="input" type="text" />
-//       </div>
-
-//       {/* === AI Options (Checkbox Group) === */}
-//       <div className="mb-6">
-//         <p className="text-h6 font-montserrat font-medium">
-//           Check all that apply and elaborate below
-//         </p>
-//         {aiOptions.map((label, idx) => (
-//           <label key={idx} className="flex items-center gap-2 cursor-pointer">
-//             <input type="checkbox" value={label} {...register("aiOptions")} />
-//             <span>{label}</span>
-//           </label>
-//         ))}
-//       </div>
-
-//       {/* === Decentralized === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">
-//           Are you building something decentralized? Why or why not?
-//         </label>
-//         <input
-//           {...register("decentralized")}
-//           placeholder="Enter here"
-//           className="input"
-//           type="text"
-//         />
-//       </div>
-
-//       {/* === Project Stage === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">Idea?</label>
-//         <input {...register("idea")} placeholder="Enter here" className="input" type="text" />
-//       </div>
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">MVP/Prototype</label>
-//         <input
-//           {...register("MVPPrototype")}
-//           placeholder="Enter here"
-//           className="input"
-//           type="text"
-//         />
-//       </div>
-
-//       {/* === Metrics === */}
-//       <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-5">
-//         <div>
-//           <label className="text-h6 font-montserrat font-medium">Live users</label>
-//           <input
-//             {...register("liveUsers")}
-//             placeholder="Enter here"
-//             className="input"
-//             type="text"
-//           />
-//         </div>
-//         <div>
-//           <label className="text-h6 font-montserrat font-medium">Revenue</label>
-//           <input {...register("revenue")} placeholder="Enter here" className="input" type="text" />
-//         </div>
-//       </div>
-
-//       {/* === Token === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">Token Launched</label>
-//         <input
-//           {...register("tokenLaunched")}
-//           placeholder="Enter here"
-//           className="input"
-//           type="text"
-//         />
-//       </div>
-
-//       {/* === Other === */}
-//       <div className="mb-6">
-//         <label className="text-h6 font-montserrat font-medium">Other</label>
-//         <input {...register("other")} placeholder="Enter here" className="input" type="text" />
-//       </div>
-//     </section>
-//   );
-// }

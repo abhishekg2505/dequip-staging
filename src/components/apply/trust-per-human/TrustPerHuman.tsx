@@ -1,9 +1,13 @@
 "use client";
-
+import type { FieldErrors } from "react-hook-form";
+import { applyFormSchema, ApplyFormType } from "@/src/schema/applyFormSchema";
 import Link from "next/link";
 import { Button } from "../../ui/button";
-
-export default function TrustPerHuman() {
+type Props = {
+  register: any;
+  errors: FieldErrors<ApplyFormType>;
+};
+export default function TrustPerHuman({ register, errors }: Props) {
   return (
     <section className="mt-20">
       <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
@@ -38,12 +42,13 @@ export default function TrustPerHuman() {
               Enter your score
             </label>
             <input
-              name="yourScore"
+              {...register("yourScore")}
               id="yourScore"
               placeholder="Enter here"
               className="input"
               type="text"
             />
+            {errors.yourScore && <p className="text-red-500 text-sm">{errors.yourScore.message}</p>}
           </div>
         </div>
       </div>

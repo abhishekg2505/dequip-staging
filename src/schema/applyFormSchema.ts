@@ -1,10 +1,10 @@
 import { z } from "zod";
 export const founderSchema = z.object({
-  fullName: z.string(),
-  linkedIn: z.string().url(),
-  role: z.string(),
+  fullName: z.string().min(3, { message: "This field is required" }),
+  linkedIn: z.string().min(3, { message: "This field is required" }).url(),
+  role: z.string().min(3, { message: "This field is required" }),
   email: z.string().min(1, "Email is required").email("Invalid email"),
-  timeZone: z.string().optional(),
+  timeZone: z.string().min(0, { message: "This field is required" }),
 });
 export type Founder = z.infer<typeof founderSchema>;
 
@@ -14,15 +14,15 @@ export const applyFormSchema = z.object({
     .string()
     .min(5, "startup name is required and must be greater than 4")
     .max(20, "must be less than 20"),
-  oneLinePitch: z.string(),
+  oneLinePitch: z.string().min(3, { message: "This field is required" }),
   websiteURL: z.string().url(),
-  hqLocation: z.string(),
-  incorporation: z.string(),
-  timeZone: z.string(),
+  hqLocation: z.string().min(3, { message: "This field is required" }),
+  incorporation: z.string().min(3, { message: "This field is required" }),
+  timeZone: z.string().min(0, { message: "This field is required" }),
   // Founder Details
   founder: founderSchema,
   coFounders: z.array(founderSchema),
-  fullTimeTeam: z.string(),
+  fullTimeTeam: z.string().min(1, { message: "This field is required" }),
   howToHear: z.string({ message: "Please select where you heard about us" }),
 
   // What You’re Building
@@ -30,44 +30,48 @@ export const applyFormSchema = z.object({
   jargon: z.string().min(1, "This field is required"),
   whatsYourEdge: z.string().min(1, "This field is required"),
   whatsApproach: z.string().min(1, "This field is required"),
-  whatsProduct: z.string().optional(),
+  whatsProduct: z.string().min(3, { message: "This field is required" }),
   quantumOptions: z.array(z.string()),
-  relateAI: z.string().optional(),
+  relateAI: z.string().min(1, { message: "This field is required" }),
   aiOptions: z.array(z.string()),
-  decentralized: z.string().optional(),
-  idea: z.string().optional(),
-  MVPPrototype: z.string().optional(),
-  liveUsers: z.string().optional(),
-  revenue: z.string().optional(),
-  tokenLaunched: z.string().optional(),
+  decentralized: z.string().min(1, { message: "This field is required" }),
+  idea: z.string().min(3, { message: "This field is required" }),
+  MVPPrototype: z.string().min(1, { message: "This field is required" }),
+  liveUsers: z.string().min(3, { message: "This field is required" }),
+  revenue: z.string().min(3, { message: "This field is required" }),
+  tokenLaunched: z.string().min(1, { message: "This field is required" }),
   other: z.string().optional(),
-
   // Alignment With DeQUIP
-  startupEmbody: z.string(),
+  startupEmbody: z.string().min(1, { message: "This field is required" }),
 
   // Vision, Readiness, & Fit
-  joinDequip: z.string(),
-  whatsYourBlocker: z.string(),
+  joinDequip: z.string().min(1, { message: "This field is required" }),
+  whatsYourBlocker: z.string().min(1, { message: "This field is required" }),
   mentorshipKind: z.array(z.string()),
-  raiseFunds: z.string(),
-  atWhatStage: z.string(),
+  raiseFunds: z.string().min(1, { message: "This field is required" }),
+  atWhatStage: z.string().min(0).max(2).regex(/^\d+$/, { message: "score must be only numbers" }),
   // Bonus Round
-  launchedbefor: z.string().url(),
   projectUrls: z.array(
     z.object({
       url: z.string().url("Please enter a valid URL"),
     })
   ),
-  remoteFirstIncubator: z.string(),
-  explain: z.string(),
-  attendDemoDay: z.string(),
-  featuredPublicly: z.string(),
-  expectationsAboveQuestion: z.string(),
+  evenFlopped: z.string().min(3, { message: "This field is required" }),
+  rememberTeam: z.string().min(3, { message: "This field is required" }),
 
+  // Logistic
+  remoteFirstIncubator: z.string().min(3, { message: "This field is required" }),
+  explain: z.string().min(1, { message: "This field is required" }),
+  attendDemoDay: z.string().min(1, { message: "This field is required" }),
+  featuredPublicly: z.string().min(1, { message: "This field is required" }),
+  expectationsAboveQuestion: z.string().min(1, { message: "This field is required" }),
   // Additional Information
-  uploadDeck: z.string().url(),
-  uploadPhoto: z.string().url(),
-  SubscribeMeToPulse: z.string(),
+  uploadDeck: z.string().url("Please enter valid url"),
+  uploadPhoto: z.string().url("Please enter valid url"),
+  SubscribeMeToPulse: z.string().min(1, { message: "This field is required" }),
+
+  // And finally… Trust Per Human (TPH)
+  yourScore: z.string().min(0).max(2).regex(/^\d+$/, { message: "score must be only numbers" }),
 });
 
 // Inferred full form values type to use everywhere in your app

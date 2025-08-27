@@ -116,6 +116,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.startupName && (
+              <span className="text-red-500 text-sm">{errors.startupName.message as string}</span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
@@ -130,6 +133,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.oneLinePitch && (
+              <span className="text-red-500 text-sm">{errors.oneLinePitch.message as string}</span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -144,6 +150,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.websiteURL && (
+              <span className="text-red-500 text-sm">{errors.websiteURL.message as string}</span>
+            )}
           </div>
 
           <div className="flex flex-col gap-[16px]">
@@ -157,6 +166,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.hqLocation && (
+              <span className="text-red-500 text-sm">{errors.hqLocation.message as string}</span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -171,6 +183,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.incorporation && (
+              <span className="text-red-500 text-sm">{errors.incorporation.message as string}</span>
+            )}
           </div>
 
           <div className="flex flex-col gap-[16px] relative">
@@ -184,6 +199,9 @@ export default function ApplyDequipForm() {
                 <TimezoneSelect value={field.value} onChange={field.onChange} />
               )}
             />
+            {errors.timeZone && (
+              <span className="text-red-500 text-sm">{errors.timeZone.message as string}</span>
+            )}
           </div>
         </div>
       </section>
@@ -208,6 +226,11 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founder?.fullName && (
+              <span className="text-red-500 text-sm">
+                {errors.founder.fullName.message as string}
+              </span>
+            )}
           </div>
         </div>
 
@@ -223,6 +246,9 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founder?.role && (
+              <span className="text-red-500 text-sm">{errors.founder.role.message as string}</span>
+            )}
           </div>
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
@@ -235,6 +261,11 @@ export default function ApplyDequipForm() {
               className="input"
               type="text"
             />
+            {errors.founder?.linkedIn && (
+              <span className="text-red-500 text-sm">
+                {errors.founder.linkedIn.message as string}
+              </span>
+            )}
           </div>
         </div>
 
@@ -301,13 +332,16 @@ export default function ApplyDequipForm() {
               Have you launched anything before? Show us. Include GitHub, product links, demo
               videos, whitepapers, etc.
             </label>
-            <input
+            {/* <input
               {...register("launchedbefor")}
               id="launchedbefor"
               placeholder="Enter here"
               className="input"
               type="text"
             />
+            {errors.launchedbefor && (
+              <span className="text-red-500 text-sm">{errors.launchedbefor.message as string}</span>
+            )} */}
           </div>
         </div>
         <BonusRoundSection
@@ -327,12 +361,15 @@ export default function ApplyDequipForm() {
               builders. Don&rsquo;t be shy.)
             </label>
             <input
-              name="evenFlopped"
+              {...register("evenFlopped")}
               id="evenFlopped"
               placeholder="Enter here"
               className="input"
               type="text"
             />
+            {errors.evenFlopped && (
+              <span className="text-red-500 text-sm">{errors.evenFlopped.message as string}</span>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
@@ -341,12 +378,15 @@ export default function ApplyDequipForm() {
               If we only remember one thing about your team, what should it be?
             </label>
             <input
-              name="rememberTeam"
+              {...register("rememberTeam")}
               id="rememberTeam"
               placeholder="Enter here"
               className="input"
               type="text"
             />
+            {errors.rememberTeam && (
+              <span className="text-red-500 text-sm">{errors.rememberTeam.message as string}</span>
+            )}
           </div>
         </div>
       </section>
@@ -357,7 +397,7 @@ export default function ApplyDequipForm() {
       {/* === Additional Infromation === */}
       <AdditionalInformation register={register} errors={errors} />
       {/* === Trust Per Human === */}
-      <TrustPerHuman />
+      <TrustPerHuman register={register} errors={errors} />
 
       <Button disabled={loading} type="submit" className="group relative overflow-hidden">
         <span

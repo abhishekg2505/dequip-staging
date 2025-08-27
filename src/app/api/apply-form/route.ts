@@ -42,87 +42,101 @@ export async function POST(req: NextRequest) {
       subject: "New Apply Form Submission",
       html: `
     <h2>New Form Submission</h2>
-    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width:100%;">
+  <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width:100%;">
+  
+    <!-- Startup Snapshot -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Startup Snapshot</th></tr>
+    <tr><th align="left">Startup Name</th><td>${parsed.data.startupName}</td></tr>
+    <tr><th align="left">One Line Pitch</th><td>${parsed.data.oneLinePitch}</td></tr>
+    <tr><th align="left">Website</th><td>${parsed.data.websiteURL}</td></tr>
+    <tr><th align="left">HQ Location</th><td>${parsed.data.hqLocation}</td></tr>
+    <tr><th align="left">Incorporation</th><td>${parsed.data.incorporation}</td></tr>
+    <tr><th align="left">Time Zone</th><td>${parsed.data.timeZone}</td></tr>
 
-      <!-- Startup Snapshot -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Startup Snapshot</th></tr>
-      <tr><th align="left">Startup Name</th><td>${parsed.data.startupName}</td></tr>
-      <tr><th align="left">One Line Pitch</th><td>${parsed.data.oneLinePitch}</td></tr>
-      <tr><th align="left">Website</th><td>${parsed.data.websiteURL}</td></tr>
-      <tr><th align="left">HQ Location</th><td>${parsed.data.hqLocation}</td></tr>
-      <tr><th align="left">Incorporation</th><td>${parsed.data.incorporation}</td></tr>
-      <tr><th align="left">Time Zone</th><td>${parsed.data.timeZone}</td></tr>
+    <!-- Founder Details -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Founder Details</th></tr>
+    <tr><th align="left">Founder Name</th><td>${parsed.data.founder.fullName}</td></tr>
+    <tr><th align="left">Role</th><td>${parsed.data.founder.role}</td></tr>
+    <tr><th align="left">LinkedIn</th><td>${parsed.data.founder.linkedIn}</td></tr>
+    <tr><th align="left">Email</th><td>${parsed.data.founder.email}</td></tr>
+    <tr><th align="left">Time Zone</th><td>${parsed.data.founder.timeZone}</td></tr>
+    <tr><th align="left">Co-Founders</th>
+      <td>${
+        parsed.data.coFounders.length > 0
+          ? parsed.data.coFounders
+              .map((cf) => `${cf.fullName} (${cf.role}, ${cf.email})`)
+              .join("<br/>")
+          : "-"
+      }</td>
+    </tr>
+    <tr><th align="left">Full Time Team</th><td>${parsed.data.fullTimeTeam}</td></tr>
+    <tr><th align="left">How Did You Hear</th><td>${parsed.data.howToHear}</td></tr>
 
-      <!-- Founder Details -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Founder Details</th></tr>
-      <tr><th align="left">Founder Name</th><td>${parsed.data.founder.fullName}</td></tr>
-      <tr><th align="left">Role</th><td>${parsed.data.founder.role}</td></tr>
-      <tr><th align="left">LinkedIn</th><td>${parsed.data.founder.linkedIn}</td></tr>
-      <tr><th align="left">Email</th><td>${parsed.data.founder.email}</td></tr>
-      <tr><th align="left">Time Zone</th><td>${parsed.data.founder.timeZone || "-"}</td></tr>
-      <tr><th align="left">Co-Founders</th>
-        <td>
-          ${parsed.data.coFounders
-            .map((cf) => `${cf.fullName} (${cf.role}, ${cf.email})`)
-            .join("<br/>")}
-        </td>
-      </tr>
-      <tr><th align="left">Full Time Team</th><td>${parsed.data.fullTimeTeam}</td></tr>
-      <tr><th align="left">How Did You Hear</th><td>${parsed.data.howToHear}</td></tr>
+    <!-- What You’re Building -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">What You’re Building</th></tr>
+    <tr><th align="left">What? & Why?</th><td>${parsed.data.buildingMatter}</td></tr>
+    <tr><th align="left">Detailed Solution</th><td>${parsed.data.jargon}</td></tr>
+    <tr><th align="left">Your Edge</th><td>${parsed.data.whatsYourEdge}</td></tr>
+    <tr><th align="left">Approach</th><td>${parsed.data.whatsApproach}</td></tr>
+    <tr><th align="left">Quantum Relevance</th><td>${parsed.data.whatsProduct || "-"}</td></tr>
+    <tr><th align="left">Quantum Needs</th><td>${parsed.data.quantumOptions.join(", ")}</td></tr>
+    <tr><th align="left">AI Relevance</th><td>${parsed.data.relateAI || "-"}</td></tr>
+    <tr><th align="left">AI Needs</th><td>${parsed.data.aiOptions.join(", ")}</td></tr>
+    <tr><th align="left">Decentralized/Centralised</th><td>${
+      parsed.data.decentralized || "-"
+    }</td></tr>
+    <tr><th align="left">Idea</th><td>${parsed.data.idea || "-"}</td></tr>
+    <tr><th align="left">MVP/Prototype</th><td>${parsed.data.MVPPrototype || "-"}</td></tr>
+    <tr><th align="left">Live Users</th><td>${parsed.data.liveUsers || "-"}</td></tr>
+    <tr><th align="left">Revenue</th><td>${parsed.data.revenue || "-"}</td></tr>
+    <tr><th align="left">Token Launched</th><td>${parsed.data.tokenLaunched || "-"}</td></tr>
+    <tr><th align="left">Other</th><td>${parsed.data.other || "-"}</td></tr>
 
-      <!-- What You’re Building -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">What You’re Building</th></tr>
-      <tr><th align="left">Building Matter</th><td>${parsed.data.buildingMatter}</td></tr>
-      <tr><th align="left">Jargon</th><td>${parsed.data.jargon}</td></tr>
-      <tr><th align="left">Your Edge</th><td>${parsed.data.whatsYourEdge}</td></tr>
-      <tr><th align="left">Approach</th><td>${parsed.data.whatsApproach}</td></tr>
-      <tr><th align="left">Product</th><td>${parsed.data.whatsProduct || "-"}</td></tr>
-      <tr><th align="left">Quantum Options</th><td>${parsed.data.quantumOptions.join(
-        ", "
-      )}</td></tr>
-      <tr><th align="left">Relate AI</th><td>${parsed.data.relateAI || "-"}</td></tr>
-      <tr><th align="left">AI Options</th><td>${parsed.data.aiOptions.join(", ")}</td></tr>
-      <tr><th align="left">Decentralized</th><td>${parsed.data.decentralized || "-"}</td></tr>
-      <tr><th align="left">Idea</th><td>${parsed.data.idea || "-"}</td></tr>
-      <tr><th align="left">MVP/Prototype</th><td>${parsed.data.MVPPrototype || "-"}</td></tr>
-      <tr><th align="left">Live Users</th><td>${parsed.data.liveUsers || "-"}</td></tr>
-      <tr><th align="left">Revenue</th><td>${parsed.data.revenue || "-"}</td></tr>
-      <tr><th align="left">Token Launched</th><td>${parsed.data.tokenLaunched || "-"}</td></tr>
-      <tr><th align="left">Other</th><td>${parsed.data.other || "-"}</td></tr>
+    <!-- Alignment With DeQUIP -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Alignment With DeQUIP</th></tr>
+    <tr><th align="left">Mission Alignment</th><td>${parsed.data.startupEmbody}</td></tr>
 
-      <!-- Alignment With DeQUIP -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Alignment With DeQUIP</th></tr>
-      <tr><th align="left">Startup Embody</th><td>${parsed.data.startupEmbody}</td></tr>
+    <!-- Vision, Readiness, & Fit -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Vision, Readiness & Fit</th></tr>
+    <tr><th align="left">Success Benchmark</th><td>${parsed.data.joinDequip}</td></tr>
+    <tr><th align="left">Blocker</th><td>${parsed.data.whatsYourBlocker}</td></tr>
+    <tr><th align="left">Mentorship Needs</th><td>${parsed.data.mentorshipKind.join(", ")}</td></tr>
+    <tr><th align="left">Funds Required</th><td>${parsed.data.raiseFunds}</td></tr>
+    <tr><th align="left">Amount & Stage</th><td>${parsed.data.atWhatStage}</td></tr>
 
-      <!-- Vision, Readiness, & Fit -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Vision, Readiness & Fit</th></tr>
-      <tr><th align="left">Join DeQUIP</th><td>${parsed.data.joinDequip}</td></tr>
-      <tr><th align="left">Blocker</th><td>${parsed.data.whatsYourBlocker}</td></tr>
-      <tr><th align="left">Mentorship</th><td>${parsed.data.mentorshipKind.join(", ")}</td></tr>
-      <tr><th align="left">Raise Funds</th><td>${parsed.data.raiseFunds}</td></tr>
-      <tr><th align="left">Stage</th><td>${parsed.data.atWhatStage}</td></tr>
+    <!-- Bonus Round -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Bonus Round</th></tr>
+    <tr><th align="left">Project URLs</th>
+      <td>${
+        parsed.data.projectUrls.length > 0
+          ? parsed.data.projectUrls.map((p) => p.url).join("<br/>")
+          : "-"
+      }</td>
+    </tr>
+    <tr><th align="left">Even Flopped</th><td>${parsed.data.evenFlopped}</td></tr>
+    <tr><th align="left">Remember Team</th><td>${parsed.data.rememberTeam}</td></tr>
 
-      <!-- Bonus Round -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Bonus Round</th></tr>
-      <tr><th align="left">Launched Before</th><td>${parsed.data.launchedbefor}</td></tr>
-      <tr><th align="left">Project URLs</th><td>${parsed.data.projectUrls
-        .map((p) => p.url)
-        .join("<br/>")}</td></tr>
-      <tr><th align="left">Remote First Incubator</th><td>${
-        parsed.data.remoteFirstIncubator
-      }</td></tr>
-      <tr><th align="left">Explain</th><td>${parsed.data.explain}</td></tr>
-      <tr><th align="left">Attend Demo Day</th><td>${parsed.data.attendDemoDay}</td></tr>
-      <tr><th align="left">Featured Publicly</th><td>${parsed.data.featuredPublicly}</td></tr>
-      <tr><th align="left">Expectations</th><td>${parsed.data.expectationsAboveQuestion}</td></tr>
+    <!-- Logistic -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Logistic</th></tr>
+    <tr><th align="left">Remote First Incubator</th><td>${
+      parsed.data.remoteFirstIncubator
+    }</td></tr>
+    <tr><th align="left">Explain</th><td>${parsed.data.explain}</td></tr>
+    <tr><th align="left">Attend Demo Day</th><td>${parsed.data.attendDemoDay}</td></tr>
+    <tr><th align="left">Featured Publicly</th><td>${parsed.data.featuredPublicly}</td></tr>
+    <tr><th align="left">Expectations</th><td>${parsed.data.expectationsAboveQuestion}</td></tr>
 
-      <!-- Additional Information -->
-      <tr><th colspan="2" align="left" style="background:#f3f3f3;">Additional Information</th></tr>
-      <tr><th align="left">Deck</th><td>${parsed.data.uploadDeck}</td></tr>
-      <tr><th align="left">Photo</th><td>${parsed.data.uploadPhoto}</td></tr>
-      <tr><th align="left">Subscribe Me</th><td>${parsed.data.SubscribeMeToPulse}</td></tr>
+    <!-- Additional Information -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Additional Information</th></tr>
+    <tr><th align="left">Deck</th><td>${parsed.data.uploadDeck}</td></tr>
+    <tr><th align="left">Photo</th><td>${parsed.data.uploadPhoto}</td></tr>
+    <tr><th align="left">Subscribe Me</th><td>${parsed.data.SubscribeMeToPulse}</td></tr>
 
-    </table>
+    <!-- Trust Per Human (TPH) -->
+    <tr><th colspan="2" align="left" style="background:#f3f3f3;">Trust Per Human (TPH)</th></tr>
+    <tr><th align="left">Your Score</th><td>${parsed.data.yourScore}</td></tr>
+
+  </table>
   `,
     });
     console.log("Admin email sent");

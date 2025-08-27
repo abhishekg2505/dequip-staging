@@ -1,85 +1,3 @@
-// import { NextRequest, NextResponse } from "next/server";
-// import { partnerFormSchema } from "@/src/schema/partnerFormSchema";
-// import clientPromise from "@/src/lib/mongodb";
-// import nodemailer from "nodemailer";
-// import { uploadToCloudinary } from "@/src/lib/cloudinary";
-
-// const adminEmail = process.env.ADMIN_EMAIL!;
-// const gmailUser = process.env.GMAIL_USER!;
-// const gmailPass = process.env.GMAIL_PASS!;
-
-// export async function POST(req: NextRequest) {
-//   try {
-//     // Parse formData from the request
-//     // const formData = await req.formData();
-
-//     // // Extract fields from FormData
-//     // const fields: Record<string, any> = {};
-//     // for (const [key, value] of formData.entries()) {
-//     //   // For file fields, skip and process separately
-//     //   if (value instanceof File) continue;
-//     //   fields[key] = value;
-//     // }
-
-//     // // Upload files to Cloudinary, get URLs
-//     // let logoUrl = "",
-//     //   deckUrl = "";
-//     // const logoFile = formData.get("uploadLogo");
-//     // const deckFile = formData.get("deckFile");
-//     // if (logoFile instanceof File && logoFile.size > 0) {
-//     //   logoUrl = (await uploadToCloudinary(logoFile as File, "partner_logos")).secure_url;
-//     // }
-//     // if (deckFile instanceof File && deckFile.size > 0) {
-//     //   deckUrl = (await uploadToCloudinary(deckFile as File, "partner_decks")).secure_url;
-//     // }
-
-//     // // Merge file URLs into the fields
-//     // const data = { ...fields, logoUrl, deckUrl };
-//     const body = await req.json();
-//     console.log("Received in API:", body);
-//     // Validate using Zod
-//     const parsed = partnerFormSchema.safeParse(body);
-//     if (!parsed.success) {
-//       return NextResponse.json({ error: parsed.error.format() }, { status: 400 });
-//     }
-
-//     // Save to MongoDB
-//     const client = await clientPromise;
-//     await client.db("dequip_apply_form").collection("partner_form").insertOne(parsed.data);
-
-//     // Send Email to Admin
-//     const transporter = nodemailer.createTransport({
-//       service: "gmail",
-//       auth: { user: gmailUser, pass: gmailPass },
-//     });
-//     await transporter.sendMail({
-//       from: `"Qnet Partner Bot" <${gmailUser}>`,
-//       to: adminEmail,
-//       subject: `New Partner Form Submission - ${parsed.data.companyName}`,
-//       html: `<h2>${parsed.data.companyName} submitted a partner application.</h2>
-//         <p>Contact: ${parsed.data.founderemail}</p>
-
-//         <!-- Add more fields as needed -->
-//       `,
-//     });
-
-//     // Send confirmation email to user
-//     await transporter.sendMail({
-//       from: gmailUser,
-//       to: parsed.data.founderemail,
-//       subject: "Thank you for your Partner Application",
-//       html: `<p>Thank you for submitting your Partner application to DeQUIP!</p>`,
-//     });
-
-//     return NextResponse.json({ message: "Submission successful!" });
-//   } catch (error) {
-//     console.error("API error:", error);
-//     let message = "An error occurred";
-//     if (error instanceof Error) message = error.message;
-//     return NextResponse.json({ error: message }, { status: 500 });
-//   }
-// }
-
 import { NextRequest, NextResponse } from "next/server";
 import { partnerFormSchema } from "@/src/schema/partnerFormSchema";
 import nodemailer from "nodemailer";
@@ -123,25 +41,56 @@ export async function POST(req: NextRequest) {
       to: adminEmail,
       subject: "New Partner Form Submission",
       html: `
-        <h2>New Form Submission</h2>
-        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
-          <tr><th align="left">Company Name</th><td>${parsed.data.companyName}</td></tr>
-          <tr><th align="left">Company Size</th><td><a href="${
-            parsed.data.website
-          }" target="_blank">${parsed.data.companySize}</a></td></tr>
-          <tr><th align="left">Headquater Location</th><td>${
-            parsed.data.regionsOfOperation
-          }</td></tr>
-          <tr><th align="left">Eegions Of Operation</th><td>${
-            parsed.data.regionsOfOperation
-          }</td></tr>
-          <tr><th align="left">Linkedin Profile</th><td>${parsed.data.linkedinProfile}</td></tr>
-          <tr><th align="left">Full Name</th><td>${parsed.data.founderFullName}</td></tr>
-          <tr><th align="left">Role</th><td>${parsed.data.founderRole}</td></tr>
-          <tr><th align="left">Founder Linkedin</th><td>${parsed.data.founderLinkedin}</td></tr>
-          <tr><th align="left">Founder Email</th><td>${parsed.data.founderemail || "—"}</td></tr>
-        </table>
-      `,
+  <h2>New Form Submission</h2>
+  <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+    <!-- Organization Details -->
+    <tr><th align="left">Company Name</th><td>${parsed.data.companyName}</td></tr>
+    <tr><th align="left">Website</th><td><a href="${parsed.data.website}" target="_blank">${
+        parsed.data.website
+      }</a></td></tr>
+    <tr><th align="left">Company Size</th><td>${parsed.data.companySize}</td></tr>
+    <tr><th align="left">HQ Location</th><td>${parsed.data.HqLocation}</td></tr>
+    <tr><th align="left">Regions Of Operation</th><td>${parsed.data.regionsOfOperation}</td></tr>
+    <tr><th align="left">LinkedIn Profile</th><td>${parsed.data.linkedinProfile}</td></tr>
+    <tr><th align="left">Twitter Handle</th><td>${parsed.data.xHandle || "-"}</td></tr>
+
+    <!-- Primary Contact -->
+    <tr><th align="left">Founder Full Name</th><td>${parsed.data.founderFullName}</td></tr>
+    <tr><th align="left">Founder Role</th><td>${parsed.data.founderRole}</td></tr>
+    <tr><th align="left">Founder LinkedIn</th><td>${parsed.data.founderLinkedin}</td></tr>
+    <tr><th align="left">Founder Email</th><td>${parsed.data.founderemail}</td></tr>
+    <tr><th align="left">Founder Timezone</th><td>${parsed.data.founderTimezone}</td></tr>
+
+    <!-- Value You Bring -->
+    <tr><th align="left">Type of Partner</th><td>${parsed.data.whatTypeOfPartner}</td></tr>
+    <tr><th align="left">Checked Options</th><td>${parsed.data.checkedOptions.join(", ")}</td></tr>
+    <tr><th align="left">Offering to DeQUIP</th><td>${parsed.data.offeringToDequip}</td></tr>
+    <tr><th align="left">How to Support Startup</th><td>${parsed.data.howToSupportStartup}</td></tr>
+    <tr><th align="left">Checked Options 2</th><td>${parsed.data.checkedOptions2.join(
+      ", "
+    )}</td></tr>
+
+    <!-- Why You’re a Fit -->
+    <tr><th align="left">Why Interested</th><td>${parsed.data.whyInterested}</td></tr>
+    <tr><th align="left">Hope To Co-create</th><td>${parsed.data.hopeToCocreate}</td></tr>
+    <tr><th align="left">Organization Align</th><td>${parsed.data.organizationAlign}</td></tr>
+    <tr><th align="left">Why You Are Fit</th><td>${parsed.data.whyYouAreFit.join(", ")}</td></tr>
+
+    <!-- Incentives & Collaboration -->
+    <tr><th align="left">Token Allocation</th><td>${parsed.data.tokenAllocation}</td></tr>
+    <tr><th align="left">Webinar</th><td>${parsed.data.webinar}</td></tr>
+    <tr><th align="left">Press Media</th><td>${parsed.data.pressMedia}</td></tr>
+    <tr><th align="left">Pulse Newsletter</th><td>${parsed.data.pulseNewsletter}</td></tr>
+
+    <!-- Logistics & Readiness -->
+    <tr><th align="left">Support Startups</th><td>${parsed.data.supportStartups}</td></tr>
+    <tr><th align="left">Main Point of Contact</th><td>${parsed.data.mainPointOfContact}</td></tr>
+    <tr><th align="left">Regional Limitations</th><td>${parsed.data.regionalLimitations}</td></tr>
+
+    <!-- Final Details -->
+    <tr><th align="left">Share Bio</th><td>${parsed.data.shareBio}</td></tr>
+  </table>
+  `,
     });
     console.log("Admin email sent");
 

@@ -26,6 +26,9 @@ export default function AdditionalInformation({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.uploadDeck && (
+            <span className="text-red-500 text-sm">{errors.uploadDeck.message as string}</span>
+          )}
         </div>
         <div className="flex flex-col gap-[16px]">
           <label htmlFor="uploadPhoto" className="text-h6 font-montserratfont-medium">
@@ -39,6 +42,9 @@ export default function AdditionalInformation({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.uploadPhoto && (
+            <span className="text-red-500 text-sm">{errors.uploadPhoto.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4">
@@ -62,6 +68,11 @@ export default function AdditionalInformation({ register, errors }: Props) {
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
+            {errors.SubscribeMeToPulse && (
+              <span className="text-red-500 text-sm">
+                {errors.SubscribeMeToPulse.message as string}
+              </span>
+            )}
           </div>
         </div>
       </div>

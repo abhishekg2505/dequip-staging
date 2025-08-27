@@ -38,6 +38,9 @@ export default function VisionReadinessFit({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.joinDequip && (
+            <span className="text-red-500 text-sm">{errors.joinDequip.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -61,6 +64,11 @@ export default function VisionReadinessFit({ register, errors }: Props) {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               )
+            )}
+            {errors.whatsYourBlocker && (
+              <span className="text-red-500 text-sm">
+                {errors.whatsYourBlocker.message as string}
+              </span>
             )}
           </div>
         </div>
@@ -98,6 +106,11 @@ export default function VisionReadinessFit({ register, errors }: Props) {
                 <span className="text-white text-sm">{label}</span>
               </label>
             ))}
+            {errors.mentorshipKind && (
+              <span className="text-red-500 text-sm">
+                {errors.mentorshipKind.message as string}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -121,6 +134,9 @@ export default function VisionReadinessFit({ register, errors }: Props) {
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
+            {errors.raiseFunds && (
+              <span className="text-red-500 text-sm">{errors.raiseFunds.message as string}</span>
+            )}
           </div>
         </div>
       </div>
@@ -136,6 +152,9 @@ export default function VisionReadinessFit({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.atWhatStage && (
+            <span className="text-red-500 text-sm">{errors.atWhatStage.message as string}</span>
+          )}
         </div>
       </div>
     </section>

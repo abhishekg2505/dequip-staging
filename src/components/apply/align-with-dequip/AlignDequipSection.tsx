@@ -33,6 +33,9 @@ export default function AlignDequipSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.startupEmbody && (
+            <span className="text-red-500 text-sm">{errors.startupEmbody.message as string}</span>
+          )}
         </div>
       </div>
     </section>

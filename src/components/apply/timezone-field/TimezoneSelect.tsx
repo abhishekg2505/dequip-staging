@@ -47,7 +47,7 @@ export function TimezoneSelect({ value, onChange }: TimezoneSelectProps) {
   return (
     <Select.Root value={value} onValueChange={onChange}>
       <Select.Trigger
-        className="w-full text-p2 font-open-sans font-normal px-4 py-2 bg-transparent rounded-[999px] border border-[#ffffff5e] focus:outline-none flex items-center justify-between"
+        className="w-full text-p2 font-open-sans font-normal px-4 py-2 bg-transparent rounded-[999px] border border-[rgba(255,255,255,0.3)] focus:outline-none flex items-center justify-between"
         aria-label="Timezone"
       >
         <Select.Value placeholder="Select Time Zone" className="" />

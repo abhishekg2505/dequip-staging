@@ -44,7 +44,7 @@ export default function BonusRoundSection({
             <div className="flex flex-col gap-[16px]">
               <input
                 {...register(`projectUrls.${index}.url` as const)}
-                placeholder="Enter url"
+                placeholder="Enter here"
                 className="input"
                 type="text"
               />

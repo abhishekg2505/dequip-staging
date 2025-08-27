@@ -43,6 +43,13 @@ export default function PartnerDequipForm() {
     resolver: zodResolver(partnerFormSchema),
     defaultValues: {
       founderTimezone: "",
+      checkedOptions2: [],
+      checkedOptions: [],
+      whyYouAreFit: [],
+      tokenAllocation: "",
+      webinar: "",
+      pressMedia: "",
+      pulseNewsletter: "",
       // offeringLinks: [],
     },
   });
@@ -81,9 +88,9 @@ export default function PartnerDequipForm() {
     setLoading(false);
   };
 
-  // useEffect(() => {
-  //   console.log("errors", errors);
-  // }, [errors]);
+  useEffect(() => {
+    console.log("errors", errors);
+  }, [errors]);
 
   return (
     <form
@@ -376,45 +383,15 @@ export default function PartnerDequipForm() {
                   <span className="text-white text-sm">{label}</span>
                 </label>
               ))}
+              {errors.checkedOptions && (
+                <span className="text-red-500 text-sm">
+                  {errors.checkedOptions.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
-          {/*  <p className="text-h6 font-montserrat font-medium">
-            Please describe the specific offering or benefit you&rsquo;d extend to DeQUIP
-            startups(e.g. 10 hrs of legal consulting, 6 months of product credits, token design
-            workshops, etc.)
-          </p>
-          <div className="flex flex-col gap-[16px]">
-            {fields.map((field, idx) => (
-              <div key={field.id} className="flex gap-2 mb-1">
-                <input
-                  {...register(`offeringLinks.${idx}` as const)}
-                  className="input"
-                  placeholder="Link URL"
-                  type="text"
-                />
-                {fields.length > 1 && (
-                  <Button type="button" className="mt-2" onClick={() => remove(idx)}>
-                    Remove
-                  </Button>
-                )}
-              </div>
-            ))}
-            <Button
-              type="button"
-              variant="outline"
-              className="group relative overflow-hidden"
-              onClick={() => append("")}
-            >
-              <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
-                Add more links
-              </span>
-            </Button>
-            {errors.offeringLinks && typeof errors.offeringLinks.message === "string" && (
-              <span className="text-red-500 text-sm">{errors.offeringLinks.message}</span>
-            )}
-          </div> */}
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="offeringToDequip" className="text-h6 font-montserratfont-medium">
               Please describe the specific offering or benefit you&rsquo;d extend to DeQUIP
@@ -484,6 +461,11 @@ export default function PartnerDequipForm() {
                   <span className="text-white text-sm">{label}</span>
                 </label>
               ))}
+              {errors.checkedOptions2 && (
+                <span className="text-red-500 text-sm">
+                  {errors.checkedOptions2.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -582,6 +564,11 @@ export default function PartnerDequipForm() {
                   <span className="text-white text-sm">{label}</span>
                 </label>
               ))}
+              {errors.whyYouAreFit && (
+                <span className="text-red-500 text-sm">
+                  {errors.whyYouAreFit.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -616,6 +603,11 @@ export default function PartnerDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.tokenAllocation && (
+                <span className="text-red-500 text-sm">
+                  {errors.tokenAllocation.message as string}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-4 mt-10">
@@ -637,6 +629,9 @@ export default function PartnerDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.webinar && (
+                <span className="text-red-500 text-sm">{errors.webinar.message as string}</span>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-4 mt-10">
@@ -659,6 +654,9 @@ export default function PartnerDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.pressMedia && (
+                <span className="text-red-500 text-sm">{errors.pressMedia.message as string}</span>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-4 mt-10">
@@ -681,6 +679,11 @@ export default function PartnerDequipForm() {
                   {value.charAt(0).toUpperCase() + value.slice(1)}
                 </label>
               ))}
+              {errors.pulseNewsletter && (
+                <span className="text-red-500 text-sm">
+                  {errors.pulseNewsletter.message as string}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -759,27 +762,7 @@ export default function PartnerDequipForm() {
             Final Details
           </span>
         </h2>
-        {/* <div className="grid grid-cols-1 gap-5 mb-10">
-          <div className="flex flex-col gap-[16px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label>Upload your logo</label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => handleFileChange(e, setLogoFile)}
-                />
-                {logoFile && <p className="text-xs">{logoFile.name}</p>}
-              </div>
-              {/* File upload for Deck */}
-        {/*<div>
-                <label>Upload deck (optional)</label>
-                <input type="file" onChange={(e) => handleFileChange(e, setDeckFile)} />
-                {deckFile && <p className="text-xs">{deckFile.name}</p>}
-              </div>
-            </div>
-          </div>
-        </div> */}
+
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
             <label htmlFor="shareBio" className="text-h6 font-montserratfont-medium">

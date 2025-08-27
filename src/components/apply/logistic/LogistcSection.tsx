@@ -36,6 +36,11 @@ export default function LogisticSection({ register, errors }: Props) {
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
+            {errors.remoteFirstIncubator && (
+              <span className="text-red-500 text-sm">
+                {errors.remoteFirstIncubator.message as string}
+              </span>
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-[16px]">
@@ -49,6 +54,9 @@ export default function LogisticSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.explain && (
+            <span className="text-red-500 text-sm">{errors.explain.message as string}</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-5 mb-10">
@@ -71,6 +79,9 @@ export default function LogisticSection({ register, errors }: Props) {
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
+            {errors.attendDemoDay && (
+              <span className="text-red-500 text-sm">{errors.attendDemoDay.message as string}</span>
+            )}
           </div>
         </div>
       </div>
@@ -95,6 +106,11 @@ export default function LogisticSection({ register, errors }: Props) {
                 {value.charAt(0).toUpperCase() + value.slice(1)}
               </label>
             ))}
+            {errors.featuredPublicly && (
+              <span className="text-red-500 text-sm">
+                {errors.featuredPublicly.message as string}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -110,6 +126,11 @@ export default function LogisticSection({ register, errors }: Props) {
             className="input"
             type="text"
           />
+          {errors.expectationsAboveQuestion && (
+            <span className="text-red-500 text-sm">
+              {errors.expectationsAboveQuestion.message as string}
+            </span>
+          )}
         </div>
       </div>
     </section>

@@ -54,6 +54,9 @@ export default function FounderDetailsSection({
                 type="text"
                 id={`${name}.${index}.fullName`}
               />
+              {errors[name] && errors[name][index] && errors[name][index].fullName && (
+                <span className="text-red-500 text-sm">{errors[name][index].fullName.message}</span>
+              )}
             </div>
           </div>
           <div className="grid grid-cols-1 gap-5 mb-10">
@@ -72,6 +75,9 @@ export default function FounderDetailsSection({
                 type="text"
                 id={`${name}.${index}.linkedIn`}
               />
+              {errors[name] && errors[name][index] && errors[name][index].linkedIn && (
+                <span className="text-red-500 text-sm">{errors[name][index].linkedIn.message}</span>
+              )}
             </div>
             <div className="flex flex-col gap-[16px]">
               <label
@@ -87,6 +93,9 @@ export default function FounderDetailsSection({
                 className="input"
                 id={`${name}.${index}.role`}
               />
+              {errors[name] && errors[name][index] && errors[name][index].role && (
+                <span className="text-red-500 text-sm">{errors[name][index].role.message}</span>
+              )}
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-0">
@@ -104,6 +113,9 @@ export default function FounderDetailsSection({
                 className="input"
                 id={`${name}.${index}.email`}
               />
+              {errors[name] && errors[name][index] && errors[name][index].email && (
+                <span className="text-red-500 text-sm">{errors[name][index].email.message}</span>
+              )}
             </div>
             <div className="flex flex-col gap-[16px]">
               <label
@@ -119,6 +131,9 @@ export default function FounderDetailsSection({
                   <TimezoneSelect value={field.value} onChange={field.onChange} />
                 )}
               />
+              {errors[name] && errors[name][index] && errors[name][index].timeZone && (
+                <span className="text-red-500 text-sm">{errors[name][index].timeZone.message}</span>
+              )}
             </div>
           </div>
           <Button
@@ -165,6 +180,9 @@ export default function FounderDetailsSection({
               {value.charAt(0).toUpperCase() + value.slice(1)}
             </label>
           ))}
+          {errors.fullTimeTeam && (
+            <p className="text-red-500 text-sm">{errors.fullTimeTeam.message}</p>
+          )}
         </div>
       </div>
 
