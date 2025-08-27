@@ -10,7 +10,7 @@ export const mentorFormSchema = z.object({
   countryOfResidence: z.string().min(3, { message: "Enter Country of Residence" }),
   primaryLanguage: z.string().min(3, { message: "Enter Primary Language" }),
   currentRoleAndComapny: z.string().min(3, { message: "Enter Role & Company" }),
-  yearOfExperience: z.number().min(1, { message: "Enter Year of Experience" }),
+  yearOfExperience: z.number(),
   specialization: z.array(z.string()).min(1, { message: "Please select at least one option" }),
   mentoredStartups: z.string().min(1, { message: "Please select" }),
   participatedIncubator: z.string().min(1, { message: "Please select" }),
