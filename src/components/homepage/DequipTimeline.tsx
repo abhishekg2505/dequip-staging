@@ -180,7 +180,7 @@ const DequipTimeline: React.FC = () => {
               prevEl: ".swiper-prev",
             }}
             spaceBetween={20}
-            slidesPerView={1}
+            slidesPerView={1.1}
             breakpoints={{
               768: {
                 slidesPerView: 1,

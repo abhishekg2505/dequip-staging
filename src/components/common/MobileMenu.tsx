@@ -50,7 +50,7 @@ const MobileMenu = () => {
                       rel={item.link?.startsWith("http") ? "noopener noreferrer" : ""}
                       onClick={() => item.link && setIsSheetOpen(false)}
                     >
-                      <SheetTitle className="">
+                      <SheetTitle className="leading-0" style={{ lineHeight: 0 }}>
                         <span className="text-h4 leading-normal font-normal bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                           {item.itemName}
                         </span>
