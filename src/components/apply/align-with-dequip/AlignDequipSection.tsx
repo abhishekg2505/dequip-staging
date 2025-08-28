@@ -16,7 +16,7 @@ export default function AlignDequipSection({ register, errors }: Props) {
           Alignment With DeQUIP
         </span>
       </h2>
-      <h5 className="text-left text-h5 font-montserrat font-medium mb-10">
+      <h5 className="text-left text-p2 md:text-h5 font-montserrat font-medium mb-10">
         We&rsquo;re not here to incubate features. We&rsquo;re here to incubate infrastructure.
         DeQUIP stands for “Decentralized Quantum-Uncrackable Infrastructure Protocol.”{" "}
       </h5>

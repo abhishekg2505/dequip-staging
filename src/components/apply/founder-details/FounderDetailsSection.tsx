@@ -169,7 +169,7 @@ export default function FounderDetailsSection({
           {["yes", "no", "some"].map((value) => (
             <label
               key={value}
-              className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+              className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
             >
               <input
                 type="radio"
@@ -200,7 +200,7 @@ export default function FounderDetailsSection({
           ].map((option) => (
             <label
               key={option}
-              className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+              className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
             >
               <input
                 type="radio"

@@ -53,7 +53,7 @@ export default function VisionReadinessFit({ register, errors }: Props) {
               (value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     {...register("whatsYourBlocker")}
@@ -123,7 +123,7 @@ export default function VisionReadinessFit({ register, errors }: Props) {
             {["Yes", "No", "Maybe"].map((value) => (
               <label
                 key={value}
-                className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
               >
                 <input
                   {...register("raiseFunds")}

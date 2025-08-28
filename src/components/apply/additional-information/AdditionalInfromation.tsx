@@ -57,7 +57,7 @@ export default function AdditionalInformation({ register, errors }: Props) {
             {["yes", "no"].map((value) => (
               <label
                 key={value}
-                className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
               >
                 <input
                   type="radio"

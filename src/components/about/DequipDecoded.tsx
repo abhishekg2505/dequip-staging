@@ -106,7 +106,7 @@ const DequipDecoded = () => {
 
   return (
     <div ref={sectionRef} className="relative px-4 md:px-20 pt-[150px] md:pt-[273px] pb-[250px]">
-      <div className="absolute left-0 bottom-32">
+      <div className="absolute left-0 bottom-4 md:bottom-32">
         <Image
           src="/images/about/ringleft.png"
           alt="Ring Left"

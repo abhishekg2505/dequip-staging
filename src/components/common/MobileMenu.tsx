@@ -45,13 +45,15 @@ const MobileMenu = () => {
                   >
                     <Link
                       href={item.link || "#"}
-                      className=""
+                      className="text-h4"
                       target={item.link?.startsWith("http") ? "_blank" : "_self"}
                       rel={item.link?.startsWith("http") ? "noopener noreferrer" : ""}
                       onClick={() => item.link && setIsSheetOpen(false)}
                     >
-                      <SheetTitle className="text-h6 font-semibold bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
-                        {item.itemName}
+                      <SheetTitle className="">
+                        <span className="text-h4 leading-normal font-normal bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
+                          {item.itemName}
+                        </span>
                       </SheetTitle>
                     </Link>
                     {item.subMenu && <ChevronDown className="ml-2" />}
@@ -62,7 +64,7 @@ const MobileMenu = () => {
                         <Link
                           key={subIdx}
                           href={subItem.subMenuLink}
-                          className="block py-1 text-h4 font-semibold bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent"
+                          className="block py-1 text-h5 font-normal bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent"
                           target={subItem.subMenuLink.startsWith("http") ? "_blank" : "_self"}
                           rel={subItem.subMenuLink.startsWith("http") ? "noopener noreferrer" : ""}
                           onClick={() => setIsSheetOpen(false)}

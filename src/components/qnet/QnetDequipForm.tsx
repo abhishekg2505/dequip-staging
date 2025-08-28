@@ -61,7 +61,7 @@ export default function QnetDequipForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="px-4 md:px-20 pt-[77px] pb-[80px] container mx-auto"
     >
-      <section id="qnet-form">
+      <section id="qnet-form" className="scroll-mt-24">
         <h2 className="text-left text-h4 md:text-h3 font-montserrat font-semibold mb-10">
           <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
             Founder Details
@@ -253,12 +253,12 @@ export default function QnetDequipForm() {
             And finally… Trust Per Human (TPH)
           </span>
         </h2>
-        <h5 className="text-h5 font-montserrat mb-10">
+        <h5 className="text-p2 md:text-h5 font-montserrat mb-10">
           At Quranium, trust is core. <br />
           We ask all applicants to take the TPH Assessment; a 2-minute framework, designed by
           Quranium&rsquo;s CEO Kapil Dhiman, to understand how you show up in the world.
         </h5>
-        <h5 className="text-h5 font-montserrat mb-5">
+        <h5 className="text-p2 md:text-h5 font-montserrat mb-5">
           It&rsquo;s not about popularity. It&rsquo;s about predictability, empathy, and presence.
         </h5>
         <Link href="https://trustperhuman.com/" target="_blank">

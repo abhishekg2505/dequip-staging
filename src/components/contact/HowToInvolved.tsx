@@ -24,7 +24,7 @@ const threats: ThreatCardProps[] = [
     title: "Apply to DeQUIP 50",
     desc: "If you’re building quantum-ready, AI-native, or uncrackable infrastructure, apply to be part of the first 50.",
     pillbtn: "Apply Now",
-    url: "#",
+    url: "/apply",
     imageurl: "/images/contact/tl1.png",
     imagepos: "right bottom",
   },
@@ -32,7 +32,7 @@ const threats: ThreatCardProps[] = [
     title: "Become a Mentor",
     desc: "Contribute 1–2 hours/week to help shape the next generation of innovation. All mentors receive token exposure.",
     pillbtn: "Become a Mentor",
-    url: "#",
+    url: "/mentor",
     imageurl: "/images/contact/tl2.png",
     imagepos: "right bottom",
   },
@@ -40,7 +40,7 @@ const threats: ThreatCardProps[] = [
     title: "Become a Partner",
     desc: "Support founders with your tools, services, or reach, and gain early access to high-growth opportunities.",
     pillbtn: "Become a Partner",
-    url: "#",
+    url: "/partner",
     imageurl: "/images/contact/tl3.png",
     imagepos: "left bottom",
   },
@@ -48,7 +48,7 @@ const threats: ThreatCardProps[] = [
     title: "Join QNet Club",
     desc: "Not selected but still want in? Get the next-best seat in the house with weekly insights, 1:1 mentor calls, and community networking for just $1/min.",
     pillbtn: "Join Now",
-    url: "#",
+    url: "/qnet",
     imageurl: "/images/contact/tl4.png",
     imagepos: "left bottom",
   },
@@ -58,7 +58,7 @@ const threats: ThreatCardProps[] = [
 Subscribe to Pulse, Quranium’s monthly newsletter that keeps the future close.
 `,
     pillbtn: "Subscribe",
-    url: "#",
+    url: "https://www.linkedin.com/newsletters/quranium-pulse-7317467565704765441/",
     imageurl: "/images/contact/tl4.png",
     imagepos: "left bottom",
   },
@@ -165,7 +165,7 @@ const HowToInvolved: React.FC = () => {
               key={index}
               className="group perspective"
             >
-              <div className="relative w-full h-[520px] bg-card-gradient p-[1px] rounded-[10px]">
+              <div className="relative w-full h-[350px] md:h-[520px] bg-card-gradient p-[1px] rounded-[10px]">
                 <div
                   className="bg-[#020309] p-5 h-full rounded-[10px] flex flex-col justify-start items-start text-left transition-colors duration-300 ease-in-out bg-size-[223px_auto] bg-no-repeat"
                   style={{
@@ -178,11 +178,14 @@ const HowToInvolved: React.FC = () => {
                       {threat.title}
                     </span>
                   </h6>
-                  <p className="text-h6 font-open-sans font-normal text-[#EAEAEA] mt-5 h-[200px]">
+                  <p className="text-h6 font-open-sans font-normal text-[#EAEAEA] mt-5 h-[150px] md:h-[200px]">
                     {threat.desc}
                   </p>
                   <Link href={threat.url}>
-                    <Button variant="outline" className="group relative overflow-hidden mt-[67px]">
+                    <Button
+                      variant="outline"
+                      className="group relative overflow-hidden mt-0 md:mt-[67px]"
+                    >
                       <span className="text-p3 font-open-sans bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
                         {threat.pillbtn}
                       </span>
@@ -199,7 +202,7 @@ const HowToInvolved: React.FC = () => {
               Have questions? Want to get involved in another way?
             </span>
           </h5>
-          <Link href="#" target="_blank">
+          <Link href="mailto:business@quranium.org" target="_blank">
             <Button variant="outline" className="group relative overflow-hidden">
               <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                 Connect with DeQUIP50 team

@@ -338,7 +338,7 @@ export default function MentorDequipForm() {
               {["Yes", "No"].map((value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -364,7 +364,7 @@ export default function MentorDequipForm() {
               {["Yes", "No"].map((value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -508,7 +508,7 @@ export default function MentorDequipForm() {
               {["Yes", "No", "Maybe"].map((value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -553,12 +553,12 @@ export default function MentorDequipForm() {
             TPH - &rsquo;Trust Per Human&rsquo;
           </span>
         </h2>
-        <h5 className="text-h5 font-montserrat mb-10">
+        <h5 className="text-p2 md:text-h5 font-montserrat mb-10">
           Trust is what enables human connection, collaboration, and belonging at scale. It&rsquo;s
           what makes people feel safe, open, and willing to invest; emotionally, socially, or
           financially.
         </h5>
-        <h5 className="text-h5 font-montserrat mb-5">
+        <h5 className="text-p2 md:text-h5 font-montserrat mb-5">
           Before we finalize your application, we kindly ask that you complete the TPH
           self-assessment. It takes just 2 minutes and helps us build the most values-aligned,
           high-trust incubator community in Web3.
@@ -648,7 +648,7 @@ export default function MentorDequipForm() {
               {["Yes", "No"].map((value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -674,7 +674,7 @@ export default function MentorDequipForm() {
               {["Yes", "No"].map((value) => (
                 <label
                   key={value}
-                  className="flex items-center gap-2 text-[16px] font-normal text-white cursor-pointer"
+                  className="flex items-center gap-2 text-[18px] font-normal text-white cursor-pointer"
                 >
                   <input
                     type="radio"

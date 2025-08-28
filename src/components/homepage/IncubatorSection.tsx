@@ -94,7 +94,7 @@ const IncubatorSection = () => {
   return (
     <div>
       <div ref={sectionRef} className="scroll-mt-24 mt-10 px-4 md:px-20 ">
-        <div className="relative container py-[120px] mx-auto px-0 bg-[url('/images/homepage/incubator.webp')] bg-cover bg-left">
+        <div className="relative container py-[120px] mx-auto px-4 md:px-0 bg-[url('/images/homepage/incubator.webp')] bg-cover bg-left">
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <h2 ref={mainTitleRef} className="text-white text-h4 md:text-h3 font-semibold">
               <span className="bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent">
@@ -127,7 +127,7 @@ const IncubatorSection = () => {
             <div ref={rightCardRef} className="mt-6 text-center w-full flex justify-center">
               <Link href="/apply">
                 <Button variant="outline" className="group relative overflow-hidden">
-                  <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
+                  <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff]">
                     Apply Now
                   </span>
                 </Button>

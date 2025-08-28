@@ -15,12 +15,12 @@ export default function TrustPerHuman({ register, errors }: Props) {
           And finally… Trust Per Human (TPH)
         </span>
       </h2>
-      <h5 className="text-h5 font-montserrat mb-10">
+      <h5 className="text-p2 md:text-h5 font-montserrat mb-10">
         At Quranium, trust is core. <br />
         We ask all applicants to take the TPH Assessment; a 2-minute framework, designed by
         Quranium&rsquo;s CEO Kapil Dhiman, to understand how you show up in the world.
       </h5>
-      <h5 className="text-h5 font-montserrat mb-5">
+      <h5 className="text-p2 md:text-h5 font-montserrat mb-5">
         Trust Per Human provides us with your trust score, by considering your actions,
         communication, and consistency. A score above 80 is required to proceed with your
         application.
