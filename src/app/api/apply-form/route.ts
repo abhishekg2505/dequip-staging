@@ -113,8 +113,8 @@ export async function POST(req: NextRequest) {
           : "-"
       }</td>
     </tr>
-    <tr><th align="left">Even Flopped</th><td>${parsed.data.evenFlopped}</td></tr>
-    <tr><th align="left">Remember Team</th><td>${parsed.data.rememberTeam}</td></tr>
+    <tr><th align="left">Past Work</th><td>${parsed.data.evenFlopped}</td></tr>
+    <tr><th align="left">Team’s USP</th><td>${parsed.data.rememberTeam}</td></tr>
 
     <!-- Logistic -->
     <tr><th colspan="2" align="left" style="background:#f3f3f3;">Logistic</th></tr>
@@ -123,7 +123,7 @@ export async function POST(req: NextRequest) {
     }</td></tr>
     <tr><th align="left">Explain</th><td>${parsed.data.explain}</td></tr>
     <tr><th align="left">Attend Demo Day</th><td>${parsed.data.attendDemoDay}</td></tr>
-    <tr><th align="left">Featured Publicly</th><td>${parsed.data.featuredPublicly}</td></tr>
+    <tr><th align="left">Feature Publicly</th><td>${parsed.data.featuredPublicly}</td></tr>
     <tr><th align="left">Expectations</th><td>${parsed.data.expectationsAboveQuestion}</td></tr>
 
     <!-- Additional Information -->

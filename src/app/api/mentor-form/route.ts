@@ -73,7 +73,9 @@ export async function POST(req: NextRequest) {
         </td>
       </tr>
       <tr><th align="left">Mentoring Style</th><td>${parsed.data.mentoringStyle}</td></tr>
-      <tr><th align="left">Startups Support</th><td>${parsed.data.startupsSupport}</td></tr>
+      <tr><th align="left">Preferred Startup Sectors</th><td>${
+        parsed.data.startupsSupport
+      }</td></tr>
       <tr><th align="left">Commitment Cycle</th><td>${parsed.data.commitmentCycle}</td></tr>
       <tr><th align="left">Selection Panels</th><td>${parsed.data.selectionPanels}</td></tr>
       <tr><th align="left">Why Mentor</th><td>${parsed.data.whyMentor}</td></tr>
