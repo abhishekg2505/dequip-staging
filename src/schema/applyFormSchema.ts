@@ -49,7 +49,7 @@ export const applyFormSchema = z.object({
   whatsYourBlocker: z.string().min(1, { message: "This field is required" }),
   mentorshipKind: z.array(z.string()),
   raiseFunds: z.string().min(1, { message: "This field is required" }),
-  atWhatStage: z.string().min(0).max(2).regex(/^\d+$/, { message: "score must be only numbers" }),
+  atWhatStage: z.string().min(1, { message: "This field is required" }),
   // Bonus Round
   projectUrls: z.array(
     z.object({

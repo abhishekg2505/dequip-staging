@@ -58,7 +58,8 @@ export function TimezoneSelect({ value, onChange }: TimezoneSelectProps) {
 
       <Select.Portal>
         <Select.Content
-          className="w-full  relative mt-2 rounded-lg border border-[rgba(255,255,255,0.3)] bg-[#0E0E0E] text-white shadow-lg"
+          style={{ position: "static", marginTop: 0, boxShadow: "none" }}
+          className="w-full z-50 mt-2 rounded-lg border border-[rgba(255,255,255,0.3)] bg-[#0E0E0E] text-white shadow-lg"
           position="popper"
           sideOffset={4}
         >
