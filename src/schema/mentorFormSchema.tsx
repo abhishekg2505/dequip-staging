@@ -21,14 +21,14 @@ export const mentorFormSchema = z.object({
   participatedIncubator: z.string().min(1, { message: "The Field is required" }),
   workWithNotableCompanies: z.array(
     z.object({
-      url: z.string().url("Please enter a valid URL"),
+      url: z.string().min(1, { message: "The field is required" }),
     })
   ),
-  mentoringStyle: z.string().min(3, { message: "The Field is required" }),
-  startupsSupport: z.string().min(3, { message: "The Field is required" }),
-  commitmentCycle: z.string().min(3, { message: "The Field is required" }),
-  selectionPanels: z.string().min(1, { message: "The Field is required" }),
-  whyMentor: z.string().min(3, { message: "The Field is required" }),
+  mentoringStyle: z.string().min(1, { message: "The field is required" }),
+  startupsSupport: z.string().min(1, { message: "The field is required" }),
+  commitmentCycle: z.string().min(1, { message: "The field is required" }),
+  selectionPanels: z.string().min(1, { message: "The field is required" }),
+  whyMentor: z.string().min(3, { message: "The field is required" }),
   // TPHScore: z.number().min(1, { message: "Enter your score" }),
   TPHScore: z
     .string()
@@ -37,8 +37,8 @@ export const mentorFormSchema = z.object({
     .regex(/^\d+$/, { message: "Enter your score must be only numbers" }),
   shareBio: z.string().min(50, { message: "atleast 50 character" }),
   profileLink: z.string().url(),
-  pulseNewsletter: z.string().min(1, { message: "The Field is required" }),
-  panelInvites: z.string().min(1, { message: "The Field is required" }),
+  pulseNewsletter: z.string().min(1, { message: "The field is required" }),
+  panelInvites: z.string().min(1, { message: "The field is required" }),
 });
 
 export type MentorFormType = z.infer<typeof mentorFormSchema>;
