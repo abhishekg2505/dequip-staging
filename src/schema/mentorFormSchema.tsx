@@ -17,18 +17,18 @@ export const mentorFormSchema = z.object({
     .regex(/^\d+$/, { message: "Year of experience must be only numbers" }),
 
   specialization: z.array(z.string()).min(1, { message: "Please select at least one option" }),
-  mentoredStartups: z.string().min(1, { message: "Please select" }),
-  participatedIncubator: z.string().min(1, { message: "Please select" }),
+  mentoredStartups: z.string().min(1, { message: "The Field is required" }),
+  participatedIncubator: z.string().min(1, { message: "The Field is required" }),
   workWithNotableCompanies: z.array(
     z.object({
       url: z.string().url("Please enter a valid URL"),
     })
   ),
-  mentoringStyle: z.string().min(3, { message: "Please select" }),
-  startupsSupport: z.string().min(3, { message: "Please select" }),
-  commitmentCycle: z.string().min(3, { message: "Please select" }),
-  selectionPanels: z.string().min(1, { message: "Please select" }),
-  whyMentor: z.string().min(3, { message: "Please select" }),
+  mentoringStyle: z.string().min(3, { message: "The Field is required" }),
+  startupsSupport: z.string().min(3, { message: "The Field is required" }),
+  commitmentCycle: z.string().min(3, { message: "The Field is required" }),
+  selectionPanels: z.string().min(1, { message: "The Field is required" }),
+  whyMentor: z.string().min(3, { message: "The Field is required" }),
   // TPHScore: z.number().min(1, { message: "Enter your score" }),
   TPHScore: z
     .string()
@@ -37,8 +37,8 @@ export const mentorFormSchema = z.object({
     .regex(/^\d+$/, { message: "Enter your score must be only numbers" }),
   shareBio: z.string().min(50, { message: "atleast 50 character" }),
   profileLink: z.string().url(),
-  pulseNewsletter: z.string().min(1, { message: "Please select" }),
-  panelInvites: z.string().min(1, { message: "Please select" }),
+  pulseNewsletter: z.string().min(1, { message: "The Field is required" }),
+  panelInvites: z.string().min(1, { message: "The Field is required" }),
 });
 
 export type MentorFormType = z.infer<typeof mentorFormSchema>;
