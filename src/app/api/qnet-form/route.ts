@@ -285,9 +285,9 @@ export async function POST(req: NextRequest) {
           <tr><th align="left">What Are You Building</th><td>${
             parsed.data.whatAreYouBuilding
           }</td></tr>
-          <tr><th align="left">Interested Options</th><td>${(
-            parsed.data.interestedOptions || []
-          ).join(", ")}</td></tr>
+          <tr><th align="left">Seeking</th><td>${(parsed.data.interestedOptions || []).join(
+            ", "
+          )}</td></tr>
           <tr><th align="left">Your Score</th><td>${parsed.data.yourScore}</td></tr>
           <tr><th align="left">Final Steps</th><td>${parsed.data.finalSteps || "—"}</td></tr>
         </table>

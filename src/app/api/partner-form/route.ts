@@ -63,18 +63,20 @@ export async function POST(req: NextRequest) {
 
     <!-- Value You Bring -->
     <tr><th align="left">Type of Partner</th><td>${parsed.data.whatTypeOfPartner}</td></tr>
-    <tr><th align="left">Checked Options</th><td>${parsed.data.checkedOptions.join(", ")}</td></tr>
-    <tr><th align="left">Offering to DeQUIP</th><td>${parsed.data.offeringToDequip}</td></tr>
-    <tr><th align="left">How to Support Startup</th><td>${parsed.data.howToSupportStartup}</td></tr>
-    <tr><th align="left">Checked Options 2</th><td>${parsed.data.checkedOptions2.join(
+    <tr><th align="left">Partnership Options</th><td>${parsed.data.checkedOptions.join(
       ", "
     )}</td></tr>
+    <tr><th align="left">Offering to DeQUIP</th><td>${parsed.data.offeringToDequip}</td></tr>
+    <tr><th align="left">How to Support Startup</th><td>${parsed.data.howToSupportStartup}</td></tr>
+    <tr><th align="left">Support Options</th><td>${parsed.data.checkedOptions2.join(", ")}</td></tr>
 
     <!-- Why You’re a Fit -->
     <tr><th align="left">Why Interested</th><td>${parsed.data.whyInterested}</td></tr>
-    <tr><th align="left">Hope To Co-create</th><td>${parsed.data.hopeToCocreate}</td></tr>
-    <tr><th align="left">Organization Align</th><td>${parsed.data.organizationAlign}</td></tr>
-    <tr><th align="left">Why You Are Fit</th><td>${parsed.data.whyYouAreFit.join(", ")}</td></tr>
+    <tr><th align="left">Inclination</th><td>${parsed.data.hopeToCocreate}</td></tr>
+    <tr><th align="left">Value Alignment</th><td>${parsed.data.organizationAlign}</td></tr>
+    <tr><th align="left">Value Alignment Options</th><td>${parsed.data.whyYouAreFit.join(
+      ", "
+    )}</td></tr>
 
     <!-- Incentives & Collaboration -->
     <tr><th align="left">Token Allocation</th><td>${parsed.data.tokenAllocation}</td></tr>
@@ -83,7 +85,7 @@ export async function POST(req: NextRequest) {
     <tr><th align="left">Pulse Newsletter</th><td>${parsed.data.pulseNewsletter}</td></tr>
 
     <!-- Logistics & Readiness -->
-    <tr><th align="left">Support Startups</th><td>${parsed.data.supportStartups}</td></tr>
+    <tr><th align="left">Startup Support Bandwidth</th><td>${parsed.data.supportStartups}</td></tr>
     <tr><th align="left">Main Point of Contact</th><td>${parsed.data.mainPointOfContact}</td></tr>
     <tr><th align="left">Regional Limitations</th><td>${parsed.data.regionalLimitations}</td></tr>
 
