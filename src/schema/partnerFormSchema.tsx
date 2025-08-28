@@ -12,7 +12,7 @@ export const partnerFormSchema = z.object({
   HqLocation: z.string().nonempty({ message: "HQ Location is required" }),
   regionsOfOperation: z.string().nonempty({ message: "Region of operation is required" }),
   linkedinProfile: z.string().url("Enter a valid LinkedIn URL"),
-  xHandle: z.string().url("Enter a valid twitter URL").optional(),
+  xHandle: z.string().url("Enter a valid twitter URL").optional().or(z.literal("")),
   // Primary Contact
   founderFullName: z.string().nonempty({ message: "Full name is required" }).min(3),
   founderRole: z.string().nonempty({ message: "Role is required" }).min(3),
