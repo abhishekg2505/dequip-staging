@@ -15,7 +15,7 @@ export const applyFormSchema = z.object({
     .min(5, "startup name is required and must be greater than 4")
     .max(20, "must be less than 20"),
   oneLinePitch: z.string().min(3, { message: "This field is required" }),
-  websiteURL: z.string().url(),
+  websiteURL: z.string().min(3, { message: "This field is required" }),
   hqLocation: z.string().min(3, { message: "This field is required" }),
   incorporation: z.string().min(3, { message: "This field is required" }),
   timeZone: z.string().min(0, { message: "This field is required" }),
@@ -60,7 +60,7 @@ export const applyFormSchema = z.object({
   rememberTeam: z.string().min(3, { message: "This field is required" }),
 
   // Logistic
-  remoteFirstIncubator: z.string().min(3, { message: "This field is required" }),
+  remoteFirstIncubator: z.string().min(1, { message: "This field is required" }),
   explain: z.string().min(1, { message: "This field is required" }),
   attendDemoDay: z.string().min(1, { message: "This field is required" }),
   featuredPublicly: z.string().min(1, { message: "This field is required" }),

@@ -5,7 +5,7 @@ export const mentorFormSchema = z.object({
   nickname: z.string().min(3),
   mentorEmail: z.string().email("Enter a valid email"),
   linkedinProfile: z.string().url("Enter a valid LinkedIn URL"),
-  xHandle: z.string().url("Enter a valid Twitter URL"),
+  xHandle: z.string().url("Enter a valid Twitter URL").optional().or(z.literal("")),
   mentorTimezone: z.string(),
   countryOfResidence: z.string().min(3, { message: "Enter Country of Residence" }),
   primaryLanguage: z.string().min(3, { message: "Enter Primary Language" }),

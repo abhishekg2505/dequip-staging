@@ -37,23 +37,59 @@ export async function POST(req: NextRequest) {
 
     // 4️⃣ Send email to Admin
     await transporter.sendMail({
-      from: `"Partner Bot" <${parsed.data.mentorEmail}>`,
+      from: `"Mentor Bot" <${parsed.data.mentorEmail}>`,
       to: adminEmail,
-      subject: "New Partner Form Submission",
+      subject: "New Mentor Form Submission",
       html: `
-        <h2>New Form Submission</h2>
-        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
-          <tr><th align="left">Company Name</th><td>${parsed.data.fullname}</td></tr>
-          <tr><th align="left">Company Size</th><td>${parsed.data.nickname}</td></tr>
-          <tr><th align="left">Headquater Location</th><td>${parsed.data.mentorEmail}</td></tr>
-          <tr><th align="left">Eegions Of Operation</th><td>${parsed.data.linkedinProfile}</td></tr>
-          <tr><th align="left">Linkedin Profile</th><td>${parsed.data.mentorTimezone}</td></tr>
-          <tr><th align="left">Full Name</th><td>${parsed.data.countryOfResidence}</td></tr>
-          <tr><th align="left">Role</th><td>${parsed.data.primaryLanguage}</td></tr>
-          <tr><th align="left">Founder Linkedin</th><td>${parsed.data.currentRoleAndComapny}</td></tr>
-          <tr><th align="left">Founder Email</th><td>${parsed.data.yearOfExperience}</td></tr>
-        </table>
-      `,
+    <h2>New Form Submission</h2>
+    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+      <!-- Basic Info -->
+      <tr><th align="left">Full Name</th><td>${parsed.data.fullname}</td></tr>
+      <tr><th align="left">Nickname</th><td>${parsed.data.nickname}</td></tr>
+      <tr><th align="left">Mentor Email</th><td>${parsed.data.mentorEmail}</td></tr>
+      <tr><th align="left">LinkedIn Profile</th><td>${parsed.data.linkedinProfile}</td></tr>
+      <tr><th align="left">Twitter Handle</th><td>${parsed.data.xHandle || "-"}</td></tr>
+      <tr><th align="left">Timezone</th><td>${parsed.data.mentorTimezone}</td></tr>
+      <tr><th align="left">Country of Residence</th><td>${parsed.data.countryOfResidence}</td></tr>
+      <tr><th align="left">Primary Language</th><td>${parsed.data.primaryLanguage}</td></tr>
+      <tr><th align="left">Current Role and Company</th><td>${
+        parsed.data.currentRoleAndComapny
+      }</td></tr>
+      <tr><th align="left">Years of Experience</th><td>${parsed.data.yearOfExperience}</td></tr>
+
+      <!-- Mentoring Info -->
+      <tr><th align="left">Specialization</th><td>${parsed.data.specialization.join(", ")}</td></tr>
+      <tr><th align="left">Mentored Startups</th><td>${parsed.data.mentoredStartups}</td></tr>
+      <tr><th align="left">Participated Incubators</th><td>${
+        parsed.data.participatedIncubator
+      }</td></tr>
+      <tr><th align="left">Work With Notable Companies</th>
+        <td>
+          ${
+            parsed.data.workWithNotableCompanies && parsed.data.workWithNotableCompanies.length > 0
+              ? parsed.data.workWithNotableCompanies.map((c) => c.url).join("<br/>")
+              : "-"
+          }
+        </td>
+      </tr>
+      <tr><th align="left">Mentoring Style</th><td>${parsed.data.mentoringStyle}</td></tr>
+      <tr><th align="left">Startups Support</th><td>${parsed.data.startupsSupport}</td></tr>
+      <tr><th align="left">Commitment Cycle</th><td>${parsed.data.commitmentCycle}</td></tr>
+      <tr><th align="left">Selection Panels</th><td>${parsed.data.selectionPanels}</td></tr>
+      <tr><th align="left">Why Mentor</th><td>${parsed.data.whyMentor}</td></tr>
+
+      <!-- Assessment -->
+      <tr><th align="left">TPH Score</th><td>${parsed.data.TPHScore}</td></tr>
+
+      <!-- Bio & Profile -->
+      <tr><th align="left">Share Bio</th><td>${parsed.data.shareBio}</td></tr>
+      <tr><th align="left">Profile Link</th><td>${parsed.data.profileLink}</td></tr>
+
+      <!-- Newsletter & Panels -->
+      <tr><th align="left">Pulse Newsletter</th><td>${parsed.data.pulseNewsletter}</td></tr>
+      <tr><th align="left">Panel Invites</th><td>${parsed.data.panelInvites}</td></tr>
+    </table>
+  `,
     });
     console.log("Admin email sent");
 
