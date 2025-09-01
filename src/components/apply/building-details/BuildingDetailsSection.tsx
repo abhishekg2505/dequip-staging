@@ -167,7 +167,7 @@ export default function BuildingDetailsSection({ register, errors }: Props) {
               {/* Custom checkbox */}
               <span
                 className="
-        w-4 h-4 border border-[#ffffff] rounded-sm flex items-center justify-center
+        w-4 h-4 border flex-shrink-0 border-[#ffffff] rounded-sm flex items-center justify-center
         bg-transparent peer-checked:bg-[#ffffff]
         relative
         after:content-[''] after:w-[6px] after:h-[8px]

@@ -356,7 +356,7 @@ export default function PartnerDequipForm() {
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
             <p className="text-h6 font-montserrat font-medium">Check all that apply</p>
-            <div className="max-w-[560px] columns-2 gap-4">
+            <div className="max-w-[560px] md:columns-2 gap-4">
               {options.map((label, idx) => (
                 <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2.5">
                   {/* Hidden checkbox */}

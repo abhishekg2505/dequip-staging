@@ -78,7 +78,7 @@ export default function VisionReadinessFit({ register, errors }: Props) {
           <p className="text-h6 font-montserrat font-medium">
             What kind of mentorship would be most valuable? Check top 3.
           </p>
-          <div className="max-w-[560px] columns-2 gap-4">
+          <div className="max-w-[560px] md:columns-2 gap-4">
             {options.map((label, idx) => (
               <label key={idx} className="flex items-center cursor-pointer gap-2 mb-2">
                 {/* Hidden checkbox */}
@@ -92,7 +92,7 @@ export default function VisionReadinessFit({ register, errors }: Props) {
                 {/* Custom checkbox */}
                 <span
                   className="
-        w-4 h-4 border border-[#ffffff] rounded-sm flex items-center justify-center
+        w-4 h-4 border flex-shrink-0 border-[#ffffff] rounded-sm flex items-center justify-center
         bg-transparent peer-checked:bg-[#ffffff]
         relative
         after:content-[''] after:w-[6px] after:h-[8px]

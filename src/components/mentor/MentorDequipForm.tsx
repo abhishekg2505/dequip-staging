@@ -279,7 +279,7 @@ export default function MentorDequipForm() {
               Which sectors do you specialize in?
             </p>
             <p className="text-[16px] font-montserrat font-medium">Check all that apply</p>
-            <div className="max-w-[560px] columns-2 gap-4">
+            <div className="max-w-[560px] md:columns-2 gap-4">
               <Controller
                 name="specialization"
                 control={control}

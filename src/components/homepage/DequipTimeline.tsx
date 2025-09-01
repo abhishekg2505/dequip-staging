@@ -232,7 +232,7 @@ const DequipTimeline: React.FC = () => {
           <div className="flex justify-center gap-6 mt-6 md:mt-0 md:block">
             {/* Left Arrow */}
             <div
-              className={`swiper-prev md:absolute md:-left-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
+              className={`swiper-prev absolute left-0 top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
                 isBeginning ? "opacity-0 pointer-events-none" : "opacity-100"
               }`}
             >
@@ -241,7 +241,7 @@ const DequipTimeline: React.FC = () => {
 
             {/* Right Arrow */}
             <div
-              className={`swiper-next md:absolute md:-right-7 md:top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
+              className={`swiper-next absolute right-0 top-1/2 md:transform md:-translate-y-1/2 z-10 bg-background border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.3)] p-2 rounded-full cursor-pointer ${
                 isEnd ? "opacity-0 pointer-events-none" : "opacity-100"
               }`}
             >
