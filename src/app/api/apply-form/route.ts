@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
     <tr><th align="left">Website</th><td>${parsed.data.websiteURL}</td></tr>
     <tr><th align="left">HQ Location</th><td>${parsed.data.hqLocation}</td></tr>
     <tr><th align="left">Incorporation</th><td>${parsed.data.incorporation}</td></tr>
-    <tr><th align="left">Time Zone</th><td>${parsed.data.timeZone}</td></tr>
+    <tr><th align="left">Time Zone</th><td>${parsed.data.snapshottimeZone}</td></tr>
 
     <!-- Founder Details -->
     <tr><th colspan="2" align="left" style="background:#f3f3f3;">Founder Details</th></tr>

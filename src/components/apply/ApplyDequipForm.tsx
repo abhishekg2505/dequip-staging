@@ -106,7 +106,7 @@ export default function ApplyDequipForm() {
         </h2>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="startupName" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="startupName" className="text-h6 font-montserrat font-medium">
               Startup Name
             </label>
             <input
@@ -123,7 +123,7 @@ export default function ApplyDequipForm() {
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="oneLinePitch" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="oneLinePitch" className="text-h6 font-montserrat font-medium">
               One-line Pitch
             </label>
             <input
@@ -140,7 +140,7 @@ export default function ApplyDequipForm() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="websiteURL" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="websiteURL" className="text-h6 font-montserrat font-medium">
               Website or Notion/Figma Deck
             </label>
             <input
@@ -156,7 +156,7 @@ export default function ApplyDequipForm() {
           </div>
 
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="hqLocation" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="hqLocation" className="text-h6 font-montserrat font-medium">
               HQ Location/Base Country
             </label>
             <input
@@ -173,7 +173,7 @@ export default function ApplyDequipForm() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="incorporation" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="incorporation" className="text-h6 font-montserrat font-medium">
               Incorporation Status & Jurisdiction
             </label>
             <input
@@ -188,19 +188,21 @@ export default function ApplyDequipForm() {
             )}
           </div>
 
-          <div className="flex flex-col gap-[16px] relative">
-            <label htmlFor="dateFounded" className="text-h6 font-montserratfont-medium">
-              Time Zone
+          <div className="flex flex-col gap-[16px]">
+            <label htmlFor="snapshottimeZone" className="text-h6 font-montserrat font-medium">
+              Time Zone1
             </label>
             <Controller
-              name="timeZone"
+              name="snapshottimeZone"
               control={control}
               render={({ field }) => (
-                <TimezoneSelect value={field.value} onChange={field.onChange} />
+                <TimezoneSelect value={field.value || ""} onChange={field.onChange} />
               )}
             />
-            {errors.timeZone && (
-              <span className="text-red-500 text-sm">{errors.timeZone.message as string}</span>
+            {errors.snapshottimeZone && (
+              <span className="text-red-500 text-sm">
+                {errors.snapshottimeZone.message as string}
+              </span>
             )}
           </div>
         </div>
@@ -216,7 +218,7 @@ export default function ApplyDequipForm() {
         <p className="text-h5 font-montserrat mb-10">Primary Contact - Founder 1</p>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="founderFullName" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="founderFullName" className="text-h6 font-montserrat font-medium">
               Full Name
             </label>
             <input
@@ -236,7 +238,7 @@ export default function ApplyDequipForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="founderRole" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="founderRole" className="text-h6 font-montserrat font-medium">
               Role
             </label>
             <input
@@ -251,7 +253,7 @@ export default function ApplyDequipForm() {
             )}
           </div>
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="founderLinkedin" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="founderLinkedin" className="text-h6 font-montserrat font-medium">
               Linkedin
             </label>
             <input
@@ -271,7 +273,7 @@ export default function ApplyDequipForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="founderemail" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="founderemail" className="text-h6 font-montserrat font-medium">
               Email
             </label>
             <input
@@ -286,7 +288,7 @@ export default function ApplyDequipForm() {
             )}
           </div>
           <div className="flex flex-col gap-[16px] relative">
-            <label htmlFor="founderTimezone" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="founderTimezone" className="text-h6 font-montserrat font-medium">
               Time zone
             </label>
             <Controller
@@ -328,7 +330,7 @@ export default function ApplyDequipForm() {
         </h2>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="launchedbefor" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="launchedbefor" className="text-h6 font-montserrat font-medium">
               Have you launched anything before? Show us. Include GitHub, product links, demo
               videos, whitepapers, etc.
             </label>
@@ -356,7 +358,7 @@ export default function ApplyDequipForm() {
         />
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="evenFlopped" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="evenFlopped" className="text-h6 font-montserrat font-medium">
               What are you most proud of that you&rsquo;ve built, even if it flopped? (We love
               builders. Don&rsquo;t be shy.)
             </label>
@@ -374,7 +376,7 @@ export default function ApplyDequipForm() {
         </div>
         <div className="grid grid-cols-1 gap-5 mb-10">
           <div className="flex flex-col gap-[16px]">
-            <label htmlFor="rememberTeam" className="text-h6 font-montserratfont-medium">
+            <label htmlFor="rememberTeam" className="text-h6 font-montserrat font-medium">
               If we only remember one thing about your team, what should it be?
             </label>
             <input

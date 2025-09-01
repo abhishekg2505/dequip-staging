@@ -18,12 +18,13 @@ export const applyFormSchema = z.object({
   websiteURL: z.string().min(3, { message: "This field is required" }),
   hqLocation: z.string().min(3, { message: "This field is required" }),
   incorporation: z.string().min(3, { message: "This field is required" }),
-  timeZone: z.string().min(0, { message: "This field is required" }),
+  snapshottimeZone: z.string().min(0, { message: "This field is required" }),
   // Founder Details
   founder: founderSchema,
   coFounders: z.array(founderSchema),
   fullTimeTeam: z.string().min(1, { message: "This field is required" }),
   howToHear: z.string({ message: "Please select where you heard about us" }),
+  timeZone: z.string().min(0, { message: "This field is required" }),
 
   // What You’re Building
   buildingMatter: z.string().min(1, "This field is required"),

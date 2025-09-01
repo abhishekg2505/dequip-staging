@@ -95,7 +95,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       ref={sectionRef}
-      className="scroll-mt-24 rounded-[20px] pb-10 pt-[170px] px-4 md:px-20 bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
+      className="scroll-mt-24 rounded-[20px] relative pb-10 pt-[170px] px-4 md:px-20 bg-[url('/images/homepage/hero-gradient.webp')]  bg-contain bg-right-top bg-no-repeat"
     >
       <div className="absolute inset-0 bg-black z-[0] bg-[url('/images/common/bg/stars.png')]  bg-contain bg-top bg-no-repeat" />
       <div className="max-w-7xl mx-auto">
@@ -116,7 +116,7 @@ const HeroSection: React.FC = () => {
             </p>
             <Link ref={lineRef} href="#apply-form">
               <Button variant="outline" className="group relative overflow-hidden">
-                <span className="text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
+                <span className="text-[12px] sm:text-p2 font-montserrat bg-[linear-gradient(180deg,_rgba(255,255,255,0.3)_8.85%,_#FFFFFF_100%)] bg-clip-text text-transparent group-hover:bg-none group-hover:text-[#ffffff] group-hover:bg-none group-hover:text-[#ffffff]">
                   Apply Now
                 </span>
               </Button>
